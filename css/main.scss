@@ -1,0 +1,25 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+/*
+　　　 ∧＿∧
+　　　(´･ω･)
+　 ⌒~ー､ ー⌒ヽ
+／ ヽ　 ｜ |
+(　_ノﾄー仝ーイ￣￣＼
+ CSS )ミ土彡/ COOL )
+　 ＼ ヽ――-L_＿＿／
+￣￣(_ノ _　 ＼
+　 /　 ／ ＼　 ヽ
+
+Theme Name: Ghiscar
+Author: Jessica Paoli <http://jessicapaoli.com>
+License: MIT
+*/
+
+@import 'base/base',
+        'components/header',
+        'components/home'
+        ;

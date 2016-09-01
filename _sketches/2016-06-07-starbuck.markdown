@@ -1,0 +1,7 @@
+---
+layout: post
+title:  "Starbuck"
+date:   2016-06-07 00:13:00 -0500
+---
+
+![Starbuck]({{ "/media/rain-progress.gif" | prepend: site.baseurl | prepend: site.url }})

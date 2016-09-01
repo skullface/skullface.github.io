@@ -1,0 +1,7 @@
+---
+layout: post
+title:  "Kimmy Taught Me"
+date:   2016-07-31 14:53:00 -0500
+---
+
+![Kimmy Taught Me]({{ "/media/kimmy.png" | prepend: site.baseurl | prepend: site.url }})

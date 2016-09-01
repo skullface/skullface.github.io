@@ -1,0 +1,16 @@
+---
+layout: home
+---
+
+<div class="sketchbook">
+  <h2>From the <a href="/sketchbook">Sketchbook</a></h2>
+  <ul class="sketches">
+
+  {% assign sorted = (site.sketches | sort: 'date') | reverse %}
+  {% for sketch in sorted limit:3 %}
+  <li class="sketch">
+    {{ sketch.content }}
+  </li>
+  {% endfor %}
+  </ul>
+</div>
