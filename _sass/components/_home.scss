@@ -19,7 +19,7 @@
 }
 
 .intro_text {
-  min-height: 60vh;
+  min-height: 66vh;
   @media all and (max-width: 800px) {
     min-height: 250px;
   }
@@ -28,7 +28,16 @@
   align-items: center;
   align-content: center;
   margin-top: -4vh;
+}
 
+time {
+  display: inline-block;
+  font-family: $font-family_head;
+  text-transform: uppercase;
+  font-weight: $font-weight_normal;
+  letter-spacing: .1rem;
+  font-size: .75rem;
+  margin-bottom: .5rem;
 }
 
 dl {
@@ -196,11 +205,50 @@ dd {
   fill: #bf1313;
 }
 
-.sketchbook {
-  text-align: center;
-  background: url('../media/paper_@2X.png');
+.books {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.notebook {
+  width: 35%;
+  background: #292929 url('../media/paper_@2XX.png');
+  color: white;
   background-size: contain;
-  padding-bottom: 3rem;
+  padding-bottom: 2rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+  .notebook h2 {
+    text-align: center;
+  }
+
+  .note a, .note a h3 {
+    opacity: .7;
+  }
+
+  .note a:hover, .note a:hover h3 {
+    opacity: 1;
+  }
+
+  .note h3 {
+    font-weight: $font-weight_semibold;
+    margin-bottom: .5rem;
+  }
+
+  .note {
+    font-size: 1rem;
+  }
+
+.sketchbook {
+  width: 65%;
+  text-align: center;
+  background: #f7f7f7 url('../media/paper_@2XX.png');
+  background-size: contain;
+  padding-bottom: 2rem;
 }
 
 .sketches {
@@ -224,8 +272,8 @@ dd {
     }
   }
 
-  h2 {
-    padding: 2.6rem 0 2rem 0;
+  .books h2 {
+    padding: 2.4rem 0 2rem 0;
     font-size: 1.25rem;
     font-weight: $font-weight_normal;
     text-transform: uppercase;

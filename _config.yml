@@ -19,7 +19,7 @@ author: Jessica Paoli
 author_email: jes@sica.me
 description: > # this means to ignore newlines until "baseurl:"
   Jessica Paoli is an interdisciplinary designer, illustrator, and
-  visual artist in Cleveland, Ohio. This is her sketchbook.
+  visual artist in Cleveland, Ohio.
 baseurl:      "" # the subpath of your site, e.g. /blog
 url:          "" # the base hostname & protocol for your site
 locale:       en-US
@@ -34,7 +34,7 @@ collections:
   sketches:
     output: true
     permalink: /sketchbook/:path/
-  blog:
+  blogs:
     output: true
     permalink: /blog/:path/
 

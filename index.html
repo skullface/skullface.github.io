@@ -2,15 +2,32 @@
 layout: home
 ---
 
-<div class="sketchbook">
-  <h2>From the <a href="/sketchbook">Sketchbook</a></h2>
-  <ul class="sketches">
+<div class="books">
+  <div class="sketchbook">
+    <h2>From the <a href="/sketchbook">Sketchbook</a></h2>
 
-  {% assign sorted = (site.sketches | sort: 'date') | reverse %}
-  {% for sketch in sorted limit:3 %}
-  <li class="sketch">
-    {{ sketch.content }}
-  </li>
-  {% endfor %}
-  </ul>
+    <ul class="sketches">
+    {% assign sorted = (site.sketches | sort: 'date') | reverse %}
+    {% for sketch in sorted limit:3 %}
+    <li class="sketch">
+      {{ sketch.content }}
+    </li>
+    {% endfor %}
+    </ul>
+  </div>
+
+  <div class="notebook">
+    <h2>From the <a href="/blog">Notebook</a></h2>
+
+    {% assign sorted = (site.blogs | sort: 'date') | reverse %}
+    {% for blog in sorted limit:1 %}
+    <article class="note">
+      <a href="{{ blog.url | prepend: site.baseurl }}">
+      <time>{{ blog.date | date: '%B %d, %Y' }}</time>
+      <h3>{{ blog.title }}</h3>
+      {{ blog.content | strip_html | truncatewords:30}}
+      </a>
+    </article>
+    {% endfor %}
+  </div>
 </div>
