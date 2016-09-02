@@ -48,15 +48,17 @@ a {
   }
 }
 
-p a {
+p a,
+.features h2 a {
   font-family: $font-family_head;
   font-weight: $font-weight_bold;
-  font-size: 100%;
-  letter-spacing: .5px;
-  background: url(http:///jessicapaoli.com/wp-content/themes/fsociety/assets/img/line.svg) left bottom no-repeat;
+  background: url(http:///jessicapaoli.com/wp-content/themes/fsociety/assets/img/line.svg) center bottom no-repeat;
   background-size: auto 100%;
   &:hover {
     color: $color_primary;
+  }
+  &:last-child {
+    background-position: right bottom;
   }
 }
 
@@ -70,7 +72,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 3.65rem;
+  font-size: 3.25rem;
   color: $color_dark;
   line-height: 1.15;
   font-weight: $font-weight_semibold;

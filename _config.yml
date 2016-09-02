@@ -33,7 +33,7 @@ include:      ["_pages"]
 collections:
   sketches:
     output: true
-    permalink: /sketchbook/:path/
+    permalink: /sketchbook/
   blogs:
     output: true
     permalink: /blog/:path/

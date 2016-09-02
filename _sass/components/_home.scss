@@ -1,5 +1,7 @@
+@import 'books'
+;
+
 .projects {
-  border-left: solid 2rem $color_light;
   @media all and (max-width: 800px) {
     border-left-width: 0rem;
   }
@@ -19,15 +21,16 @@
 }
 
 .intro_text {
-  min-height: 66vh;
+  min-height: 85vh;
   @media all and (max-width: 800px) {
     min-height: 250px;
+    margin-top: -2rem;
   }
   display: flex;
   flex-direction: row;
   align-items: center;
   align-content: center;
-  margin-top: -4vh;
+  margin-top: -12vh;
 }
 
 time {
@@ -129,6 +132,22 @@ dd {
     }
   }
 
+  figcaption {
+    width: 70%;
+    margin: 2rem auto 4rem 4rem;
+    font-size: 1.125rem;
+    max-width: 32rem;
+    padding-left: 1rem;
+    border-left: solid 1rem $color_light;
+    @media only screen and (max-width: 800px) {
+      margin: 1rem 0 3rem 0;
+      font-size: 1rem;
+      width: 100%;
+      border: 0;
+      padding-left: 0;
+    }
+  }
+
   .project_content p {
     width: 33rem;
     margin-top: -7px;
@@ -205,87 +224,6 @@ dd {
   fill: #bf1313;
 }
 
-.books {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: stretch;
-}
-
-.notebook {
-  width: 35%;
-  background: #292929 url('../media/paper_@2XX.png');
-  color: white;
-  background-size: contain;
-  padding-bottom: 2rem;
-  padding-left: 4rem;
-  padding-right: 4rem;
-}
-
-  .notebook h2 {
-    text-align: center;
-  }
-
-  .note a, .note a h3 {
-    opacity: .7;
-  }
-
-  .note a:hover, .note a:hover h3 {
-    opacity: 1;
-  }
-
-  .note h3 {
-    font-weight: $font-weight_semibold;
-    margin-bottom: .5rem;
-  }
-
-  .note {
-    font-size: 1rem;
-  }
-
-.sketchbook {
-  width: 65%;
-  text-align: center;
-  background: #f7f7f7 url('../media/paper_@2XX.png');
-  background-size: contain;
-  padding-bottom: 2rem;
-}
-
-.sketches {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 80%;
-  margin: 0 auto;
-  list-style: none;
-  @media all and (max-width: 800px) {
-    width: 95%;
-  }
-}
-
-  .sketch {
-    img {
-      mix-blend-mode: multiply;
-      max-width: 100%;
-      max-height: 200px;
-    }
-  }
-
-  .books h2 {
-    padding: 2.4rem 0 2rem 0;
-    font-size: 1.25rem;
-    font-weight: $font-weight_normal;
-    text-transform: uppercase;
-    letter-spacing: .1em;
-  }
-
-  h2 a {
-    font-weight: $font-weight_semibold;
-  }
-
-
-
 .tooltip {
   display: inline-block;
   position: relative;
@@ -302,8 +240,8 @@ dd {
     content: attr(data-title);
     position: absolute;
     z-index: 98;
-    top: 5px;
-    left: 15%;
+    top: 0px;
+    left: 10%;
     padding: 1rem 1.25rem;
     color: #fff;
     background: rgba(0,0,0,.9);
