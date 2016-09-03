@@ -1,0 +1,13 @@
+{% include header.html %}
+{% include nav.html %}
+
+<div class="sketchbook_sketches">
+  {% assign sorted = (site.blogs | sort: 'date') | reverse %}
+  {% for blog in sorted %}
+  <article class="sketchbook_sketch">
+      {{ blog.content }}
+  </article>
+  {% endfor %}
+</div>
+
+{% include footer.html %}

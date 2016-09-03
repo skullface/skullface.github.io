@@ -1,0 +1,36 @@
+.sketchbook_sketch {
+   text-align: center
+}
+
+.sketchbook_sketches {
+   margin: 2rem auto 0 auto;
+   width: 95%
+}
+
+.sketchbook_sketch {
+   width: 95%
+}
+
+@media only screen and (min-width: 601px) and (max-width: 999px) {
+   .sketchbook_sketch {
+       width: 49%
+   }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1999px) {
+   .sketchbook_sketch {
+       width: 29%
+   }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1439px) {
+   .sketchbook_sketch {
+       width: 30%
+   }
+}
+
+@media only screen and (min-width: 1440px) {
+   .sketchbook_sketch {
+       width: 31%
+   }
+}

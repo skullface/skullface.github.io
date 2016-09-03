@@ -26,14 +26,17 @@ locale:       en-US
 
 
 # Where things are
-layouts_dir:  ./_layouts
-data_dir:     ./_data
-sass_dir:     ./_sass
+layouts_dir:  /_jekyll/layouts
+data_dir:     /_jekyll/data
+sass:
+  sass_dir:     /_jekyll/scss
+includes_dir: /_jekyll/includes
+plugins_dir:  /_jekyll/plugins
 include:      ["_pages"]
 collections:
   sketches:
     output: true
-    permalink: /sketchbook/
+    permalink: /sketchbook/:path/
   blogs:
     output: true
     permalink: /blog/:path/
@@ -54,4 +57,4 @@ port:         4000
 host:         127.0.0.1
 
 # Outputting
-permalink:    "/:title"
+permalink:    pretty

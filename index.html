@@ -4,35 +4,32 @@ layout: home
 
 <div class="features">
   <div class="catalog">
-
-    <figure>
-      <a href="">
-        <img src="media/jessica-paoli_shop_super-kawaii-tee.jpg" alt="">
-      </a>
-    </figure>
-    <figure>
-      <a href="">
-        <img src="media/jessica-paoli_shop_pins.jpg" alt="">
-      </a>
-    </figure>
-    <figure>
-      <a href="">
-        <img src="media/jessica-paoli_shop_kittysandry.jpg" alt="">
-      </a>
-    </figure>
+    <a href="/shop">
+      <figure>
+          <img src="media/jessica-paoli_shop_super-kawaii-tee.jpg" alt="">
+      </figure>
+      <figure>
+          <img src="media/jessica-paoli_shop_pins.jpg" alt="">
+      </figure>
+      <figure>
+          <img src="media/jessica-paoli_shop_kittysandry.jpg" alt="">
+      </figure>
+    </a>
   </div>
   <div class="books">
     <div class="sketchbook">
       <h2>From the <a href="/sketchbook">Sketchbook</a></h2>
 
-      <ul class="sketches">
-      {% assign sorted = (site.sketches | sort: 'date') | reverse %}
-      {% for sketch in sorted limit:3 %}
-      <li class="sketch">
-        {{ sketch.content }}
-      </li>
-      {% endfor %}
-      </ul>
+      <a href="/sketchbook">
+        <ul class="sketches">
+        {% assign sorted = (site.sketches | sort: 'date') | reverse %}
+        {% for sketch in sorted limit:3 %}
+        <li class="sketch">
+          {{ sketch.content }}
+        </li>
+        {% endfor %}
+        </ul>
+      </a>
     </div>
 
     <div class="notebook">
