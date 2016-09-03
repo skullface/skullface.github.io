@@ -1,4 +1,17 @@
 ---
 title: Jessica Paoli | Blog
-layout: blog
+layout: default
 ---
+
+
+  <ul class="notebook_notes-list">
+    {% for blog in site.blogs %}
+    <li>
+      <time class="post-meta">{{ blog.date | date: "%b %-d, %Y" }}</time>
+
+      <a class="post-link" href="{{ blog.url | prepend: site.baseurl }}">{{ blog.title | escape }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/blog.xml" | prepend: site.baseurl }}">via RSS</a></p>

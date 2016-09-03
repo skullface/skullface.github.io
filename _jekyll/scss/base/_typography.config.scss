@@ -52,13 +52,13 @@ p a,
 .features h2 a {
   font-family: $font-family_head;
   font-weight: $font-weight_bold;
-  background: url(http:///jessicapaoli.com/wp-content/themes/fsociety/assets/img/line.svg) center bottom no-repeat;
+  background: url(http:///jessicapaoli.com/wp-content/themes/fsociety/assets/img/line.svg) 40% bottom no-repeat;
   background-size: auto 100%;
   &:hover {
     color: $color_primary;
   }
   &:last-child {
-    background-position: right bottom;
+    background-position: 20% bottom;
   }
 }
 
