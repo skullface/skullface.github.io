@@ -1,15 +1,30 @@
-.site-header {
-    padding-top: 1.33333rem;
-    padding-bottom: 1.33333rem;
-    width: 80%;
+.site_header {
+    padding: 1.33333rem 10%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     align-content: center;
+    background: $color-primary;
 }
 
-.site-navigation a {
+.header_navigation ul {
+    list-style: none;
+}
+
+.header_navigation li {
+    display: inline-block;
+}
+
+.header_navigation li:first-child:after {
+  content: "\27E1";
+  font-weight: $font-weight_light;
+  color: rgba(0,0,0,.25);
+  margin-left: 1rem;
+  margin-right: .9rem;
+}
+
+.header_navigation a {
     margin-right: 15px;
     font-family: $font-family_head;
     font-weight: $font-weight_bold;
@@ -17,15 +32,10 @@
     text-transform: uppercase;
     letter-spacing: .1rem;
     &:hover {
-        color: $color_primary;
+        color: white;
     }
 }
-
-.intro .site-navigation a:hover {
-    color: white;
-}
-
-    .site-navigation a:last-child {
+    .header_navigation a:last-child {
         margin-right: 0;
     }
 
@@ -35,25 +45,29 @@
     line-height: 1;
 }
 
-.site-logo {
+.header_logo {
     height: 50px;
     fill: $color_text;
 }
 
+a:hover .header_logo {
+    fill: white;
+}
+
 @media all and (max-width: 800px) {
-    .site-header {
+    .site_header {
         -webkit-flex-direction: column;
         -ms-flex-direction: column;
         flex-direction: column;
         padding-bottom: 1.33333rem
     }
-    .site-navigation {
+    .header_navigation {
         order: 3;
         font-size: .9rem;
         line-height: 2;
         text-align: center
     }
-    .site-logo {
+    .header_logo {
         order: 1;
         width: 140px;
         margin-bottom: 10px;
@@ -62,12 +76,3 @@
         left: 0;
     }
 }
-
-.intro #logo:hover svg {
-    fill: white;
-}
-
-#logo:hover svg {
-    fill: $color_primary;
-}
-

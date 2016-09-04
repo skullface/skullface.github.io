@@ -31,7 +31,7 @@ $font-family_head:      "Avenir Next", Avenir, "europa", -apple-system, BlinkMac
 /// -------------
 
 body {
-  font: $font-weight_light $font-size_base $font-family_body;
+  font: $font-weight_normal $font-size_base $font-family_body;
   line-height: $leading;
   hyphens: auto;
   @media only screen and (max-width: 500px) {
@@ -45,11 +45,14 @@ a {
 //  border-bottom: solid 2px $color_primary;
   cursor: pointer;
   &:hover, &:active {
+    cursor: url(http://www.rw-designer.com/cursor-extern.php?id=55501)
   }
 }
 
 p a,
-.features h2 a {
+.about_recognition a,
+.about_links a,
+.features h2 a{
   font-family: $font-family_head;
   font-weight: $font-weight_bold;
   background: url(http:///jessicapaoli.com/wp-content/themes/fsociety/assets/img/line.svg) 40% bottom no-repeat;
@@ -62,8 +65,8 @@ p a,
   }
 }
 
-p {
-  max-width: 30rem;
+div:not(.project) p {
+  margin-bottom: 2rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -72,21 +75,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 3.25rem;
+  font-size: 3.75rem;
   line-height: 1.15;
   font-weight: $font-weight_semibold;
-  color: $color_dark;
 }
 
 h2 {
-  font-size: 1.25rem;
-  font-weight: $font-weight_normal;
-  text-transform: uppercase;
-  letter-spacing: .1em;
+  font-size: 2rem;
+  font-weight: $font-weight_bold;
+  letter-spacing: .05rem;
+  margin-bottom: .5rem;
+  text-transform: uppercase
 }
 
 h3 {
-  font-weight: $font-weight_semibold;
+  font-weight: $font-weight_normal;
+  font-size: 1.75rem;
+  margin: 1rem 0 .5rem 0;
 }
 
 sup {

@@ -9,20 +9,30 @@
 
 .intro {
   background: $color_primary;
-  text-align: center;
 }
 
 .intro h1 {
-  width: 100%;
+  font-size: 3.25rem;
+  padding-right: 2rem;
+  line-height: 1.35;
+  padding: 7rem 0 8rem 0;
   font-weight: $font-weight_normal;
+  max-width: 800px;
+  margin: 0 auto;
   @media only screen and (max-width: 800px) {
     font-size: 1.75rem;
+    line-height: 1.3;
+    padding: 3rem 10%;
+  }
+  @media only screen and (min-width: 801px) and (max-width: 1023px) {
+    padding: 2rem 0;
+    font-size: 2.5rem;
   }
 }
 
 
 .intro_text {
-  min-height: 85vh;
+  min-height: 90vh;
   @media all and (max-width: 800px) {
     min-height: 250px;
     margin-top: -2rem;
@@ -31,7 +41,11 @@
   flex-direction: row;
   align-items: center;
   align-content: center;
-  margin-top: -12vh;
+  margin-top: -13vh;
+}
+
+.projects p {
+  max-width: 30rem;
 }
 
 time {
@@ -123,13 +137,11 @@ dd {
     margin-right: auto;
     max-width: 800px;
     margin-bottom: 1.5rem;
-    padding-right: 3rem;
     @media only screen and (max-width: 800px) {
       font-size: 3rem;
     }
     @media only screen and (max-width: 500px) {
       font-size: 2rem;
-      padding-right: 0;
     }
   }
 
@@ -169,8 +181,8 @@ dd {
   position: fixed;
   right: 0px;
   text-align: center;
-  bottom: 10%;
-  cursor: de;
+  bottom: 3%;
+  cursor: default;
 
   ul {
     list-style: none;
@@ -180,7 +192,7 @@ dd {
 
 #projects_navigation a {
   display: block;
-  background: rgba(0,0,0,.07);
+  background: rgba(0,0,0,.04);
   width: 48px;
   height: 48px;
 }
@@ -241,8 +253,8 @@ dd {
     content: attr(data-title);
     position: absolute;
     z-index: 98;
-    top: 0px;
-    left: 10%;
+    top: 4px;
+    left: 15%;
     padding: 1rem 1.25rem;
     color: #fff;
     background: rgba(0,0,0,.9);
@@ -265,3 +277,43 @@ dd {
     mix-blend-mode: multiply;
   }
 }
+
+
+.about-contact {
+  padding: 4rem 10% 2rem 10%;
+  background: #f9f9f9;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 1.125rem;
+}
+
+  .about-contact p {
+    max-width: 33rem;
+  }
+
+  .about-contact figure {
+    float: left;
+    margin: 0 2rem .25rem 0;
+  }
+
+  .about-contact img {
+    max-height: 145px;
+  }
+
+  .about_me {
+    width: 66%;
+    @media all and (max-width: 800px) {
+      width: 100%;
+    }
+  }
+
+  .contact_me {
+    width: 30%;
+    @media all and (max-width: 800px) {
+      width: 100%;
+      margin-top: 2rem;
+    }
+  }

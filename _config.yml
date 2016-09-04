@@ -37,9 +37,9 @@ collections:
   sketches:
     output: true
     permalink: /sketchbook/:path/
-  blogs:
+  projects:
     output: true
-    permalink: /blog/:path/
+    permalink: /project/:path/
 
 # Handling Reading
 encoding:     "utf-8"

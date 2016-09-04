@@ -19,11 +19,17 @@
 .copyright {
     text-align: right;
     font-size: .9rem;
+    font-family: $font-family_head;
     font-weight: $font-weight_normal;
     max-width: 50rem;
 
     @media all and (max-width: 800px) {
         text-align: center;
+        width: 100%;
+        a {
+            display: block;
+            background: url('null');
+        }
     }
 }
 
@@ -69,4 +75,8 @@
 a .arrow {
     background-color: white;
     padding: 3px;
+}
+
+.about_contact a .arrow {
+    background-color: #f9f9f9;
 }

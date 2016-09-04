@@ -1,5 +1,4 @@
 {% include header.html %}
-{% include nav.html %}
 
 <div class="sketchbook_sketches">
   {% assign sorted = (site.sketches | sort: 'date') | reverse %}
@@ -10,4 +9,4 @@
   {% endfor %}
 </div>
 
-{% include footer-masonry.html %}
+{% include footer.html %}

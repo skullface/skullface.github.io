@@ -1,14 +1,11 @@
-.sketchbook_sketch {
-   text-align: center
-}
-
 .sketchbook_sketches {
    margin: 2rem auto 0 auto;
    width: 95%
 }
 
 .sketchbook_sketch {
-   width: 95%
+   width: 95%;
+   text-align: center;
 }
 
 @media only screen and (min-width: 601px) and (max-width: 999px) {
@@ -19,7 +16,7 @@
 
 @media only screen and (min-width: 1000px) and (max-width: 1999px) {
    .sketchbook_sketch {
-       width: 29%
+       width: 33%
    }
 }
 
