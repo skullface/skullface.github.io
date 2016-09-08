@@ -27,6 +27,8 @@ permalink: /now/
 - skate decks
 - plush or vinyl toys
 - art for a video game
+- a font
+- a solo show
 
 ---
 
