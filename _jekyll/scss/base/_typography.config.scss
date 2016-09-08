@@ -24,7 +24,7 @@ $leading:               1.6;
 
 /// Family stacks
 $font-family_body:      "Georgia", "Times New Roman", serif;
-$font-family_head:      "Avenir Next", Avenir, "europa", -apple-system, BlinkMacSystemFont, "Avenir", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-family_head:      "europa", "Avenir Next", Avenir, -apple-system, BlinkMacSystemFont, "Avenir", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
 
 /// Typographic body, heading, and link styles
@@ -50,9 +50,8 @@ a {
 }
 
 p a,
-.about_recognition a,
-.about_links a,
-.features h2 a{
+.site_content a,
+.mini-nav a {
   font-family: $font-family_head;
   font-weight: $font-weight_bold;
   background: url(http:///jessicapaoli.com/wp-content/themes/fsociety/assets/img/line.svg) 40% bottom no-repeat;
@@ -65,8 +64,16 @@ p a,
   }
 }
 
-div:not(.project) p {
+.site_content p,
+.post p,
+.about-contact p,
+.site_content ul {
   margin-bottom: 2rem;
+}
+
+h1 + p,
+ul + h2 {
+  margin-top: 2rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -77,26 +84,64 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 3.75rem;
   line-height: 1.15;
-  font-weight: $font-weight_semibold;
+  font-weight: $font-weight_bold;
 }
 
 h2 {
-  font-size: 2rem;
-  font-weight: $font-weight_bold;
-  letter-spacing: .05rem;
   margin-bottom: .5rem;
+  font-size: 1.65rem;
+  font-weight: $font-weight_bold;
+  letter-spacing: .1rem;
   text-transform: uppercase
 }
 
 h3 {
+  margin: 0 0 .5rem 0;
   font-weight: $font-weight_normal;
-  font-size: 1.75rem;
-  margin: 1rem 0 .5rem 0;
+  font-size: 1.25rem;
 }
 
 sup {
   margin-left: 2px;
   font-size: .5rem;
+}
+
+time {
+  display: inline-block;
+  margin-bottom: .5rem;
+  font: $font-weight_normal .75rem $font-family_head;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+}
+
+.site_content > hr + ul li {
+  margin-bottom: 1.125rem;
+  line-height: 1.45;
+}
+
+label {
+  display: block;
+  font: $font-weight_semibold .75rem $font-family_head;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+}
+
+label span {
+  display: block;
+  margin: .5rem 0 .25rem 0;
+}
+
+input[type=text],
+input[type=email],
+textarea {
+  display:  block;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 10px 15px;
+  font-family: $font-family_head;
+  font-size: 1rem;
+  border: 0;
+  background: #fff;
 }
 
 a.button,
@@ -106,13 +151,13 @@ input[type=button] {
   position: relative;
   display: inline-block;
   border: 0;
-  padding: 1rem 1.33333rem;
-  outline: 0;
+  padding: 1rem 1rem .5rem 1rem;
+  outline: none;
   -webkit-appearance: none;
   cursor: pointer;
-  font: $font-weight_bold 1.1rem $font-family_head;
+  font: $font-weight_bold .9rem $font-family_head;
   text-transform: uppercase;
-  letter-spacing: .075rem;
+  letter-spacing: .1rem;
   text-align: center;
   transition: all .15s ease-in-out;
   border-bottom: solid 5px darken($color_primary, 5%);
@@ -165,6 +210,12 @@ button:disabled {
   cursor: default;
 }
 
+a.button_secondary {
+  font-weight: $font-weight_normal;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
 button:disabled:hover {
   border-color: darken($color_primary, 5%);
   color: $color_dark;
@@ -173,4 +224,18 @@ button:disabled:hover {
 
 button:disabled:hover:after {
   left: 0;
+}
+
+input:focus,
+textarea:focus {
+  border-left: solid 8px $color_primary;
+  outline: none;
+}
+
+hr {
+  border: 0;
+  height: 0;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }

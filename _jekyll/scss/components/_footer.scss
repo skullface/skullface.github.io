@@ -1,54 +1,73 @@
-.site-footer {
+/* Footer */
+
+.site_footer {
+    width: 80%;
+    margin: 0 auto;
     padding-top: 4rem;
     padding-bottom: 4rem;
+    font: $font-weight_normal .9rem $font-family_head;
+    text-align: center;
+    @media all and (max-width: 800px) {
+        .site_footer {
+            padding: 2rem;
+        }
+    }
+}
+
+.footer_links {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    width: 80%;
+    align-items: flex-start;
+    width: 100%;
     margin: 0 auto;
-    align-items: center;
+    @media all and (max-width: 1100px) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
 
-    @media all and (max-width: 800px) {
-        .site-footer {
-            padding: 2rem;
-            flex-direction: column
+.mini-nav ul {
+    list-style: none;
+    @media all and (max-width: 700px) {
+        margin-top: 2rem;
+    }
+}
+.mini-nav li {
+    display: inline;
+    margin-right: 1rem;
+    &:last-child {
+        margin-right: 0;
+    }
+    @media all and (max-width: 700px) {
+        a {
+            display: inline-block;
+            margin: 12px;
+            padding: 3px;
         }
     }
 }
 
 .copyright {
-    text-align: right;
-    font-size: .9rem;
-    font-family: $font-family_head;
-    font-weight: $font-weight_normal;
-    max-width: 50rem;
-
-    @media all and (max-width: 800px) {
-        text-align: center;
-        width: 100%;
-        a {
-            display: block;
-            background: url('null');
-        }
-    }
+    margin-top: 4rem;
+    text-align: center;
+    font: $font-weight_normal .75rem $font-family_head;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
 }
 
 .social-media ul {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
     list-style: none;
 }
 
-
-@media all and (max-width: 800px) {
+@media all and (max-width: 1100px) {
     .social-media {
-        width: 100%;
-        text-align: center;
         padding-bottom: 1.33333rem
-    }
-    .social-media ul {
-        justify-content: center
     }
 }
 .social-media svg {
@@ -57,7 +76,12 @@
     fill: #7f7f7f;
 }
 .social-media li {
-    margin-right: 20px
+    display: inline-block;
+    margin-right: 20px;
+    @media all and (max-width: 700px) {
+        margin-right: 3rem;
+        margin-top: 1rem;
+    }
 }
 .social-media li:last-child {
     margin-right: 0

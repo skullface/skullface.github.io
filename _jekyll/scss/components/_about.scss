@@ -1,0 +1,44 @@
+/* About & Contact */
+
+.about-contact {
+  padding: 8% 10% 5% 10%;
+  font-size: 1.125rem;
+  background: #f9f9f9;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+  .about-contact p {
+    max-width: 33rem;
+  }
+
+  .about-contact img {
+    display: block;
+    margin-bottom: 1rem;
+    max-height: 145px;
+    @media all and (max-width: 920px) {
+      float: right;
+    }
+  }
+
+  .about_me, .contact_me {
+    width: 46%;
+    @media all and (max-width: 800px) {
+      width: 100%;
+    }
+  }
+
+
+  @media all and (min-width: 1100px) {
+    .form_name, .form_email {
+      width: 47.25%;
+      display: inline-block;
+    }
+
+    .fields input[type=email] {
+      margin-left: 5.5%;
+    }
+  }

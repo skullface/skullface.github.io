@@ -40,6 +40,9 @@ collections:
   projects:
     output: true
     permalink: /project/:path/
+  products:
+    output: true
+    permalink: /shop/:path/
 
 # Handling Reading
 encoding:     "utf-8"
