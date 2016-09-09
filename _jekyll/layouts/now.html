@@ -1,0 +1,46 @@
+{% include header.html %}
+
+<div class="site_content page_now">
+
+  <h1>{{ page.title }}</h1>
+
+  <div class="now_content">
+    <p class="now_intro"><a href="http://nownownow.com/about">This page</a> is an authentic and transparent look at my priorities in work and life. I will <a href="https://sivers.org/hellyeah" target="_blank">say no</a> to requests that don't meet these priorities in order to stay aligned with my goals and eliminate distractions. If you&rsquo;d like to connect on any of the below or just want to chat, please send a <a href="https://twitter.com/intent/tweet?text=@skullface%20Hi,%20Skullface!%20I…">tweet</a> or an email to <em><strong>meow</strong> at jessica paoli dot com</em>. I look forward to hearing from you. &hearts;<br><br><em>Last updated in {{ page.date | date: "%B %Y" }}.</em></p>
+
+    <div class="now_container">
+      <div class="now_list">
+        {{ content }}
+      </div>
+
+      <div class="now_future">
+        <div class="bucket-list">
+          <h2>Design bucket list</h2>
+          <ul>
+            <li>something for Square Enix, Kanye West, Martha Stewart, and Disney</li>
+            <li>a political campaign</li>
+            <li>book covers</li>
+            <li>skate decks</li>
+            <li>plush or vinyl toys</li>
+            <li>art for a video game</li>
+            <li><s>art for a music video</s> <a href="https://www.youtube.com/watch?v=fnxR5VHtaCo">⋆</a></li>
+            <li><s>something to appear on TV</s> <a href="http://video.cnbc.com/gallery/?video=3000515728">⋆</a></li>
+            <li>a font</li>
+          </ul>
+        </div>
+
+        <div class="big-picture">
+          <h2>Big-picture goals</h2>
+          <ul>
+            <li>make design, tech, comics, and video games more inclusive</li>
+            <li>become conversationally fluent in Japanese and Korean</li>
+            <li>share my experiences and my knowledge, even when I'm unsure of their value</li>
+            <li>integrate exercise and fitness into my life so it becomes seamless</li>
+            <li>write and publish a book</li>
+            <li>continually simplifiy and minimize all areas of my life</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% include footer.html %}
