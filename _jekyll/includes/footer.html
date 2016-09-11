@@ -5,13 +5,17 @@
 
       <p>I <a href="/sketchbook">doodle</a>, <a href="http://codepen.io/skullface/">experiment</a>, collaborate with the smart folks of <a href="http://product.voxmedia.com">Vox Media</a>, and celebrate fun at <a href="/shop" title="It's an annagram of Skullface!">False Luck</a>. I focus on purposeful, inclusive, and empathetic experiences in all my work. If you&rsquo;re curious, you can learn about <a href="https://dribbble.com/stories/2016/07/06/timeout-jessica-paoli">my process and workspace</a>.</p>
 
+      {% if page.layout != 'now' %}
       <p>&#10140; <a href="/now">This is what I&rsquo;ve been up to lately.</a></p>
+      {% endif %}
   </div>
 
   <div class="contact_me" id="contact">
     <h2>Get In Touch</h2>
 
+    {% if page.layout != 'now' %}
     <p>If you&rsquo;re interested in working together, please check out <a href="/now">what I'm working on now</a> first.</p>
+    {% endif %}
 
     <form action="https://helloworks.co/app/form/send/b5c3dc01ea01431d8ce136e428af14d9" class="hw-form"><div class="fields"><label class="form_name"><span>Name</span> <input type="text" name="name" required="" placeholder="Daenerys Stormborn"></label> <label class="form_email"><span>Email Address</span> <input type="email" name="email" required="" placeholder="no.spam@promise.com"></label> <label><span>Message</span> <textarea name="message" required=""></textarea><div class="send-message"><button type="submit">Send Message</button><input type="hidden" name="validator" value="true"></div></form>
   </div>
@@ -80,7 +84,7 @@
           <a href="/blog">Blog</a>
         </li>
         <li>
-          <a href="/sketch">Sketchbook</a>
+          <a href="/sketchbook">Sketchbook</a>
         </li>
         <li>
           <a href="/shop">Shop</a>

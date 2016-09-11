@@ -4,6 +4,21 @@
   background: $color_primary;
 }
 
+.post_content {
+  max-width: 36rem;
+  margin: 2rem auto;
+}
+
+.site_content p.rss-subscribe {
+  text-align: center;
+  width: 100%;
+  max-width: 100rem;
+  border-top: solid 1px $color_light;
+  padding-top: 2rem;
+  margin-top: 5rem;
+  font-size: 1rem;
+}
+
 .intro_content {
   display: flex;
   flex-direction: column;
