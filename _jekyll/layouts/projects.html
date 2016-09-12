@@ -3,7 +3,7 @@
 <section class="projects" id="projects">
   {% assign sorted = (site.projects | sort: 'path') %}
   {% for project in sorted %}
-  <div class="project" id="cards-against-humanity">
+  <div class="project" id="{{ project.slug }}">
     <h1 class="project_title">{{ project.title }} {% include icon_{{ project.icon }}.svg %}</h1>
 
     <div class="project_content">

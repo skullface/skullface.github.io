@@ -8,6 +8,10 @@
     align-items: center;
     align-content: center;
     font-family: $font-family_head;
+    font-weight: $font-weight_bold;
+    font-size: .9rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
     background: $color-primary;
 }
 
@@ -33,10 +37,6 @@
 
 .header_navigation a {
     margin-right: 15px;
-    font-weight: $font-weight_bold;
-    font-size: .9rem;
-    text-transform: uppercase;
-    letter-spacing: .1rem;
     &:hover {
         color: white;
     }
@@ -81,4 +81,8 @@ a:hover .header_logo {
     #logo {
         left: 0;
     }
+}
+
+.header_navigation span.current-page {
+    color: rgba(0,0,0,.4);
 }

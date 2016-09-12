@@ -2,12 +2,18 @@
   <nav class="header_navigation">
     <ul>
       {% if page.layout != 'home' %}
-      <li><a href="../#projects">Projects</a></li>
+      <li><a href="/">Projects</a></li>
       {% endif %}
       {% if page.layout == 'home' %}
-      <li><a data-scroll href="#projects">Projects</a></li>
+      <li><span class="current-page">Projects</span></li>
       {% endif %}
-    <li><a href="/blog">Blog</a></li>
+
+      {% if page.title != 'Blog' %}
+      <li><a href="/blog">Blog</a></li>
+      {% endif %}
+      {% if page.title == 'Blog' %}
+      <li><span class="current-page">Blog</span></li>
+      {% endif %}
     </ul>
   </nav>
 
@@ -17,8 +23,19 @@
 
   <nav class="header_navigation">
     <ul>
+      {% if page.title != 'Sketchbook' %}
       <li><a href="/sketchbook">Sketchbook</a></li>
+      {% endif %}
+      {% if page.title == 'Sketchbook' %}
+      <li><span class="current-page">Sketchbook</span></li>
+      {% endif %}
+
+      {% if page.title != 'Shop' %}
       <li><a href="/shop">Shop</a></li>
+      {% endif %}
+      {% if page.title == 'Shop' %}
+      <li><span class="current-page">Shop</span></li>
+      {% endif %}
     </ul>
   </nav>
 </header>

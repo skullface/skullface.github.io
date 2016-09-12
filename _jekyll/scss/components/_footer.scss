@@ -14,6 +14,13 @@
     }
 }
 
+.about_me p {
+    margin-bottom: 1.5rem;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
 .footer_links {
     display: flex;
     flex-wrap: wrap;
