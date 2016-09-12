@@ -3,138 +3,27 @@ layout: home
 ---
 
 <section class="projects" id="projects">
+  {% assign sorted = (site.projects | sort: 'path') %}
+  {% for project in sorted %}
   <div class="project" id="cards-against-humanity">
-    <h1 class="project_title">Geeking out with Cards Against Humanity&rsquo;s Artist Series. {% include icon_cah.svg %}</h1>
+    <h1 class="project_title">{{ project.title }} {% include icon_{{ project.icon }}.svg %}</h1>
 
     <div class="project_content">
-      <p><a href="http://amynicole.co" target="_blank">Amy Schwartz</a>, Cards Against Humanity’s Design Director knew my style and interests would be the perfect fit for their latest supplemental card pack about Sega Genesis, Magic the Gathering, Dungeons and Dragons, and general geekery. The answer was a cheerful White Knight, a powerful and babely tabletop-playing mage, and a fun Mario-style type treatment, all on an N64 cartridge. I even got to <a href="http://twitch.tv/skvllface" target="_blank">livestream</a> part of the illustration process!</p>
+      {{ project.description }}
 
+      {% if project.disciplines != '' %}
       <dl class="project_metadata">
         <dt class="metadata_disciplines">Disciplines</dt>
-          <dd>Art Direction, Illustration, Lettering</dd>
+          <dd>{{ project.disciplines }}</dd>
+        {% if project.direction != '' %}
         <dt class="metadata_direction">Team</dt>
-          <dd>Design Director: <br>Amy Schwartz</dd>
+          <dd>{{ project.direction }}</dd>
+        {% endif %}
       </dl>
+      {% endif %}
     </div>
 
-    <figure>
-      <img src="media/cards-against-humanity_jessica-paoli.jpg" alt="">
-    </figure>
+    {{ project.content }}
   </div>
-
-
-  <div class="project" id="eater-young-guns">
-    <h1 class="project_title">Toasting America&rsquo;s best young chefs, bartenders, and restauranteurs. {% include icon_eyg.svg %}</h1>
-
-    <div class="project_content">
-        <p>Eater.com&rsquo;s annual Young Guns celebration honors the best up-and-coming individuals in the restaurant industry across the United States. To ring in the class of 2016, I developed a flexible design system for the year's festivities, anchored by big June bash. Treating brand moments for the entire experience, digitally and physically.</p>
-
-      <dl class="project_metadata">
-        <dt class="metadata_disciplines">Disciplines</dt>
-          <dd>Art Direction, Print Design, Experiential Design</dd>
-        <dt class="metadata_direction">Team</dt>
-          <dd>Design Director: <br>Carrie Ruby; Stylist: Amanda Cran</dd>
-      </dl>
-    </div>
-
-    <figure>
-      <img src="media/eater-young-guns-2016_jessica-paoli.jpg" alt="">
-    </figure>
-  </div>
-
-
-  <div class="project" id="concert-launch-party">
-    <h1 class="project_title">A branded launch party fit for a Questlove DJ set. {% include icon_concert.svg %}</h1>
-
-    <div class="project_content">
-      <p>Vox Media celebrated the introduction of Concert, their latest premium advertising offering, with a big shindig at NYC&rsquo;s Upfronts&#8203;/&#8203;NewFronts 2016. From the first save-the-date to the last cocktail napkin of the night, I collaborated with the event coordinators and executive team to create an impactful, cohesive system across all collateral. The identity stemmed from a literal translation of the &ldquo;Concert&rdquo; product, inspired by gritty silkscreened gig posters &mdash; &ldquo;DJ set by Questlove&rdquo; is one benefit you don&rsquo;t downplay.</p>
-
-      <dl class="project_metadata">
-        <dt class="metadata_disciplines">Disciplines</dt>
-          <dd>Art Direction, Print Design, Experiential Design</dd>
-        <dt class="metadata_direction">Team</dt>
-          <dd>Design Directors: <br>Carrie Ruby, Georgia Cowley; VP of Design:<br>Ted Irvine</dd>
-      </dl>
-    </div>
-
-    <figure>
-      <img src="media/vox-concert-launch_posters_jessica-paoli.png" alt="">
-    </figure>
-
-    <figure>
-      <img src="media/vox-concert-launch_photos_jessica-paoli.jpg" alt="">
-    </figure>
-
-    <figure>
-      <img src="media/vox-concert-launch_collateral_jessica-paoli.jpg" alt="">
-    </figure>
-  </div>
-
-
-  <div class="project" id="ign-snapchat">
-    <h1 class="project_title">Highly custom snaps for the IGN Discover channel.
-        {% include icon_ign.svg %}</h1>
-
-    <div class="project_content">
-      <p>In Summer 2015, IGN became a featured Snapchat Discover channel — one of 20 curated and monetized feeds that go live with new content every single day to a massive audience. The Snaps in these feeds are 10 seconds long, vertical (the opposite of how we traditionally think about video), and must account for incongruent screen size ratios across all mobile devices. I worked with IGN’s production team to illustrate and design over two dozen Snaps that went live in December 2015.</p>
-
-      <dl class="project_metadata">
-        <dt class="metadata_disciplines">Disciplines</dt>
-          <dd>Illustration, Animation, Motion Design</dd>
-        <dt class="metadata_direction">Team</dt>
-          <dd>Design Director: <br>Nicholas Macias</dd>
-      </dl>
-    </div>
-
-    <figure>
-      <img src="media/ign-snapchat_illustrations_jessica-paoli.jpg" alt="">
-    </figure>
-    <figure>
-      <img src="media/ign-snapchat_gift-guide_jessica-paoli.png" alt="">
-    </figure>
-
-    <video poster="media/ign-snapchat_holiday_jessica-paoli.jpg" loop autoplay>
-      <source src="media/ign-snapchat_holiday_jessica-paoli.mp4">
-    </video>
-  </div>
-
-
-  <div class="project" id="logos">
-    <h1 class="project_title">Logos, visual identity, and brand collateral. {% include icon_logos.svg %}</h1>
-    <div class="project_content">
-      <p>A smattering of logotypes, logomarks, and extended applications for various ventures.</p>
-    </div>
-
-    <figure class="transparent-on-gray">
-      <img src="media/jessica-paoli_logos_grid.gif">
-    </figure>
-
-    <figure class="transparent-on-gray">
-      <img src="media/jessica-paoli_logos_john-gibian_details.jpg">
-    </figure>
-  </div>
-
-
-  <div class="project" id="illustrations">
-    <h1 class="project_title">Fortunate enough to draw for friends and money. {% include icon_illo.svg %}</h1>
-    <div class="project_content">
-      <p>Please check the <a href="/shop">Shop</a> to see if any of these prints are available for purchase! I&rsquo;m currently not accepting commissions at this time, but feel free to email me to get in the pipeline.</p>
-    </div>
-
-    <figure>
-      <img src="media/jessica-paoli_illustrations_avatars.jpg" alt="Social media avatar portraits!">
-      <figcaption>Pretty faces for pretty people!</figcaption>
-    </figure>
-
-    <figure>
-      <img src="media/jessica-paoli_illustrations_secret-loves.jpg" alt="Woozy Winks in the Secret Loves of Geek Girls">
-      <figcaption>Pinup illustration accompanying prose by Trina Robbins appears in the mega-Kickstarter success anthology “<a href="http://secretloves.ca">The Secret Loves of Geek Girls</a>” — to be re-released by Dark Horse in late 2016.
-      </figcaption>
-    </figure>
-
-    <figure>
-      <img src="media/jessica-paoli_illustrations_prints.jpg" alt="">
-    </figure>
-  </div>
-
+  {% endfor %}
 </section>

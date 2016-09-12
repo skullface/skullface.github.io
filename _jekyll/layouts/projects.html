@@ -1,0 +1,29 @@
+{% include header.html %}
+
+<section class="projects" id="projects">
+  {% assign sorted = (site.projects | sort: 'path') %}
+  {% for project in sorted %}
+  <div class="project" id="cards-against-humanity">
+    <h1 class="project_title">{{ project.title }} {% include icon_{{ project.icon }}.svg %}</h1>
+
+    <div class="project_content">
+      {{ project.description }}
+
+      {% if project.disciplines != '' %}
+      <dl class="project_metadata">
+        <dt class="metadata_disciplines">Disciplines</dt>
+          <dd>{{ project.disciplines }}</dd>
+        {% if project.direction != '' %}
+        <dt class="metadata_direction">Team</dt>
+          <dd>{{ project.direction }}</dd>
+        {% endif %}
+      </dl>
+      {% endif %}
+    </div>
+
+    {{ project.content }}
+  </div>
+  {% endfor %}
+</section>
+
+{% include footer.html %}

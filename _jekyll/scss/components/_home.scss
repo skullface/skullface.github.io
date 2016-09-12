@@ -1,7 +1,8 @@
 /* Hero */
 
 .intro {
-  background: $color_primary;
+  background: $color_primary url('/media/baddd.gif') center center;
+  background-size: cover;
 }
 
 .post_content {
