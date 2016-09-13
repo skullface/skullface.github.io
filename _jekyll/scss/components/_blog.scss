@@ -1,8 +1,11 @@
 /* Blog */
 
-.notebook_notes-list {
+.blog_index {
    margin: 2rem auto 0 auto;
-   text-align: center;
-   width: 55%;
    list-style: none;
+}
+
+.index_time {
+  display: inline-block;
+  width: 30%;
 }

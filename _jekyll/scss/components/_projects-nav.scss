@@ -29,8 +29,6 @@
   margin-top: 8px;
 }
 
-#projects_navigation a:hover {
-  svg {
-    fill: initial;
-  }
+#projects_navigation a:hover svg {
+  fill: #555;
 }

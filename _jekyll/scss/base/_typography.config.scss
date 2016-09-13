@@ -23,8 +23,10 @@ $font-size_base:        1.25rem;
 $leading:               1.6;
 
 /// Family stacks
-$font-family_body:      "leitura-news", "Georgia", "Times New Roman", serif;
-$font-family_head:      "europa", "Avenir Next", Avenir, -apple-system, BlinkMacSystemFont, "Avenir", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-family_body:      // "leitura-news",
+"Georgia", "Times New Roman", serif;
+$font-family_head:      //"europa",
+"Avenir Next", Avenir, -apple-system, BlinkMacSystemFont, "Avenir", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
 
 /// Typographic body, heading, and link styles
@@ -150,7 +152,6 @@ input[type=button] {
   position: relative;
   display: inline-block;
   border: 0;
-  padding: 1rem 1rem .5rem 1rem;
   outline: none;
   -webkit-appearance: none;
   cursor: pointer;
@@ -162,6 +163,14 @@ input[type=button] {
   border-bottom: solid 5px darken($color_primary, 5%);
   color: $color_dark;
   background: $color_primary;
+}
+
+a.button {
+  padding: .8rem 1rem .8rem 1rem;
+}
+
+button, input[type=submit], input[type=button] {
+  padding: 1rem 1rem .5rem 1rem;
 }
 
 a.button:active,

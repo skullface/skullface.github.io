@@ -22,10 +22,15 @@
 .project {
   max-width: 80%;
   margin: 0 auto;
-  padding: 6rem 0 10rem 0;
+  padding: 6rem 0 2rem 0;
   @media all and (max-width: 800px) {
     padding-bottom: 4rem;
   }
+}
+
+.project figure:last-child,
+.project video:last-child {
+  padding-bottom: 8rem;
 }
 
 .project_container {

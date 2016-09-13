@@ -13,32 +13,32 @@
 
 <nav id="projects_navigation">
   <ul>
-    <li>
+    <li id="nav_cards">
       <a data-scroll href="#cards-against-humanity">
         {% include icon_cah.svg %}
       </a>
     </li>
-    <li>
+    <li id="nav_eater">
       <a data-scroll href="#eater-young-guns">
         {% include icon_eyg.svg %}
       </a>
     </li>
-    <li>
+    <li id="nav_concert">
       <a data-scroll href="#concert-launch-party">
         {% include icon_concert.svg %}
       </a>
     </li>
-    <li>
+    <li id="nav_ign">
       <a data-scroll href="#ign-snapchat">
         {% include icon_ign.svg %}
       </a>
     </li>
-    <li>
+    <li id="nav_logo">
       <a data-scroll href="#logos-and-visual-identity">
         {% include icon_logos.svg %}
       </a>
     </li>
-    <li>
+    <li id="nav_illo">
       <a data-scroll href="#miscellaneous-illustrations">
         {% include icon_illo.svg %}
       </a>
@@ -46,7 +46,30 @@
   </ul>
 </nav>
 
-{{ content }}
+<section class="projects" id="projects">
+  {% assign sorted = (site.projects | sort: 'path') %}
+  {% for project in sorted %}
+  <div class="project" id="{{ project.slug }}">
+    <h1 class="project_title">{{ project.title }} {% include icon_{{ project.icon }}.svg %}</h1>
 
+    <div class="project_content">
+      {{ project.description }}
+
+      {% if project.disciplines != '' %}
+      <dl class="project_metadata">
+        <dt class="metadata_disciplines">Disciplines</dt>
+          <dd>{{ project.disciplines }}</dd>
+        {% if project.direction != '' %}
+        <dt class="metadata_direction">Team</dt>
+          <dd>{{ project.direction }}</dd>
+        {% endif %}
+      </dl>
+      {% endif %}
+    </div>
+
+    {{ project.content }}
+  </div>
+  {% endfor %}
+</section>
 
 {% include footer.html %}
