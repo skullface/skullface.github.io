@@ -23,10 +23,8 @@ $font-size_base:        1.25rem;
 $leading:               1.6;
 
 /// Family stacks
-$font-family_body:      // "leitura-news",
-"Georgia", "Times New Roman", serif;
-$font-family_head:      //"europa",
-"Avenir Next", Avenir, -apple-system, BlinkMacSystemFont, "Avenir", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-family_body:      "Georgia", "Times New Roman", serif;
+$font-family_head:      "Avenir Next", "Avenir", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
 
 /// Typographic body, heading, and link styles
@@ -35,7 +33,6 @@ $font-family_head:      //"europa",
 body {
   font: $font-weight_normal $font-size_base $font-family_body;
   line-height: $leading;
-  hyphens: auto;
   @media only screen and (max-width: 500px) {
     font-size: 1.1rem;
   }
