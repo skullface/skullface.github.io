@@ -2,50 +2,41 @@
   margin-top: 4rem;
 }
 
-.shop_products {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-bottom: 4rem
-}
-
-.shop_products figure {
-    width: 30%
-}
-
 .shop_intro {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-@media all and (max-width: 500px) {
-    .shop_products {
-        flex-direction: column
-    }
-    .shop_products figure {
-        width: 100%
-    }
-}
-@media all and (min-width: 501px) and (max-width: 800px) {
-    .shop_products figure {
-        width: 50%
-    }
-}
-.shop_products figure figcaption {
   text-align: center;
-    padding-left: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.shop_zines,
+.shop_products {
+  display: flex;
+  flex-direction: row;
+  @extend %no-list;
+  @media all and (max-width: 500px) {
+    flex-direction: column;
+  }
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 4rem;
+  li {
+    text-align: center;
+  }
+}
+
+.shop_products li {
+  width: 25%;
+  margin: 0 1rem 3rem 1rem;
+  @media all and (min-width: 500px) and (max-width: 900px) {
+    width: 40%;
+  }
+  @media all and (max-width: 500px) {
     width: 100%;
-    border: 0;
-    margin: 0;
-    font-family: $font-family_head;
+  }
 }
 
-.shop_products figure a {
-    font-weight: $font-weight_bold;
-}
-
-.shop_products figure a:hover {
-    color: $color_primary;
+.shop_products .external-link {
+  position: relative;
+  top: -6px;
+  margin-left: 2px;
 }
