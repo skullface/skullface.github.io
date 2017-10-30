@@ -1,0 +1,89 @@
+input {
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 1rem;
+}
+
+label {
+  @extend %small-caps;
+  color: $color_gray-600;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+select,
+option,
+textarea {
+  width: 100%;
+  color: $color_text;
+  background: transparent;
+  border: 0;
+  border-bottom: solid 2px $color_gray-100;
+  -webkit-appearance: none;
+  &::placeholder {
+    color: $color_gray-300;
+  }
+}
+
+input:not([type="submit"]):focus,
+select:focus,
+option:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.05);
+}
+
+input:not([type="checkbox"]),
+select,
+textarea,
+.button,
+button {
+  font-family: $font-family_head;
+  font-size: 1.25rem;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+textarea {
+  padding: 20px;
+}
+
+select {
+  display: block;
+  height: 56px;
+  -webkit-appearance: none;
+  border-radius: 0;
+  padding: 10px 40px 10px 20px;
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNjIuNSAzMi44MzMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYyLjUgMzIuODMzIiB4bWw6c3BhY2U9InByZXNlcnZlIj48cGF0aCBkPSJNNjIuMTY3LDBMMzEuMDM0LDMyLjg3NUwwLjA0MiwwaDcuMDQybDIzLjgzMywyNC41TDU0LjU4MywwQzU0LjU4MywwLDYyLjQxNywwLDYyLjE2NywweiIvPjwvc3ZnPg==);
+  background-size: 50px 10px;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: right;
+}
+
+.button,
+button,
+[type="submit"],
+[type="reset"] {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 14px 25px;
+  font-weight: $font-weight_bold;
+  color: $color_text;
+  background: transparent;
+  border-radius: 5px;
+  border: solid 3px $color_primary;
+  cursor: pointer;
+  @media screen and (max-width: 700px) {
+    font-size: 1rem;
+  }
+  &:hover, &:active {
+    background: $color_primary;
+  }
+  &:focus {
+    outline: none;
+    position: relative;
+    top: 2px;
+  }
+}

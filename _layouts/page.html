@@ -1,0 +1,13 @@
+---
+layout: default
+---
+
+{% if page.title == 'Disclaimer' %}
+  <h1 class="page_title"><span>{{ page.title }}</span></h1>
+{% elsif page.title == 'Legal' %}
+  <h1 class="page_title"><span>{{ page.title }}</span></h1>
+{% endif %}
+
+  <div class="page_content">
+    {{ content }}
+  </div>

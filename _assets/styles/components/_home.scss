@@ -1,0 +1,156 @@
+/* Hero */
+h1.homepage_title {
+  font-family: $font-family_secondary;
+  font-weight: $font-weight_normal;
+  font-size: 3rem;
+  text-align: left;
+  @media all and (max-width: 900px) {
+    padding: 0 2rem;
+  }
+  @media all and (max-width: 700px) {
+    font-size: 2rem;
+  }
+}
+
+h1.page_title.homepage_title {
+  margin-bottom: 1rem;
+}
+
+.homepage.page_content a .external-link {
+  background: blue;
+  height: 40px;
+  margin-right: -5px;
+  margin-bottom: -10px;
+  background: #fff;
+}
+
+.homepage.page_content a svg:after {
+    content: " ";
+    display: inline-block;
+    background: red url('');
+    width: 20px;
+    height: 20px;
+}
+
+#collage {
+}
+
+.collage_container {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  position: relative;
+}
+
+.draggable {
+  display: inline-block;
+  cursor: move;
+}
+
+  .pin {
+    max-height: 300px;
+  }
+
+  .cat {
+    margin-top: -260px;
+    margin-left: -75px;
+  }
+
+  .sticker {
+    max-width: 250px;
+  }
+
+  .polaroid {
+    max-height: 280px;
+  }
+
+  .poster {
+    display: inline-block;
+    text-align: center;
+    position: relative;
+  }
+
+  .washi {
+    display: block;
+    position: relative;
+    width: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -20px;
+  }
+
+  .wallflower {
+    position: absolute;
+    right: 100px;
+    top: 350px;
+    max-width: 360px;
+  }
+
+  .usako {
+    top: -60px;
+    left: 60px;
+  }
+
+  .wallflower .washi,
+  .usako .washi {
+    top: 12px;
+  }
+
+  .wallflower .washi {
+    left: 40px;
+  }
+
+  .selfie .washi {
+    top: 8px;
+  }
+
+  .hexes {
+    position: absolute;
+    bottom: 80px;
+    right: 120px;
+    max-height: 250px;
+  }
+
+  .shoujo-hat {
+    position: absolute;
+    top: 0;
+    right: 60px;
+    max-width: 450px;
+  }
+
+  .kawaii-shirt {
+    margin-top: 80px;
+    margin-left: 40px;
+    max-height: 605px;
+  }
+
+  .logoz {
+    position: absolute;
+    left: 180px;
+    top: 450px;
+    max-width: 330px;
+  }
+
+  .selfie {
+    position: absolute;
+    bottom: 10%;
+    left: 35%;
+  }
+
+  .vcute {
+    position: absolute;
+    bottom: 60px;
+    left: 140px;
+  }
+
+  .lion {
+    margin-top: -60px;
+    margin-left: 55%;
+    max-width: 230px;
+  }
+
+  .board {
+    position: absolute;
+    left: 30%;
+    top: 340px;
+    max-width: 290px;
+  }

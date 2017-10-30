@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<h1 class="page_title"><span>Posts about {{ page.title | downcase }}</span></h1>
+
+{% if page.description %}
+  <div class="page_content">
+    <p class="page_description">
+      {{ page.description }}
+    </p>
+  </div>
+{% endif %}
+
+{% unless page.content == '' %}
+  <p>{{ page.content }}</p>
+{% endunless %}
+
+{% unless site.categories.[page.category] | size > 0 %}
+  <p>Oops! There aren’t any posts in this category.</p>
+{% endunless %}
+
+<div class="posts posts_all">
+  {% for post in site.categories.[page.category] %}
+  {% include post-card.html %}
+  {% endfor %}
+</div>

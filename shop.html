@@ -3,78 +3,124 @@ title: Shop
 layout: default
 ---
 
-<p class="shop_intro">Each of these items opens to a new website. Some are owned by me, others are manufactured by trusted sources and awesome partners. If you have any questions, let me know!</p>
+<div class="shop">
+  <!--
+  <div class="page_content">
+    <p>
+      Each of these items opens to a new website. Some are owned by me, others are manufactured by trusted sources and awesome partners. If you have any questions, let me know!</p>
+    </p>
+  </div>
+  -->
+  <!--
+  <ul class="shop_zines">
+    {% assign sorted = (site.products | sort: 'date') | reverse %}
+    {% for product in sorted %}
+    <li>
+      <a href="{{ product.url }}">{{ product.title }}</a>
+    </li>
+    {% endfor %}
+  </div>
+  -->
 
-<div class="shop shop_products">
-    <figure>
+  <ul class="shop_products">
+    <li>
+      <a href="http://www.falseluck.com/product/shoujo-dad-hat">
+        <img src="/media/shop/falseluck_shoujo-hat.jpg" alt="">
+        <span>&ldquo;Shoujo&rdquo; dad hat ($20)</span> {% include external-link.html %}
+      </a>
+    </li>
+
+    <li>
+      <a href="http://www.falseluck.com/product/ice-cream-cat-lapel-pin">
+        <img src="/media/shop/falseluck_ice-cream-cat.jpg" alt="">
+        <span>&ldquo;Ice Cream Cat&rdquo; rose gold cloisonné lapel pin ($9)</span>
+        {% include external-link.html %}
+      </a>
+    </li>
+
+    <li>
+      <a href="http://www.falseluck.com/product/h-exes-pin">
+        <img src="/media/shop/falseluck_hexes.jpg" alt="">
+        <span>&ldquo;All my exes live with hexes&rdquo; antique lapel pin ($9)</span>
+        {% include external-link.html %}
+      </a>
+    </li>
+
+    <li>
+      <a href="http://www.falseluck.com/product/h-exes-pin">
+        <img src="/media/shop/falseluck_snack-cats.jpg" alt="">
+        <span>&ldquo;Snack cats&rdquo; vintage-feel fitted crop top ($22)</span> {% include external-link.html %}
+      </a>
+    </li>
+
+    <li>
+      <a href="http://www.falseluck.com/product/shoujo-beanie">
+        <img src="/media/shop/falseluck_shoujo-beanie.jpg" alt="">
+        <span>&ldquo;Shoujo&rdquo; beanie ($20)</span> {% include external-link.html %}
+      </a>
+    </li>
+
+    <li>
       <a href="https://cottonbureau.com/products/super-kawaii">
-        <img src="http://jessicapaoli.com/images/jessica-paoli_shop_super-kawaii-tee.jpg">
-        <figcaption>"Super Kawaii" tshirt ($20)</figcaption>
+        <img src="/media/shop/cotton-bureau_super-kawaii.jpg" alt="">
+        <span>&ldquo;Super Kawaii&rdquo; t-shirt ($20)</span> {% include external-link.html %}
       </a>
-    </figure>
+    </li>
 
-    <figure>
+    <li>
       <a href="http://lostlustsupply.com/shop/false-luck-pin">
-        <img src="http://jessicapaoli.com/images/jessica-paoli_shop_pins.jpg">
-        <figcaption>False Luck x Lost Lust pin ($8)</figcaption>
+        <img src="/media/shop/falseluck_lost-lust.jpg" alt="">
+        <span>False Luck x Lost Lust pin ($8)</span> {% include external-link.html %}
       </a>
-    </figure>
+    </li>
 
-  <figure>
-    <a href="https://falseluck.com/collections/stickers/products/raised-by-the-internet-sticker">
-      <img src="http://jessicapaoli.com/images/raisedbytheinternet.jpg">
-      <figcaption>Raised By The Internet sticker ($2.50)</figcaption>
+  <li>
+    <a href="https://falseluck.com/product/raised-by-the-internet-sticker">
+      <img src="/media/shop/falseluck_raisedbytheinternet.jpg">
+      <span>&ldquo;Raised By The Internet&rdquo; sticker ($4)</span> {% include external-link.html %}
     </a>
-  </figure>
+  </li>
 
-  <figure>
-    <a href="https://falseluck.com/collections/stickers/products/skate-cat-sticker">
-      <img src="http://jessicapaoli.com/images/skatecat.jpg">
-      <figcaption>Skate Cat sticker ($2.50)</figcaption>
+  <li>
+    <a href="https://falseluck.com/product/skate-cat-sticker">
+      <img src="/media/shop/falseluck_skatecat.jpg">
+      <span>&ldquo;Skate Cat&rdquo; sticker ($4)</span> {% include external-link.html %}
     </a>
-  </figure>
+  </li>
 
-  <figure>
-    <a href="https://falseluck.com/collections/stickers/products/very-cute-temporary-tattoo-set">
-      <img src="http://jessicapaoli.com/images/tattoos.jpg">
-      <figcaption>Very Cute temporary tattoo set ($6.00)</figcaption>
+  <li>
+    <a href="https://falseluck.com/product/very-cute-temporary-tattoo-set">
+      <img src="/media/shop/falseluck_tattoos.jpg" alt="">
+      <span>&ldquo;Very Cute&rdquo; temporary tattoo set ($6.00)</span> {% include external-link.html %}
     </a>
-  </figure>
+  </li>
 
-  <figure>
-    <a href="https://falseluck.com/collections/stickers/products/meiku-sticker">
-      <img src="http://jessicapaoli.com/images/meiku.jpg">
-      <figcaption>Meiku sticker ($2.50)</figcaption>
+  <li>
+    <a href="https://falseluck.com/product/meiku-sticker">
+      <img src="/media/shop/falseluck_meiku.jpg" alt="">
+      <span>&ldquo;Meiku&rdquo; sticker ($4)</span> {% include external-link.html %}
     </a>
-  </figure>
+  </li>
 
-  <figure>
-    <a href="https://falseluck.com/collections/stickers/products/super-kawaii">
-      <img src="http://jessicapaoli.com/images/superkawaii.jpg">
-      <figcaption>Super Kawaii sticker ($2.50)</figcaption>
+  <li>
+    <a href="https://falseluck.com/product/super-kawaii">
+      <img src="/media/shop/falseluck_superkawaii-sticker.jpg" alt="">
+      <span>&ldquo;Super Kawaii sticker&rdquo; ($4)</span> {% include external-link.html %}
     </a>
-  </figure>
+  </li>
 
-    <figure>
-      <a href="https://society6.com/product/kittysandry_framed-print#12=60&amp;13=54">
-        <img src="http://jessicapaoli.com/images/jessica-paoli_shop_kittysandry.jpg">
-        <figcaption>Kittysandry framed print ($32)</figcaption>
-      </a>
-    </figure>
+  <li>
+    <a href="http://www.falseluck.com/product/needle-lion-sticker">
+      <img src="/media/shop/falseluck_lion.jpg" alt="">
+      <span>&ldquo;Needle Lion&rdquo; sticker ($4)</span> {% include external-link.html %}
+    </a>
+  </li>
 
-    <figure>
-      <a href="https://society6.com/product/some-girls-p23_print#1=45">
-        <img src="http://jessicapaoli.com/images/jessica-paoli_shop_some-girls.jpg">
-        <figcaption>Some Girls print ($15)</figcaption>
-      </a>
-    </figure>
-
-    <figure>
-      <a href="https://society6.com/product/pixie-dust-1mz_print#1=45">
-        <img src="http://jessicapaoli.com/images/jessica-paoli_shop_eighth.jpg">
-        <figcaption>Eighth print ($15)</figcaption>
-      </a>
-    </figure>
-
-
+  <li>
+    <a href="https://falseluck.com/product/meiku-sticker">
+      <img src="/media/shop/falseluck_very-cute-knuckle-tats.jpg" alt="">
+      <span>&ldquo;Very Cute&rdquo; sticker ($4)</span> {% include external-link.html %}
+    </a>
+  </li>
+</ul>
 </div>

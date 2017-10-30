@@ -1,0 +1,16 @@
+/**
+ *
+ * @group Page
+ * Styling for non-post pages
+ *
+**/
+
+.page_title {
+  margin-top: $spacer;
+  margin-bottom: $spacer;
+}
+
+.page_description {
+  text-align: center;
+  font-style: italic;
+}

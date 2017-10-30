@@ -1,38 +1,37 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing these this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-title: Jessica Paoli is an interdisciplinary designer and visual artist.
-email: jes@isca.me
+title: Jessica Paoli, design babe
+email: meow@jessicapaoli.com
 author: Jessica Paoli
-author_email: jes@sica.me
-description: > # this means to ignore newlines until "baseurl:"
-  Jessica Paoli is an interdisciplinary designer, illustrator, and
-  visual artist in Cleveland, Ohio.
-baseurl:      "" # the subpath of your site, e.g. /blog
-url:          "" # the base hostname & protocol for your site
+description: I’m an interdisciplinary designer, developer, and illustrator (Design Babe) dual-wielding compassion + cuteness in the Midwest.
+baseurl:  "" # the subpath of your site, e.g. /blog
+url:      "http://localhost:3000" # the base hostname & protocol for your site
+
 locale:       en-US
+lang:         en-US
+encoding:     "utf-8"
 
 
-# Where things are
-layouts_dir:  /_jekyll/layouts
-data_dir:     /_jekyll/data
-sass:
-  sass_dir:     /_jekyll/scss
-includes_dir: /_jekyll/includes
-plugins_dir:  /_jekyll/plugins
-include:      ["_pages"]
+# Build setings
+markdown:     kramdown
+highlighter:  rouge
+permalink:    /:year/:title
+future:       false
+
+whitelist:    []
+plugins:      []
+
+
+# Exclude from site build
+exclude:
+  - .DS_Store
+  - node_modules
+  - gulpfile.js
+  - package.json
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+
+
+# Collections
 collections:
   sketches:
     output: true
@@ -44,20 +43,6 @@ collections:
     output: true
     permalink: /shop/:path/
 
-# Handling Reading
-encoding:     "utf-8"
-markdown_ext: "markdown,mkdown,mkdn,mkd,md"
-
-# Plugins
-whitelist:    []
-gems:         []
-
-# Conversion
-markdown:     kramdown
-
-# Serving
-port:         4000
-host:         127.0.0.1
-
-# Outputting
-permalink:    pretty
+# Custom variables
+mediapath:
+  post: media/posts/
