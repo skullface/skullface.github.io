@@ -11,11 +11,11 @@ title: Contact
   </div>
 </section>
 
-**One-on-one design** Interested in working one-on-one for a design, illustration, or development consultation? Please [visit my studio at Grawlix.co](http://grawlix.co/?utm_source=jp-contact) to contact Rocco and me!
+**One-on-one design** Interested in working one-on-one for a design, illustration, or development consultation? Please [visit my studio at Grawlix.co](http://grawlix.co/?utm_source=jp-contact)   {% include external-link %} to contact Rocco and me!
 
 **Mentorship** For design, code, biz, or life advice, feel free to hit me up for help. There’s a good chance you’re wondering about the same thing someone else is, so, ask away! Design students, recent grads, and those early in their career: If you are a person from an underrepresented minority group (women &amp; marginalized genders, POC, queer folx, PWD) looking for a design mentor, I’d love to talk with you.
 
-**Men who brain-pick** I won’t respond to requests from male professionals who want to use my time to “pick my brain” on design or business over email, Skype, or coffee. Women perform more than enough unrecognized, unpaid [emotional labor](http://www.metafilter.com/151267/Wheres-My-Cut-On-Unpaid-Emotional-Labor) for me to offer you individualized attention for free. To schedule a paid consultation, please send me a note.
+**Men who brain-pick** I won’t respond to requests from male professionals who want to use my time to “pick my brain” on design or business over email, Skype, or coffee. Women perform more than enough unrecognized, unpaid [emotional labor](http://www.metafilter.com/151267/Wheres-My-Cut-On-Unpaid-Emotional-Labor)  {% include external-link %} for me to offer you individualized attention for free. To schedule a paid consultation, please send me a note.
 
 <div class="contact_form_container">
   <form action="https://formspree.io/meow@jessicapaoli.com" class="contact_form" method="POST">
