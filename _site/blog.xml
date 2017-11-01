@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jessica Paoli, design babe</title>
+    <description>I’m an interdisciplinary designer, developer, and illustrator (Design Babe) dual-wielding compassion + cuteness in the Midwest.</description>
+    <link>http://localhost:3000/</link>
+    <atom:link href="http://localhost:3000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 31 Oct 2017 21:17:00 -0400</pubDate>
+    <lastBuildDate>Tue, 31 Oct 2017 21:17:00 -0400</lastBuildDate>
+    <generator>Jekyll v3.5.2</generator>
+    
+  </channel>
+</rss>
