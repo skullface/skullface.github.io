@@ -1,0 +1,25 @@
+.site_content {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post_content,
+.page_content {
+  p, ul, h2, h3, footer, aside, .contact_form_container {
+    max-width: 38rem;
+    margin-left: auto;
+    margin-right: auto;
+    @media screen and (max-width: 42rem) {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+    @media screen and (min-width: 1550px) {
+      max-width: 45rem;
+    }
+  }
+
+  .media, figure, figcaption {
+    max-width: 70rem;
+  }
+}

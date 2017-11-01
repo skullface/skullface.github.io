@@ -1,0 +1,39 @@
+/**
+ *
+ * @group Colors
+ * Brand colors set as descriptive variables and functional variables as needed
+ *
+**/
+
+$color_white:         #fff;
+$color_gray-100:      #f1f1f1;
+$color_gray-200:      #ccc;
+$color_gray-300:      #bbb;
+$color_gray-400:      #999;
+$color_gray-500:      #777;
+$color_gray-600:      #555;
+$color_gray-700:      #444;
+$color_gray-800:      #333;
+$color_gray-850:      #222;
+$color_gray-900:      #121212;
+$color_black:         $color_gray-900;
+
+$color_primary:       #5DD6C7;
+$color_primary-dark:  #0db49f; //
+$color_secondary:     #7648de;
+
+$color_text:          $color_black;
+$color_error:         red;
+
+
+$social-links: (
+  facebook:   #3b5998,
+  github:     #0366d6,
+  instagram:  #c13584,
+  linkedin:   #0977b5,
+  pinterest:  #bd081c,
+  pocket:     #ef4056,
+  twitch:     #6441a5,
+  twitter:    #1da1f2,
+  rss:        #ff6600
+);

@@ -1,0 +1,44 @@
+.shop .page_content {
+  margin-top: 4rem;
+}
+
+.shop_intro {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.shop_zines,
+.shop_products {
+  display: flex;
+  flex-direction: row;
+  @extend %no-list;
+  @media all and (max-width: 500px) {
+    flex-direction: column;
+  }
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 4rem;
+  li {
+    text-align: center;
+  }
+}
+
+.shop_products li {
+  width: 25%;
+  margin: 0 1rem 3rem 1rem;
+  @media all and (min-width: 500px) and (max-width: 900px) {
+    width: 40%;
+  }
+  @media all and (max-width: 500px) {
+    width: 100%;
+    padding: 0 2rem;
+    margin: 0 0 3rem 0;
+  }
+}
+
+.shop_products .external-link {
+  position: relative;
+  top: -6px;
+  margin-left: 2px;
+}

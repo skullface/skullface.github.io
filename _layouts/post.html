@@ -1,0 +1,78 @@
+---
+layout: default
+---
+
+<article class="post">
+  <header class="post_header" style="background-image: url('{{ site.baseurl }}/media/posts/{{ page.date | date: '%Y' }}/jessicapaoli-dot-com_{{ page.image }}')">
+    <h1 class="post_title"><span>{{ page.title }}</span></h1>
+  </header>
+
+
+  <footer class="post_meta">
+    <p>
+      {% for category in page.categories %}<span class="post_category"><a href="{{ site.baseurl }}/{{ category | slugify }}">{{ category | downcase }}</a></span>{% endfor %}<time class="post_updated" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_long_string }}</time>
+    </p>
+
+    {% include social-share.html %}
+  </footer>
+
+  <div class="post_content">
+    {{ content }}
+  </div>
+</article>
+
+<div class="related-posts_container">
+<div class="related-posts">
+
+  <div class="related-posts_heading">
+  {% for category in page.categories limit:1 %}
+    <h3>Read more posts about <a href="{{ site.baseurl }}/{{ category | slugify }}">{{ category | downcase }}{% endfor %}</a> <span class="point">👉</span></h3>
+  </div>
+
+
+  {% assign RELATED_POSTS_THRESHOLD = 3 %}
+
+    {% assign related_post_count = 0 %}
+    {% for post in site.related_posts %}
+      {% if related_post_count == RELATED_POSTS_THRESHOLD %}
+        {% break %}
+      {% endif %}
+      {% for category in post.categories %}
+        {% if page.categories contains category %}
+          <a class="related-posts_post" href="{{ site.baseurl }}{{ post.url }}" style="background-image: url('{{ site.url }}{{ site.baseurl }}/{{ site.mediapath.post }}{{ post.date | date: '%Y' }}/jessicapaoli-dot-com_{{ post.image }}')">
+            <h4>
+              <span>{{ post.title }}</span>
+            </h4>
+          </a>
+          {% assign related_post_count = related_post_count | plus: 1 %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+
+    {% assign posts_left = RELATED_POSTS_THRESHOLD | minus: related_post_count %}
+    {% unless posts_left == 0 %}
+      {% for post in site.related_posts %}
+        {% if posts_left == 0 %}
+          {% break %}
+        {% endif %}
+
+        {% assign already_related = false %}
+        {% for category in post.categories %}
+          {% if page.categories contains category %}
+            {% assign already_related = true %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+        {% unless already_related %}
+          {% assign posts_left = posts_left | minus: 1 %}
+          <a class="related-posts_post" href="{{ site.baseurl }}{{ post.url }}" style="background-image: url('{{ site.url }}{{ site.baseurl }}/{{ site.mediapath.post }}{{ post.date | date: '%Y' }}/jessicapaoli-dot-com_{{ post.image }}')">
+            <h4>
+              <span>{{ post.title }}</span>
+            </h4>
+          </a>
+        {% endunless %}
+      {% endfor %}
+    {% endunless %}
+</div>
+</div>

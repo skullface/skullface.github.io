@@ -1,0 +1,27 @@
+---
+title: Downloads
+layout: default
+---
+
+<div class="downloads">
+<div class="posts posts_all">
+  {% for download in site.downloads %}
+  {% capture imagepath %}{{ site.baseurl }}{{ site.mediapath.post }}{{ download.date | date: '%Y' }}/jessicapaoli-dot-com_{{ download.image }}{% endcapture %}
+
+  <article>
+    <a class="post post_preview" href="{{ download.url | prepend: site.baseurl }}">
+      <div class="post_visual-link" style="background-image: url('{{ imagepath }}')">
+        <h2 class="post_title"><span>{{ download.title }}</span></h2>
+      </div>
+      <p class="post_blurb">
+        {% if download.description %}
+          {{ download.description }}
+        {% else %}
+          {{ download.content | strip_html | truncatewords: 30 }}
+        {% endif %}
+      </p>
+    </a>
+  </article>
+  {% endfor %}
+</div>
+</div>

@@ -1,0 +1,63 @@
+---
+layout: default
+---
+
+{% capture imagepath %}{{ site.baseurl }}{{ site.mediapath.post }}{{ download.date | date: '%Y' }}/jessicapaoli-dot-com_{{ download.image }}{% endcapture %}
+
+<article class="post">
+
+  <div class="download_content">
+    <div class="download_media">
+      <a href="{{ page.download-url }}"><img src="{{ site.baseurl }}/media/posts/{{ page.date | date: '%Y' }}/jessicapaoli-dot-com_{{ page.image }}" /></a>
+
+    </div>
+
+    <div class="download_description">
+      <header class="download_header">
+        <h1 class="post_title"><span>{{ page.title }}</span></h1>
+      </header>
+
+      <div class="post_content">
+        <p>
+          {{ page.description }}
+        </p>
+      </div>
+
+      <p class="download_button"><a href="{{ page.download-url }}" class="download button">Download <span class="arrow">&gt;</span></a></p>
+    </div>
+  </div>
+
+  {% if page.longform == true %}
+    <div class="post_content">
+      {{ page.content }}
+    </div>
+    <p class="download_button"><a href="{{ page.download-url }}" class="download button">Download <span class="arrow">&gt;</span></a></p>
+  {% endif %}
+
+  <footer class="post_meta">
+
+    {% include social-share.html %}
+      <p>
+        Last updated: <time class="post_updated" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_long_string }}</time>
+      </p>
+  </footer>
+
+</article>
+
+
+<div class="related-posts_container">
+<div class="related-posts">
+
+    <div class="related-posts_heading">
+      <h3>Download more <a href="{{ site.baseurl }}/downloads">free goodies</a> <span class="point">👉</span></h3>
+    </div>
+
+    {% for post in site.categories.['Downloads'] limit:3 %}
+            <a class="related-posts_post" href="{{ site.baseurl }}{{ post.url }}" style="background-image: url('{{ site.url }}{{ site.baseurl }}/{{ site.mediapath.post }}{{ post.date | date: '%Y' }}/jessicapaoli-dot-com_{{ post.image }}')">
+              <h4>
+                <span>{{ post.title }}</span>
+              </h4>
+            </a>
+        {% endfor %}
+</div>
+</div>

@@ -1,0 +1,23 @@
+/* Sketchbook */
+
+.sketchbook_sketches {
+   margin: 2rem auto;
+   width: 95%
+}
+
+.sketchbook_sketch {
+   width: 95%;
+   text-align: center;
+}
+
+@media only screen and (min-width: 601px) and (max-width: 999px) {
+   .sketchbook_sketch {
+       width: 49%
+   }
+}
+
+@media only screen and (min-width: 1000px) {
+   .sketchbook_sketch {
+       width: 33%
+   }
+}
