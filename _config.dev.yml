@@ -13,7 +13,7 @@ encoding:     "utf-8"
 # Build setings
 markdown:     kramdown
 highlighter:  rouge
-permalink:    /:year/:title.html
+permalink:    /:year/:title
 
 whitelist:    []
 plugins:      []
