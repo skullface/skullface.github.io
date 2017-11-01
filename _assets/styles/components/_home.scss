@@ -16,6 +16,17 @@ h1.page_title.homepage_title {
   margin-bottom: 1rem;
 }
 
+.homepage.page_content ul {
+  list-style-type: none;
+}
+
+.homepage.page_content li {
+  margin-bottom: 0.5rem;
+  @media all and (max-width: 500px) {
+    margin-bottom: 1rem;
+  }
+}
+
 .homepage.page_content a .external-link {
   background: blue;
   height: 40px;
@@ -83,11 +94,18 @@ h1.page_title.homepage_title {
     right: 100px;
     top: 350px;
     max-width: 360px;
+    @media all and (max-width: 650px) {
+      right: 30px;
+      max-width: 200px;
+    }
   }
 
   .usako {
-    top: -60px;
+    top: 0px;
     left: 60px;
+    @media all and (max-width: 650px) {
+      max-width: 300px;
+    }
   }
 
   .wallflower .washi,
@@ -108,6 +126,11 @@ h1.page_title.homepage_title {
     bottom: 80px;
     right: 120px;
     max-height: 250px;
+    @media all and (max-width: 650px) {
+      max-height: 150px;
+      right: 50px;
+      bottom: 300px;
+    }
   }
 
   .shoujo-hat {
@@ -115,12 +138,18 @@ h1.page_title.homepage_title {
     top: 0;
     right: 60px;
     max-width: 450px;
+    @media all and (max-width: 650px) {
+      max-width: 300px;
+    }
   }
 
   .kawaii-shirt {
     margin-top: 80px;
     margin-left: 40px;
     max-height: 605px;
+    @media all and (max-width: 650px) {
+      max-width: 300px;
+    }
   }
 
   .logoz {
@@ -128,24 +157,42 @@ h1.page_title.homepage_title {
     left: 180px;
     top: 450px;
     max-width: 330px;
+    @media all and (max-width: 650px) {
+      max-width: 230px;
+      left: 10px;
+    }
   }
 
   .selfie {
     position: absolute;
     bottom: 10%;
     left: 35%;
+    @media all and (max-width: 650px) {
+      left: 15px;
+      max-width: 150px;
+      bottom: 18%;
+    }
   }
 
   .vcute {
     position: absolute;
     bottom: 60px;
     left: 140px;
+    @media all and (max-width: 650px) {
+      left: 100px;
+      bottom: 180px;
+    }
   }
 
   .lion {
     margin-top: -60px;
     margin-left: 55%;
     max-width: 230px;
+    @media all and (max-width: 650px) {
+      max-width: 180px;
+      margin-left: 20%;
+      margin-top: 0;
+    }
   }
 
   .board {
@@ -153,4 +200,9 @@ h1.page_title.homepage_title {
     left: 30%;
     top: 340px;
     max-width: 290px;
+    @media all and (max-width: 650px) {
+      top: 160px;
+      left: 50%;
+      max-width: 140px;
+    }
   }
