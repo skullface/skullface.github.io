@@ -31,8 +31,8 @@ title: Contact
         </label>
       </div>
       <div class="form-detail">
-        <label for="fields[email]"><span class="label">Email</span>
-          <input type="email" name="fields[email]" required placeholder="vmars07@hearstcollege.edu">
+        <label for="eeemail"><span class="label">Email</span>
+          <input type="email" name="eeemail" required placeholder="vmars07@hearstcollege.edu">
         </label>
       </div>
       <div class="form-detail">
@@ -45,9 +45,6 @@ title: Contact
     <label>
       <span class="label">Message</span>
       <textarea required name="details" placeholder="What’s gucci?"></textarea>
-
-      <input type="hidden" name="_subject" value="🐱💗 new message at JessicaPaoli.com" />
-      <input type="text" name="_gotcha" style="display:none" />
     </label>
 
     <div class="submit">
