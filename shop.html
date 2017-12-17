@@ -4,123 +4,155 @@ layout: default
 ---
 
 <div class="shop">
-  <!--
-  <div class="page_content">
-    <p>
-      Each of these items opens to a new website. Some are owned by me, others are manufactured by trusted sources and awesome partners. If you have any questions, let me know!</p>
-    </p>
+  <div class="shop_zines">
+    <ul class="product-grid">
+      {% assign sorted = (site.products | sort: 'date') | reverse %}
+      {% for product in sorted %}
+      <li class="product-grid_zine">
+        <a href="{{ product.url }}">{{ product.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
   </div>
-  -->
-  <!--
-  <ul class="shop_zines">
-    {% assign sorted = (site.products | sort: 'date') | reverse %}
-    {% for product in sorted %}
-    <li>
-      <a href="{{ product.url }}">{{ product.title }}</a>
-    </li>
-    {% endfor %}
-  </div>
-  -->
 
-  <ul class="shop_products">
-    <li>
+  <ul class="product-grid">
+    <li class="product-grid_product">
       <a href="http://www.falseluck.com/product/shoujo-dad-hat">
         <img src="/media/shop/falseluck_shoujo-hat.jpg" alt="">
-        <span>&ldquo;Shoujo&rdquo; dad hat ($20)</span> {% include external-link.html %}
+        <span>&ldquo;Shoujo&rdquo; dad hat</span> {% include external-link.html %}
       </a>
     </li>
 
-    <li>
-      <a href="http://www.falseluck.com/product/ice-cream-cat-lapel-pin">
-        <img src="/media/shop/falseluck_ice-cream-cat.jpg" alt="">
-        <span>&ldquo;Ice Cream Cat&rdquo; rose gold cloisonné lapel pin ($9)</span>
+    <li class="product-grid_product">
+      <a href="http://www.falseluck.com/product/ice-cream-cat-enamel-pin">
+        <img src="/media/shop/falseluck_ice-cream-cat-pin.jpg" alt="">
+        <span>&ldquo;Ice Cream Cat&rdquo; rose gold cloisonné enamel pin</span>
         {% include external-link.html %}
       </a>
     </li>
 
-    <li>
+    <li class="product-grid_product">
       <a href="http://www.falseluck.com/product/h-exes-pin">
-        <img src="/media/shop/falseluck_hexes.jpg" alt="">
-        <span>&ldquo;All my exes live with hexes&rdquo; antique lapel pin ($9)</span>
+        <img src="/media/shop/falseluck_hexes-exes-pin.jpg" alt="">
+        <span>&ldquo;All My Exes Live with Hexes&rdquo; antique enamel pin</span>
         {% include external-link.html %}
       </a>
     </li>
 
-    <li>
-      <a href="http://www.falseluck.com/product/h-exes-pin">
-        <img src="/media/shop/falseluck_snack-cats.jpg" alt="">
-        <span>&ldquo;Snack cats&rdquo; vintage-feel fitted crop top ($22)</span> {% include external-link.html %}
+    <li class="product-grid_product">
+      <a href="http://lostlustsupply.com/shop/false-luck-pin">
+        <img src="/media/shop/falseluck_lostlust-pin.jpg" alt="">
+        <span>&ldquo;False Luck x Lost Lust&rdquo; logo enamel pin</span> {% include external-link.html %}
       </a>
     </li>
 
-    <li>
+    <li class="product-grid_product">
+      <a href="http://www.falseluck.com/product/h-exes-pin">
+        <img src="/media/shop/falseluck_everything-i-want-grinder.jpg" alt="">
+        <span>&ldquo;Everything I Want&rdquo; herb grinder</span>
+        {% include external-link.html %}
+      </a>
+    </li>
+
+    <li class="product-grid_product">
       <a href="http://www.falseluck.com/product/shoujo-beanie">
         <img src="/media/shop/falseluck_shoujo-beanie.jpg" alt="">
-        <span>&ldquo;Shoujo&rdquo; beanie ($20)</span> {% include external-link.html %}
+        <span>&ldquo;Shoujo&rdquo; beanie</span> {% include external-link.html %}
       </a>
     </li>
 
-    <li>
+    <li class="product-grid_product">
+      <a href="http://www.falseluck.com/product/h-exes-pin">
+        <img src="/media/shop/falseluck_super-kawaii-beanie.png" alt="">
+        <span>&ldquo;Super Kawaii&rdquo; beanie</span>
+        {% include external-link.html %}
+      </a>
+    </li>
+
+    <li class="product-grid_product">
+      <a href="http://www.falseluck.com/product/h-exes-pin">
+        <img src="/media/shop/falseluck_sensitive-cap.jpg" alt="">
+        <span>&ldquo;Sensitive&rdquo; dad hat</span>
+        {% include external-link.html %}
+      </a>
+    </li>
+
+    <li class="product-grid_product">
       <a href="https://cottonbureau.com/products/super-kawaii">
         <img src="/media/shop/cotton-bureau_super-kawaii.jpg" alt="">
-        <span>&ldquo;Super Kawaii&rdquo; t-shirt ($20)</span> {% include external-link.html %}
+        <span>&ldquo;Super Kawaii&rdquo; t-shirt</span> {% include external-link.html %}
       </a>
     </li>
 
-    <li>
-      <a href="http://lostlustsupply.com/shop/false-luck-pin">
-        <img src="/media/shop/falseluck_lost-lust.jpg" alt="">
-        <span>False Luck x Lost Lust pin ($8)</span> {% include external-link.html %}
+
+    <li class="product-grid_product">
+      <a href="http://www.falseluck.com/product/raised-by-the-internet-sticker">
+        <img src="/media/shop/falseluck_raisedbytheinternet.jpg">
+        <span>&ldquo;Raised By The Internet&rdquo; sticker</span> {% include external-link.html %}
       </a>
     </li>
 
-  <li>
-    <a href="http://www.falseluck.com/product/raised-by-the-internet-sticker">
-      <img src="/media/shop/falseluck_raisedbytheinternet.jpg">
-      <span>&ldquo;Raised By The Internet&rdquo; sticker ($4)</span> {% include external-link.html %}
-    </a>
-  </li>
+    <li class="product-grid_product">
+      <a href="http://www.falseluck.com/product/skate-cat-sticker">
+        <img src="/media/shop/falseluck_skatecat.jpg">
+        <span>&ldquo;Skate Cat&rdquo; sticker</span> {% include external-link.html %}
+      </a>
+    </li>
 
-  <li>
-    <a href="http://www.falseluck.com/product/skate-cat-sticker">
-      <img src="/media/shop/falseluck_skatecat.jpg">
-      <span>&ldquo;Skate Cat&rdquo; sticker ($4)</span> {% include external-link.html %}
-    </a>
-  </li>
+    <li class="product-grid_product">
+      <a href="http://www.falseluck.com/product/very-cute-temporary-tattoo-set">
+        <img src="/media/shop/falseluck_tattoos.jpg" alt="">
+        <span>&ldquo;Very Cute&rdquo; temporary tattoo set</span> {% include external-link.html %}
+      </a>
+    </li>
 
-  <li>
-    <a href="http://www.falseluck.com/product/very-cute-temporary-tattoo-set">
-      <img src="/media/shop/falseluck_tattoos.jpg" alt="">
-      <span>&ldquo;Very Cute&rdquo; temporary tattoo set ($6.00)</span> {% include external-link.html %}
-    </a>
-  </li>
+    <li class="product-grid_product">
+      <a href="http://www.falseluck.com/product/meiku-sticker">
+        <img src="/media/shop/falseluck_nothing-but-the-rain.jpg" alt="">
+        <span>&ldquo;Nothing but the Rain&rdquo; sticker</span> {% include external-link.html %}
+      </a>
+    </li>
 
-  <li>
-    <a href="http://www.falseluck.com/product/meiku-sticker">
-      <img src="/media/shop/falseluck_meiku.jpg" alt="">
-      <span>&ldquo;Meiku&rdquo; sticker ($4)</span> {% include external-link.html %}
-    </a>
-  </li>
+    <li class="product-grid_product">
+      <a href="http://www.falseluck.com/product/meiku-sticker">
+        <img src="/media/shop/falseluck_meiku.png" alt="">
+        <span>&ldquo;Makeup Heart&rdquo; sticker</span> {% include external-link.html %}
+      </a>
+    </li>
 
-  <li>
-    <a href="http://www.falseluck.com/product/super-kawaii">
-      <img src="/media/shop/falseluck_superkawaii-sticker.jpg" alt="">
-      <span>&ldquo;Super Kawaii sticker&rdquo; ($4)</span> {% include external-link.html %}
-    </a>
-  </li>
+    <li class="product-grid_product">
+      <a href="http://www.falseluck.com/product/super-kawaii">
+        <img src="/media/shop/falseluck_superkawaii-sticker.jpg" alt="">
+        <span>&ldquo;Super Kawaii&rdquo; sticker</span> {% include external-link.html %}
+      </a>
+    </li>
 
-  <li>
-    <a href="http://www.falseluck.com/product/needle-lion-sticker">
-      <img src="/media/shop/falseluck_lion.jpg" alt="">
-      <span>&ldquo;Needle Lion&rdquo; sticker ($4)</span> {% include external-link.html %}
-    </a>
-  </li>
+    <li class="product-grid_product">
+      <a href="http://www.falseluck.com/product/needle-lion-sticker">
+        <img src="/media/shop/falseluck_lion.jpg" alt="">
+        <span>&ldquo;Needle Lion&rdquo; sticker</span> {% include external-link.html %}
+      </a>
+    </li>
 
-  <li>
-    <a href="http://www.falseluck.com/product/meiku-sticker">
-      <img src="/media/shop/falseluck_very-cute-knuckle-tats.jpg" alt="">
-      <span>&ldquo;Very Cute&rdquo; sticker ($4)</span> {% include external-link.html %}
-    </a>
-  </li>
-</ul>
+    <li class="product-grid_product">
+      <a href="http://www.falseluck.com/product/meiku-sticker">
+        <img src="/media/shop/falseluck_very-cute-knuckle-tats.jpg" alt="">
+        <span>&ldquo;Very Cute&rdquo; sticker</span> {% include external-link.html %}
+      </a>
+    </li>
+
+    <li class="product-grid_product">
+      <a href="http://www.falseluck.com/product/meiku-sticker">
+        <img src="/media/shop/falseluck_makeup-pouch-pink.jpg" alt="">
+        <span>&ldquo;Makeup Pouch&rdquo; pink</span> {% include external-link.html %}
+      </a>
+    </li>
+
+    <li class="product-grid_product">
+      <a href="http://www.falseluck.com/product/meiku-sticker">
+        <img src="/media/shop/falseluck_makeup-pouch-black.jpg" alt="">
+        <span>&ldquo;Makeup Pouch&rdquo; black</span> {% include external-link.html %}
+      </a>
+    </li>
+  </ul>
 </div>

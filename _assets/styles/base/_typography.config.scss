@@ -19,7 +19,7 @@ $font-weight_bold:      700;
 $font-weight_heavy:     800;
 $font-weight_black:     900;
 
-$font-size_base:        1.25rem;
+$font-size_base:        1.325rem;
 $font-size_small:       0.8rem;
 
 $leading:               1.6;
@@ -88,14 +88,14 @@ ol:not(:only-child) {
 .post_content ul,
 .page_content ol,
 .post_content ol,  {
-  font-size: 1.25rem;
+  font-size: $font-size_base;
 
   @media screen and (min-width: 1550px) {
-    font-size: 1.45rem;
+    font-size: $font-size_base * 1.16;
   }
 
   @media screen and (max-width: 550px) {
-    font-size: 1.125rem;
+    font-size: $font-size_base * 0.9;
   }
 }
 

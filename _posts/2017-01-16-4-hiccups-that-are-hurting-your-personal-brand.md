@@ -6,6 +6,7 @@ categories:
  - Design
  - Business
 image: personal-brand_1.jpg
+published: false
 ---
 
 I know the term “personal brand” gets some major eye-rolls, but… If you’re freelancing under your own name, your audience’s connection to you correlates your bills getting paid. Branding is imperative when you are the face of your practice — and your practice is your business. Designers who freelance (or monetize a side project) have a personal brand, whether they accept it or not. For some, this comes naturally by just using the Internet. Lettering artist [Jen Mussari](http://jenmussari.com/) explained in a [Working File episode](https://workingfile.co/episodes/3.html), “I haven't had to focus on self-promotion in years because I've never had a problem expressing myself on the Internet.” Not everyone has the privilege to connect with their audience on their own terms by being their authentic selves. Sometimes we need a little more strategy. As good designers, we know a brand identity project without a story is just a few vectors and jpgs. It’s our job to educate our clients on the importance of strategy to set up them up for success. Letting that process slip by in your own business is easy when you’re on the grind, busy with projects day in and day out. While you share your work and promote your practice, be sure you aren’t making these missteps.
