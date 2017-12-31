@@ -6,7 +6,7 @@ description: I’m an interdisciplinary designer, developer, and illustrator (De
 baseurl:  "" # the subpath of your site, e.g. /blog
 url:      "http://jessicapaoli.com" # the base hostname & protocol for your site
 
-logo:         /assets/img/favicon.png
+logo:         favicon.png
 locale:       en-US
 lang:         en-US
 encoding:     "utf-8"

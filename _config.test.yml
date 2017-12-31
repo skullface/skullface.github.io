@@ -16,7 +16,8 @@ highlighter:  rouge
 permalink:    /:year/:title
 
 whitelist:    []
-plugins:      []
+plugins:
+  - jekyll-feed
 
 
 # Exclude from site build
