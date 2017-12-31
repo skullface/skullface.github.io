@@ -12,7 +12,7 @@
   {% if page.date %}
     <meta name="twitter:creator" content="@skullface">
   {% endif %}
-  <meta name="author" content="{{site.author}}"/>
+  <meta name="author" content="{{ site.author }}"/>
   <meta property="og:locale" content="{{ site.locale }}">
 
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
@@ -46,7 +46,6 @@
       <meta property="og:see_also" content="{{ post.url | replace:'/index.html','/' | prepend: site.baseurl | prepend: site.url }}">
     {% endfor %}
   {% endif %}
-
 
   <link rel="stylesheet" href="/assets/styles/main.css">
 
