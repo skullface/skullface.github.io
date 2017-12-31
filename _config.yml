@@ -3,7 +3,7 @@ email: meow@jessicapaoli.com
 author: Jessica Paoli
 description: I’m an interdisciplinary designer, developer, and illustrator (Design Babe) dual-wielding compassion + cuteness in the Midwest.
 baseurl:  "" # the subpath of your site, e.g. /blog
-url:      "http://skvllface.com" # the base hostname & protocol for your site
+url:      "http://jessicapaoli.com" # the base hostname & protocol for your site
 
 locale:       en-US
 lang:         en-US
