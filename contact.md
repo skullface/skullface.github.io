@@ -18,6 +18,7 @@ title: Contact
 **Men who brain-pick** I won’t respond to requests from male professionals who want to use my time to “pick my brain” on design or business over email, Skype, or coffee. Women perform more than enough unrecognized, unpaid [emotional labor](http://www.metafilter.com/151267/Wheres-My-Cut-On-Unpaid-Emotional-Labor) for me to offer you individualized attention for free. To schedule a paid consultation, please send me a note.
 
 <div class="contact_form_container">
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <form accept-charset="UTF-8" action="https://usebasin.com/f/8456a9a39901" class="contact_form" method="POST">
     <div class="contact_form_details">
       <div class="form-detail">
@@ -31,8 +32,8 @@ title: Contact
         </label>
       </div>
       <div class="form-detail">
-        <label for="eeemail"><span class="label">Email</span>
-          <input type="email" name="eeemail" required placeholder="vmars07@hearstcollege.edu">
+        <label for="email"><span class="label">Email</span>
+          <input id="email" type="email" name="email" required placeholder="vmars07@hearstcollege.edu">
         </label>
       </div>
       <div class="form-detail">
@@ -46,6 +47,8 @@ title: Contact
       <span class="label">Message</span>
       <textarea required name="details" placeholder="What’s gucci?"></textarea>
     </label>
+
+    <div class="g-recaptcha" data-sitekey="6Lew3SMUAAAAAJ82QoS7gqOTkRI_dhYrFy1f7Sqy"></div>
 
     <div class="submit">
       <button name="submit" class="submit"><span>Send message &rarr;</span></button>
