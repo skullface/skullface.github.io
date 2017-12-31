@@ -9,12 +9,6 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@skullface">
 
-  <meta property="og:type" content="{% if page.date %}article{% else %}website{% endif %}">
-  <meta property="og:locale" content="{{ site.locale }}">
-
-  <meta name="twitter:creator" content="@skullface">
-  <meta name="author" content="{{ site.author }}"/>
-
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <meta property="og:url" content="{{ page.url | replace:'/index.html','/' | prepend: site.baseurl | prepend: site.url }}">
   <meta name="twitter:url" content="{{ page.url | replace:'/index.html','/' | prepend: site.baseurl | prepend: site.url }}">
@@ -34,7 +28,7 @@
   <meta name="twitter:description" content="{% if post.description %}{{ post.description | markdownify | strip_html | strip_newlines | escape_once }}{% elsif page.description %}{{ page.description | markdownify | strip_html | strip_newlines | escape_once }}{% else %}{{ site.description }}{% endif %}">
 
   <meta property="og:image" content="{% if page.image %}{{ page.image | prepend: site.baseurl | prepend: site.url }}{% else %}{{ site.logo | prepend: site.baseurl | prepend: site.url }}{% endif %}">
-  <meta name="twitter:image" content="{% if page.image %}{{ page.image | prepend: site.baseurl | prepend: site.url }}{% else %}{{ site.logo | prepend: site.baseurl | prepend: site.url }}{% endif %}">
+  <meta name="twitter:image" content="{% if page.image %}{{ page.image | prepend: site.baseurl | prepend: site.url }}{% el %}{{ site.logo | prepend: site.baseurl | prepend: site.url }}{% endif %}">
   <meta properity="og:image:alt" content="{{ page.title}}" />
   <meta properity="twitter:image:alt" content="{{ page.title}}" />
 
