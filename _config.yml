@@ -1,3 +1,4 @@
+name: Jessica Paoli, design babe
 title: Jessica Paoli, design babe
 email: meow@jessicapaoli.com
 author: Jessica Paoli
@@ -9,6 +10,12 @@ locale:       en-US
 lang:         en-US
 encoding:     "utf-8"
 
+author:
+  facebook:     skvllface
+  twitter:      skullface
+
+twitter:
+  username:     skullface
 
 # Build setings
 markdown:     kramdown

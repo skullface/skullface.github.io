@@ -18,7 +18,9 @@ h1.page_title.homepage_title {
 
 .homepage.page_content ul {
   list-style-type: none;
-  padding-left: 0;
+  @media screen and (min-width: 42rem) {
+    padding-left: 0;
+  }
 }
 
 .homepage.page_content li {

@@ -5,17 +5,44 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="viewport" content="width=device-width">
 
-  <title>{% if page.title %}{{ page.title }} | {% endif %} Jessica Paoli, Designer</title>
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@{{ site.twitter.username | replace:'@','' }}">
+  <meta property="og:type" content="{% if page.date %}article{% else %}website{% endif %}">
+  {% if page.date %}
+    <meta name="twitter:creator" content="@skullface">
+  {% endif %}
+  <meta name="author" content="{{site.author}}"/>
+  <meta property="og:locale" content="{{ site.locale }}">
 
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <meta property="og:url" content="{{ page.url | replace:'/index.html','/' | prepend: site.baseurl | prepend: site.url }}">
+  <meta name="twitter:url" content="{{ page.url | replace:'/index.html','/' | prepend: site.baseurl | prepend: site.url }}">
 
   <link rel="apple-touch-icon" href="{PortraitURL-128}">
   <link rel="shortcut icon" href="{Favicon}">
   <link rel="alternate" type="application/rss+xml" href="{RSS}">
 
+  <title>{% if page.title %}{{ page.title }} | {% endif %} Jessica Paoli, Designer</title>
+  <meta property="og:title" content="{% if page.title %}{{ page.title | smartify | strip_html | strip_newlines | escape_once }}{% else %}{{ site.name }}{% endif %}">
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title | smartify | strip_html | strip_newlines | escape_once }}{% else %}{{ site.name }}{% endif %}">
+
   <meta name="description" content="{{site.description}}"/>
-  <meta name="author" content="{{site.author}}"/>
-  <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="{{site.baseurl}}/feed.xml" />
+  <meta property="og:description" content="{% if page.description %}{{ page.description | markdownify | strip_html | strip_newlines | truncate: 160 | escape_once }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="twitter:description" content="{% if page.description %}{{ page.description | markdownify | strip_html | strip_newlines | truncate: 160 | escape_once }}{% else %}{{ site.description }}{% endif %}">
+
+  <meta property="og:image" content="{% if page.image %}{{ page.image | prepend: site.baseurl | prepend: site.url }}{% else %}{{ site.logo | prepend: site.baseurl | prepend: site.url }}{% endif %}">
+  <meta name="twitter:image" content="{% if page.image %}{{ page.image | prepend: site.baseurl | prepend: site.url }}{% else %}{{ site.logo | prepend: site.baseurl | prepend: site.url }}{% endif %}">
+
+  {% if page.date %}
+    <meta property="article:author" content="https://www.facebook.com/{{ site.author.facebook }}">
+    <meta property="article:modified_time" content="{% if page.last_modified_at %}{{ page.last_modified_at | date_to_xmlschema }}{% else %}{{ page.date | date_to_xmlschema }}{% endif %}">
+    <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+    {% for post in site.related_posts limit:3 %}
+      <meta property="og:see_also" content="{{ post.url | replace:'/index.html','/' | prepend: site.baseurl | prepend: site.url }}">
+    {% endfor %}
+  {% endif %}
+
 
   <link rel="stylesheet" href="/assets/styles/main.css">
 
