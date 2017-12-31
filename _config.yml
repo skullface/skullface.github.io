@@ -6,16 +6,17 @@ description: I’m an interdisciplinary designer, developer, and illustrator (De
 baseurl:  "" # the subpath of your site, e.g. /blog
 url:      "http://jessicapaoli.com" # the base hostname & protocol for your site
 
+logo:         /assets/img/favicon.png
 locale:       en-US
 lang:         en-US
 encoding:     "utf-8"
 
 author:
-  facebook:     skvllface
-  twitter:      skullface
+  facebook:   skvllface
+  twitter:    skullface
 
 twitter:
-  username:     skullface
+  username:   skullface
 
 # Build setings
 markdown:     kramdown
@@ -24,7 +25,8 @@ permalink:    /:year/:title
 future:       false
 
 whitelist:    []
-plugins:      []
+plugins:
+  - jekyll-feed
 
 
 # Exclude from site build
