@@ -78,6 +78,10 @@
   margin-bottom: $spacer/2;
 }
 
+.post_content ul li {
+  margin-bottom: $spacer/3;
+}
+
 .align-left {
   float: left;
   margin-left: 15% !important;
@@ -132,6 +136,10 @@ p span.align-half:last-child {
   @media screen and (max-width: 550px) {
     padding: 0;
   }
+}
+
+.instagram-block iframe {
+  margin: 0 auto !important;
 }
 
 

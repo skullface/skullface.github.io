@@ -81,6 +81,11 @@ ol:not(:only-child) {
   margin-bottom: 2rem;
 }
 
+blockquote {
+  margin-left: 4rem;
+  font-style: italic;
+}
+
 // Body text
 .page_content p,
 .post_content p,
