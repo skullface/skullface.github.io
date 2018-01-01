@@ -26,8 +26,8 @@
   <meta property="og:description" content="{% if post.description %}{{ post.description | markdownify | strip_html | strip_newlines | escape_once }}{% elsif page.description %}{{ page.description | markdownify | strip_html | strip_newlines | escape_once }}{% else %}{{ site.description }}{% endif %}">
   <meta name="twitter:description" content="{% if post.description %}{{ post.description | markdownify | strip_html | strip_newlines | escape_once }}{% elsif page.description %}{{ page.description | markdownify | strip_html | strip_newlines | escape_once }}{% else %}{{ site.description }}{% endif %}">
 
-  <meta property="og:image" content="{% if page.image %}{{ page.image | prepend: site.baseurl | prepend: site.url }}{% else %}{{ site.logo | prepend: site.baseurl | prepend: site.url }}{% endif %}">
-  <meta name="twitter:image" content="{% if page.image %}{{ page.image | prepend: site.baseurl | prepend: site.url }}{% else %}{{ site.logo | prepend: site.baseurl | prepend: site.url }}{% endif %}">
+  <meta property="og:image" content="{% if page.date %}{{ site.url }}/{{ site.baseurl }}{{ site.mediapath.post }}{{ page.date | date: '%Y' }}/jessicapaoli-dot-com_{{ page.image }}{% elsif page.image %}{{ page.image | prepend: site.baseurl | prepend: site.url }}{% else %}{{ site.logo | prepend: site.baseurl | prepend: site.url }}{% endif %}">
+  <meta name="twitter:image" content="{% if page.date %}{{ site.url }}/{{ site.baseurl }}{{ site.mediapath.post }}{{ page.date | date: '%Y' }}/jessicapaoli-dot-com_{{ page.image }}{% elsif page.image %}{{ page.image | prepend: site.baseurl | prepend: site.url }}{% else %}{{ site.logo | prepend: site.baseurl | prepend: site.url }}{% endif %}">
   <meta property="og:image:alt" content="{{ page.title}}" />
   <meta name="twitter:image:alt" content="{{ page.title}}" />
 
