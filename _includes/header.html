@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width">
 
   <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:type" content="{% if page.date %}article{% else %}website{% endif %}">
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
