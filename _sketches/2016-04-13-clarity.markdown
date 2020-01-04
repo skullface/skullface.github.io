@@ -1,7 +1,0 @@
----
-layout: post
-title:  "Clarity Conf 2016"
-date:   2016-04-13 00:13:00 -0500
----
-
-![Clarity Conf 2016 sketchnotes]({{ "/media/clarity.gif" | prepend: site.baseurl | prepend: site.url }})
