@@ -1,65 +1,233 @@
----
-layout: default
-image:  http://jessicapaoli.com/assets/img/mock.jpg
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<h1 class="page_title homepage_title">Jessica Paoli, “Skullface” for short, is a Design Babe dual-wielding compassion and cuteness.</h1>
+  <title>Jessica Paoli, Design Babe</title>
+  <meta name="title" content="Jessica Paoli, Design Babe">
+  <meta name="description" content="I’m an interdisciplinary designer, developer, and illustrator dual-wielding compassion + cuteness in the Midwest."/>
+  <meta name="author" content="Jessica Paoli"/>
+  <link rel="icon" type="image/png" href="./favicon.png">
 
-<div id="collage">
-  <div class="collage_container">
-    <div class="poster usako draggable">
-      <img src="/assets/img/washi-sparkle.png" alt="" class="washi">
-      <img src="/assets/img/usako.jpg" class="art" alt="">
-    </div>
-    <img src="/assets/img/ice-cream-cat.png" alt="" class="draggable pin cat">
-    <img src="/assets/img/super-kawaii_tshirt.gif" alt="" class="draggable kawaii-shirt">
-    <img src="/assets/img/shoujo-dad-hat.gif" alt="" class="draggable shoujo-hat">
-    <img src="/assets/img/skateboard.gif" alt="" class="draggable board">
-    <img src="/assets/img/logos-i-made-hell-yeahhh.gif" alt="" class="draggable logoz">
-    <div class="poster wallflower draggable">
-      <img src="/assets/img/washi.png" alt="" class="washi">
-      <img src="/assets/img/wallflower.gif" class="art" alt="">
-    </div>
-    <img src="/assets/img/very-cute.png" alt="" class="draggable sticker vcute">
-    <div class="poster selfie draggable">
-      <img src="/assets/img/washi-sparkle.png" alt="" class="washi">
-      <img src="/assets/img/portrait.gif" class="polaroid" alt="">
-    </div>
-    <img src="/assets/img/lion.gif" alt="" class="draggable sticker lion">
-    <img src="/assets/img/hexes.gif" alt="" class="draggable pin hexes">
-  </div>
-  </div>
-</div>
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jessicapaoli.com">
+  <meta property="og:title" content="LOOΠΔ Orbit 1.0 membership card generator">
+  <meta property="og:description" content="Create your own fanmade digital card from the Orbit 1.0 membership kit! 🤟">
+  <meta property="og:image" content="https://loonaverse.com/orbit-card/social-card.png">
 
-<div class="homepage page_content">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://loonaverse.com/orbit-card">
+  <meta property="twitter:title" content="LOOΠΔ Orbit 1.0 membership card generator">
+  <meta property="twitter:description" content="Create your own fanmade digital card from the Orbit 1.0 membership kit! 🤟">
+  <meta name="twitter:image" content="https://loonaverse.com/orbit-card/social-card.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-31807302-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-31807302-1');
+  </script>
+
+  <script type="text/javascript">
+  </script>
+
+  <script src="https://use.typekit.net/fgx5ibe.js"></script>
+  <script>
+    try{Typekit.load({ async: true });}catch(e){}
+  </script>
+
+  <script src="./index.js"></script>
+
+  <script>
+
+    var n_sparkles = 100;
+    var sparkles = new Array(n_sparkles);
+
+    var mouse = {
+      x: 0,
+      y: 0,
+      moved: false
+    }
+
+    window.onmousemove = function(e) {
+      var new_x = e.pageX;
+      var new_y = e.pageY;
+
+      mouse = {
+        x: new_x,
+        y: new_y,
+        moved: (mouse.x !== new_x ||
+                mouse.y !== new_y)
+      };
+    }
+
+    window.onload = function() {
+      for(var i=0; i < n_sparkles; i++) {
+        var sparkleDiv = createSparkle(0, 0);
+        document.body.appendChild(sparkleDiv);
+        sparkles[i] = {
+          element: sparkleDiv,
+          x: 0,
+          y: 0,
+          size: 0,
+          visible: false,
+          horizontal_speed: randomHorizontalSpeed(),
+          color: aPleasingColor()
+        }
+      }
+
+      doSparkles();
+    }
+
+    function doSparkles() {
+      var itsTimeForANewSparkle = mouse.moved;
+      // this function is called more frequently
+      // than the mouse moves
+      mouse.moved = false;
+
+      for(var i=0; i < n_sparkles; i++) {
+        var sparkle = sparkles[i];
+
+        if (itsTimeForANewSparkle) {
+          if (sparkle.size < 1) {
+            resetSparkle(sparkle);
+            itsTimeForANewSparkle = false;
+          }
+        }
+
+        if (sparkle.visible) {
+          moveSparkle(sparkle);
+          shrinkSparkle(sparkle);
+        }
+        updateSparkleElement(sparkle);
+      }
+
+      setTimeout("doSparkles()", 40);
+    }
+
+    function moveSparkle(sparkle) {
+      sparkle.x += sparkle.horizontal_speed;
+      sparkle.y += 1 + Math.random()*3;
+    }
+
+    function shrinkSparkle(sparkle) {
+      sparkle.size -= 1;
+
+      var style = sparkle.element.style;
+      if (sparkle.size < 75) {
+        style.clip = "rect(1px, 4px, 4px, 1px)";
+      }
+      if (sparkle.size < 50) {
+        style.clip = "rect(2px, 4px, 4px, 2px)";
+        style.backgroundColor = sparkle.color;
+      }
+      if (sparkle.size < 25) {
+        style.clip = "rect(2px, 3px, 3px, 2px)";
+      }
+      if (sparkle.size < 1) {
+        sparkle.visible = false;
+      }
+    }
+
+    function updateSparkleElement(sparkle) {
+      var style = sparkle.element.style;
+      style.left = sparkle.x+"px";
+      style.top = sparkle.y+"px";
+
+      if (sparkle.visible) {
+        style.visibility = "visible"
+      } else {
+        style.visibility = "hidden"
+      }
+    }
+
+    function createSparkle(x,y) {
+      var boundingBox = createDiv(x, y, 5, 5);
+      boundingBox.style.backgroundColor = "transparent";
+
+      var down = createDiv(0, 2, 5, 1);
+      var across = createDiv(2, 0, 1, 5);
+
+      boundingBox.appendChild(down);
+      boundingBox.appendChild(across);
+
+      return boundingBox;
+    }
+
+    function resetSparkle(sparkle) {
+      sparkle.visible = true;
+      sparkle.x = mouse.x;
+      sparkle.y = mouse.y;
+      sparkle.horizontal_speed = randomHorizontalSpeed();
+      sparkle.size = 100;
+      sparkle.element.style.clip = "rect(0px, 5px, 5px, 0px)";
+      sparkle.element.style.backgroundColor = "transparent";
+      sparkle.color = aPleasingColor();
+      sparkle.element.childNodes[0].style.backgroundColor = sparkle.color;
+      sparkle.element.childNodes[1].style.backgroundColor = sparkle.color;
+    }
+
+    function createDiv(x,y,w,h) {
+      var div = document.createElement("div");
+      div.style.position = "absolute";
+      div.style.top = y + "px";
+      div.style.left = x + "px";
+      div.style.overflow = "hidden";
+      div.style.height = h + "px";
+      div.style.width = w + "px";
+      return div;
+    }
+
+    function aPleasingColor() {
+      var colorSet = [
+        '#ff4895', '#19c1df', '#f681c0',
+        '#9655c4', '#3bde9f', '#7ee65a'
+      ];
+
+      var colorRandom = colorSet[Math.floor(Math.random() * colorSet.length)];
+      return colorRandom;
+    }
+
+    function randomHorizontalSpeed() {
+      var dir = Math.random() > 0.5 ? 1 : -1;
+      var speed = randomInt(3);
+      return speed/5 * dir;
+    }
+
+    function randomInt(exclusiveMaximum) {
+      return Math.floor(Math.random() * exclusiveMaximum);
+    }
+  </script>
+</head>
+<body>
+  <h1>
+    <span class="design-babe">design&nbsp;babe</span>
+    <span class="dual-wielding">dual&nbsp;wielding</span>
+    <span class="compassion">compassion</span>
+    <span class="and">and</span>&nbsp;<span class="cuteness">cuteness</span>
+  </h1>
+
   <ul>
     <li>
-      🤞 I celebrate individuality, magic, and fun at <a href="http://falseluck.com/?utm_source=jp-home">False Luck {% include external-link.html %}</a>.
+      🤟 hewwo i am <strong>skullface</strong>
     </li>
     <li>
-      💄 I make videos about <a href="http://youtube.com/c/skullfacekillah/?utm_source=jp-home">cruelty-free beauty {% include external-link.html %}</a>&nbsp; and more.
+      🌈 webmistress and visual artist
     </li>
     <li>
-      👩🏻‍💻 I take on new projects selectively with <a href="http://grawlix.co/?utm_source=jp-home">Grawlix {% include external-link.html %}</a>.
+      ✨ i &hearts; inclusivity, irreverence, intention
     </li>
     <li>
-      📝 I <a href="/blog">write</a> about my experiences in design, entrepreneurship, planning, and marketing.
+      📈 building logged-out experiences at GitHub
     </li>
     <li>
-      📓 I self-publish <a href="/shop">zines</a> covering all of the above topics.
-    </li>
-    <li>
-      📐 I recommend <a href="http://designresources.party/?utm_source=jp-home">resources {% include external-link.html %}</a>&nbsp; for designers.
-    </li>
-    <li>
-      🎧 I ask my friends about their <a href="http://securityquestions.club/?utm_source=jp-home">Security Questions {% include external-link.html %}</a>.
-    </li>
-    <li>
-      🐱 Otherwise, I’m immersed in video games, my cats, and kpop.
+      🗣️ <a href="https://twitter.com/skullface">tweeting incessantly</a>, <s>don’t</s> @ me
     </li>
   </ul>
 
-  <p>
-    💕 As a designer, I’m passionate about inclusivity, irreverence, and intention in everything I do. Right now, I’m designing marketing experiences for millions of nerds worldwide at GitHub. I’ve had the pleasure of working with tech &amp; entertainment brands like Apple, Microsoft, Cards Against Humanity, IGN, and Vox Media on marketing and identity projects.
-  </p>
-</div>
+</body>
+</html>

@@ -1,7 +1,0 @@
----
-layout: post
-title:  "Reply"
-date:   2016-02-20 14:53:00 -0500
----
-
-![Reply]({{ "/media/reply.gif" | prepend: site.baseurl | prepend: site.url }})
