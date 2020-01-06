@@ -7,20 +7,20 @@
 
   <title>Jessica Paoli, Design Babe</title>
   <meta name="title" content="Jessica Paoli, Design Babe 🖤✨">
-  <meta name="description" content="Interdisciplinary designer, developer, and visual artist dual-wielding compassion + cuteness."/>
+  <meta name="description" content="Interdisciplinary designer, developer, and visual artist dual wielding compassion + cuteness."/>
   <meta name="author" content="Jessica Paoli"/>
   <link rel="icon" type="image/png" href="https://jessicapaoli.com/favicon.png">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://jessicapaoli.com">
   <meta property="og:title" content="Jessica Paoli, Design Babe 🖤✨">
-  <meta property="og:description" content="Interdisciplinary designer, developer, and visual artist dual-wielding compassion + cuteness.">
+  <meta property="og:description" content="Interdisciplinary designer dual wielding compassion + cuteness.">
   <meta property="og:image" content="https://jessicapaoli.com/social-card.png">
 
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://jessicapaoli.com">
   <meta property="twitter:title" content="Jessica Paoli, Design Babe 🖤✨">
-  <meta property="twitter:description" content="Interdisciplinary designer, developer, and visual artist dual-wielding compassion + cuteness.">
+  <meta property="twitter:description" content="Interdisciplinary designer, developer, and visual artist dual wielding compassion + cuteness.">
   <meta name="twitter:image" content="https://jessicapaoli.com/social-card.png">
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-31807302-1"></script>
@@ -235,11 +235,6 @@
       overflow: none;
       cursor: crosshair;
     }
-    @media only screen and (max-width: 800px) {
-      html {
-        padding: 50px;
-      }
-    }
 
     @media only screen and (max-width: 500px) {
       html {
@@ -247,14 +242,16 @@
       }
     }
 
-    body {
-      display: flex;
-      flex-direction: column;
-      margin-left: auto;
-      margin-right: auto;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
+    @media only screen and (min-width: 400px) {
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin-left: auto;
+        margin-right: auto;
+      }
     }
 
     h1, ul {
@@ -282,13 +279,27 @@
     }
     @media only screen and (max-width: 400px) {
       h1 {
-        font-size: 2.25rem;
+        font-size: 1.925rem;
+        letter-spacing: -0.5px;
       }
     }
 
     ul {
       margin: 0 0 1rem 0;
       padding-left: 0;
+    }
+
+    @media only screen and (max-width: 400px) {
+      ul {
+        margin: 0 0 1rem 20px;
+        font-size: 12px;
+        text-indent: -20px;
+      }
+
+      li {
+        line-height: 1.4;
+        margin-bottom: 0.5rem;
+      }
     }
 
     li {
@@ -299,6 +310,7 @@
       position: relative;
       text-decoration: none;
     }
+
     s:after {
       position: absolute;
       left: -2px;
@@ -310,20 +322,40 @@
       background: var(--color-primary);
     }
 
-    a {
-      padding: 3px 4px 3px 7px;
-      font-size: 0.75rem;
-      letter-spacing: 0.15rem;
-      text-transform: uppercase;
-      text-decoration: none;
-      color: inherit;
-      background-color: rgba(255, 255, 255, 0.1);
+    @media only screen and (max-width: 400px) {
+      a {
+        color: inherit;
+        text-decoration: underline;
+        text-decoration-color: var(--color-primary);
+        font-weight: 700;
+      }
     }
 
-    a:focus,
-    a:hover {
-      color: var(--color-primary);
-      background-color: rgba(255, 255, 255, 0.05);
+    @media only screen and (min-width: 400px) {
+      a {
+        padding: 3px 4px 3px 7px;
+        font-size: 0.75rem;
+        letter-spacing: 0.15rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: inherit;
+        background-color: rgba(255, 255, 255, 0.08);
+      }
+    }
+
+    @media only screen and (max-width: 400px) {
+      a:focus,
+      a:hover {
+        color: var(--color-primary);
+      }
+    }
+
+    @media only screen and (min-width: 400px) {
+      a:focus,
+      a:hover {
+        color: var(--color-primary);
+        background-color: rgba(255, 255, 255, 0.03);
+      }
     }
     </style>
 </head>
@@ -337,7 +369,7 @@
 
   <ul>
     <li>
-      🤟 hewwo i am <strong>skullface</strong>
+      🤟 hewwo i am skullface
     </li>
     <li>
       🌈 webmistress and visual artist
