@@ -30,7 +30,7 @@
 
   <script>
   (function() {
-    const nSparkles = 100
+    const nSparkles = 66
     const sparkles = new Array(nSparkles)
     let mouse = { x: 0, y: 0, moved: false }
 
@@ -83,7 +83,7 @@
 
     function moveSparkle(sparkle) {
       sparkle.x += sparkle.horizontalSpeed
-      sparkle.y += 1 + Math.random() * 3
+      sparkle.y += Math.random() * 1
     }
 
     function shrinkSparkle(sparkle) {
@@ -125,7 +125,7 @@
     }
 
     function createSparkle(x, y) {
-      const boundingBox = createDiv(x, y, 5, 5)
+      const boundingBox = createDiv(x, y, 15, 15)
       boundingBox.style.backgroundColor = "transparent"
 
       const down = createDiv(0, 2, 5, 1)
@@ -159,7 +159,7 @@
     function randomHorizontalSpeed() {
       const dir = Math.random() > 0.5 ? 1 : -1
       const speed = randomInt(3)
-      return speed / 5 * dir
+      return speed / 10 * dir
     }
 
     function randomInt(exclusiveMaximum) {
