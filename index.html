@@ -64,112 +64,88 @@
     }
     
     :root {
-      --color-primary: #ff4895;
+      --color-primary: #A542F0;
       --color-foreground: #121212;
-      --color-background: #fff;
+      --color-background: #EBEAF1;
+      --color-gray: #514C59;
+      --color-foreground-pale: #191320;
+      --spacer: 0.5em;
+      --font-family_body: "Source Serif 4", "Source Serif Pro", "Georgia", "Times New Roman", serif;
+      --font-family_head: "ARS Maquette", "ars-maquette-web", "Avenir Next", "Avenir", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      --font-family_accent: "Courier Prime", "Courier New", monospace;
     }
 
     @media (prefers-color-scheme: dark) {
       :root {
-        --color-primary: #ff4895;
-        --color-foreground: #fff;
+        --color-foreground: #EBEAF1;
         --color-background: #121212;
+        --color-foreground-pale: #A19DA9;
       }
     }
 
     html {
-      font-family: "ARS Maquette", ars-maquette-web, "Avenir Next", Avenir, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-family: var(--font-family_body);
       line-height: 1.6;
       color: var(--color-foreground);
       background-color: var(--color-background);
-      overflow: none;
       cursor: crosshair;
     }
-
-    @media only screen and (max-width: 500px) {
-      html {
-        padding: 10px;
-      }
+    
+    body {
+      overflow: none;
     }
-
-    @media only screen and (min-width: 400px) {
-      body {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        margin-left: auto;
-        margin-right: auto;
-      }
-    }
-
-    h1, ul {
-      width: 80%;
+    
+    main {
+      padding: 2em;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 78ch;
+      text-wrap: pretty;
     }
 
     h1 {
-      font-weight: 700;
-      font-size: 5.25rem;
-      font-family: "ARS Maquette", ars-maquette-web, "Avenir Next", Avenir, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-      margin: 0 0 1rem 0;
       line-height: 0.8;
-      text-transform: uppercase;
-      letter-spacing: -2px;
+      font-size: 2rem;
+      letter-spacing: -1px;
+      margin-bottom: calc(var(--spacer) * 2);
     }
-    @media only screen and (max-width: 800px) {
-      h1 {
-        font-size: 3.5rem;
-      }
+    
+    h1, h2 {
+      font-weight: 700;
+      font-family: var(--font-family_head);
     }
-    @media only screen and (max-width: 666px) {
-      h1 {
-        font-size: 2.75rem;
-      }
+  
+    h2 {
+      font-size: 1.625rem;
+      margin-top: calc(var(--spacer) * 3);
+      margin-bottom: var(--spacer);
+      color: var(--color-foreground-pale);
     }
-    @media only screen and (max-width: 400px) {
-      h1 {
-        font-size: 1.925rem;
-        letter-spacing: -0.5px;
-      }
+    
+    p, ul {
+      margin-top: 0;
     }
 
     ul {
-      margin: 0 0 1rem 0;
       padding-left: 0;
     }
-
-    @media only screen and (max-width: 400px) {
-      ul {
-        margin: 0 0 1rem 20px;
-        font-size: 12px;
-        text-indent: -20px;
-      }
-
-      li {
-        line-height: 1.4;
-        margin-bottom: 0.5rem;
-      }
+    
+    li::marker {
+      color: var(--color-gray);
     }
-
-    li {
-      list-style: none;
+    
+    p, li {
+      font-size: 1.375rem;
     }
-
-    s {
-      position: relative;
-      text-decoration: none;
+    
+    b {
+      font-family: var(--font-family_head);
     }
-
-    s:after {
-      position: absolute;
-      left: -2px;
-      top: 52%;
-      width: 108%;
-      height: 3px;
-      content: "";
-      transform: rotate(-1deg);
-      background: var(--color-primary);
+    
+    code {
+      font-family: var(--font-family_accent);
+      font-size: 1.25rem;
+      color: var(--color-foreground-pale);
     }
 
     @media only screen and (max-width: 400px) {
@@ -181,31 +157,96 @@
       }
     }
 
-    @media only screen and (min-width: 400px) {
-      a {
-        padding: 3px 4px 3px 7px;
-        font-size: 0.75rem;
-        letter-spacing: 0.15rem;
-        text-decoration: none;
-        text-transform: uppercase;
-        color: inherit;
-        background-color: rgba(255, 255, 255, 0.08);
+    a {
+      font-size: 90%;
+      font-weight: 700;
+      font-family: var(--font-family_head);
+      padding-bottom: 0.5px;
+      color: inherit;
+      background-image: url('img/line.svg');
+      background-repeat: no-repeat;
+      background-size: auto 100%;
+      background-position: 40% bottom;
+      text-decoration: none;
+      &:nth-of-type(2) {
+        background-position: 60% bottom;
+      }
+      &:hover, &:focus {
+        color: var(--color-primary);
+      }
+      font-variant-ligatures: discretionary-ligatures;
+      font-feature-settings: "liga", "dlig";
+      transition: color 80ms ease-in-out,
+                  fill 100ms ease-in-out,
+                  opacity 100ms ease-in-out,
+                  filter 100ms ease-in-out,
+                  background 100ms ease-in-out,
+                  box-shadow 150ms ease-in-out,
+                  border 150ms cubic-bezier(0.65, 0.05, 0.36, 1);
+    }
+
+    .values-and-practices {
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        max-width: 800px;
+      }
+      
+      li {
+        display: flex;
+        flex-direction: column;
+        @media all and (min-width: 680px) {
+          flex-direction: row;
+          align-items: center;
+        }
+        &:nth-of-type(even) .leads-to {
+          transform: scaleY(-1);
+        }
+      }
+      
+      .value-arrow {
+        display: flex;
+        @media all and (max-width: 680px) {
+          margin-bottom: var(--spacer) * 0.5;
+        }
+        @media all and (min-width: 680px) {
+          justify-content: space-between;
+          width: 45%;
+          padding-right: var(--spacer);
+        }
+        @media screen and (min-width: 1300px) {
+          width: 50%;
+        }
+      }
+      
+      .value {
+        @media all and (min-width: 680px) {
+          padding-right: var(--spacer);
+        }
+        font-weight: bold;
+        font-family: var(--font-family_head);
+      }
+      
+      .leads-to {
+        @media all and (min-width: 680px) {
+          display: block;
+          flex: 1;
+          content: " ";
+          background: url('img/arrow.svg') center right no-repeat;
+          background-size: auto 1em;
+        }
+      }
+
+      .practice {
+        font-size: 1.25rem;
+        font-family: var(--font-family_accent);
       }
     }
 
-    @media only screen and (max-width: 400px) {
-      a:focus,
-      a:hover {
-        color: var(--color-primary);
-      }
-    }
-
-    @media only screen and (min-width: 400px) {
-      a:focus,
-      a:hover {
-        color: var(--color-primary);
-        background-color: rgba(255, 255, 255, 0.03);
-      }
+    @keyframes animatedBackground {
+      0%   { background-position: 20% bottom; }
+      100% { background-position: 90% bottom; }
     }
     </style>
 </head>
