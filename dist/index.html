@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>skullface.me 💀🫰</title>
-  <meta name="title" content="skullface.me 🫶">
-  <meta name="description" content="Design Engineerig leader dual wielding compassion + cuteness.">
-  <meta name="author" content="skullface">
-  <link rel="icon" type="image/png" href="/favicon.31b65a3d.png">
+    <title>skullface.me 💀🫰</title>
+    <meta name="title" content="skullface.me 🫶">
+    <meta name="description" content="Design Engineerig leader dual wielding compassion + cuteness.">
+    <meta name="author" content="skullface">
+    <link rel="icon" type="image/png" href="/favicon.31b65a3d.png">
 
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://skullface.me">
-  <meta property="og:title" content="skullface.me 🫶">
-  <meta property="og:description" content="Design Engineerig leader dual wielding compassion + cuteness.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://skullface.me">
+    <meta property="og:title" content="skullface.me 🫶">
+    <meta property="og:description" content="Design Engineerig leader dual wielding compassion + cuteness.">
 
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://skullface.me">
-  <meta property="twitter:title" content="skullface.me 🫶">
-  <meta property="twitter:description" content="Design Engineerig leader and visual artist dual wielding compassion + cuteness.">
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital@0;1&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap" rel="stylesheet">
-  
-  <script src="/index.396d77e6.js"></script>
-  
-  <style>@font-face {
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://skullface.me">
+    <meta property="twitter:title" content="skullface.me 🫶">
+    <meta property="twitter:description" content="Design Engineerig leader and visual artist dual wielding compassion + cuteness.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital@0;1&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap" rel="stylesheet">
+    
+    <script src="/index.396d77e6.js"></script>
+    
+    <style>@font-face {
   font-family: Ars Maquette;
   src: url("ARSMaquettePro-Regular.c85f41cb.woff") format("woff");
   font-weight: normal;
@@ -72,7 +72,13 @@ html {
   color: var(--color-foreground);
   background-color: var(--color-background);
   cursor: crosshair;
+  font-size: 90%;
   line-height: 1.6;
+}
+
+::selection {
+  color: var(--color-background);
+  background-color: var(--color-primary);
 }
 
 body {
@@ -81,7 +87,7 @@ body {
 
 main {
   text-wrap: pretty;
-  max-width: 78ch;
+  max-width: 80ch;
   margin-left: auto;
   margin-right: auto;
   padding: 2em;
@@ -90,8 +96,16 @@ main {
 h1 {
   letter-spacing: -1px;
   margin-bottom: calc(var(--spacer) * 2);
+  color: var(--color-foreground-pale);
   font-size: 2rem;
-  line-height: .8;
+  line-height: 1;
+
+  & span {
+    font-size: 3.5rem;
+    font-family: var(--font-family_accent);
+    color: var(--color-foreground);
+    display: block;
+  }
 }
 
 h1, h2 {
@@ -106,11 +120,11 @@ h2 {
   font-size: 1.625rem;
 }
 
-p, ul {
+p, ul, ol {
   margin-top: 0;
 }
 
-ul {
+ul, ol {
   padding-left: 0;
 }
 
@@ -132,23 +146,11 @@ code {
   font-size: 1.25rem;
 }
 
-@media only screen and (width <= 400px) {
-  a {
-    color: inherit;
-    text-decoration: underline;
-    -webkit-text-decoration-color: var(--color-primary);
-    text-decoration-color: var(--color-primary);
-    font-weight: 700;
-  }
-}
-
-a {
+p a, li a {
   font-size: 90%;
   font-weight: 700;
   font-family: var(--font-family_head);
   color: inherit;
-  font-variant-ligatures: discretionary-ligatures;
-  font-feature-settings: "liga", "dlig";
   background-image: url("line.36f2de02.svg");
   background-position: 40% bottom;
   background-repeat: no-repeat;
@@ -251,112 +253,269 @@ a {
     background-position: 90% bottom;
   }
 }
+
+.links {
+  columns: 2;
+}
+
+footer {
+  border-top: solid 1px var(--color-gray);
+  margin-top: calc(var(--spacer) * 8);
+  padding-top: calc(var(--spacer) * 2);
+  color: var(--color-foreground-pale);
+
+  & p {
+    font-size: 1rem;
+  }
+
+  & p a {
+    color: var(--color-primary);
+    background-image: none;
+    text-decoration: none;
+
+    &:hover, &:focus {
+      color: var(--color-foreground);
+    }
+  }
+}
+
+.logo {
+  margin-bottom: calc(var(--spacer) * 2);
+  width: calc(var(--spacer) * 4);
+  line-height: 1;
+  display: block;
+
+  & svg {
+    fill: var(--color-primary);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    & {
+      background-color: var(--color-foreground);
+      padding: calc(var(--spacer) * 1.75);
+      border-radius: 100%;
+    }
+  }
+}
+
+.skull {
+  & .inverted {
+    opacity: 0;
+  }
+
+  & .standard {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%, 33%, 100% {
+    opacity: 1;
+  }
+
+  66% {
+    opacity: .5;
+  }
+}
+
+@keyframes floatGrow {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+
+  30%, 40% {
+    opacity: .3;
+  }
+}
+
+@keyframes blink {
+  0%, 10%, 20%, 100% {
+    transform: scale(1);
+  }
+
+  15% {
+    transform: scale(1, .01);
+  }
+}
+
+.sk-sparkle {
+  transform-origin: center;
+}
+
+.sk-eye {
+  transform-origin: 0 70px;
+  animation: 4s cubic-bezier(.65, .05, .36, 1) infinite blink;
+}
+
+.sk-sparkle-big {
+  animation: 4s ease-in-out infinite float;
+}
+
+.sk-sparkle-small {
+  animation: 8s ease-in-out infinite floatGrow;
+}
+
+.logo {
+  transition: transform .13s cubic-bezier(.65, .05, .36, 1);
+}
+
+.logo:hover, .logo:focus {
+  transform: scale(1.1);
+}
+
+.logo:hover .sk-sparkle-big, .logo:focus .sk-sparkle-big {
+  animation: 3s ease-in-out infinite float;
+}
+
+.logo:hover .sk-sparkle-small, .logo:focus .sk-sparkle-small {
+  animation: 2s ease-in-out infinite floatGrow;
+}
 </style>
-</head>
-<body>
-  
-  <main>
+  </head>
+  <body>
+    <main>
 
-    <h1>
-      skullface: designer, engineer, leader, artist
-    </h1>
-    <p>
-      Hihi, nice to meet you! (*＾▽＾)／ I’m Skullface (she/her) and you can call me <b>Skully</b>. I’m a <b>Design Engineer and visual artist</b> dual wielding compassion and cuteness. I always try to leave things better than I found them.
-    </p>
-
-    <h2>
-      Design philosophy
-    </h2>
-    <p>
-      As a kid who liked playing on the computer more than playing outside, I fell in love with design as soon as I found out it had a name. I practice design as code, as strategy, as content, as journey, as visual expression — as the native medium of the world wide web, as holistic end-to-end experience.</p>
+      <h1>
+        <a href="/" id="💀" class="logo">
+          <svg enable-background="new 0 0 100 100" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="skull" aria-hidden=""><style>path, g {
+  transition: opacity .3s;
+}
+</style><g><path d="m33.1 68.1s-6.6 6.5-5.4 10.3c.7 2.3 2.1 2.3 2.7 2.2 1-.2 2-1.1 2.7-2.1.7 1 1.8 2 2.8 2.1h.4c.7 0 1.8-.3 2.5-2.2 1.2-3.5-5.7-10.3-5.7-10.3z"></path><path d="m68.7 74.6c.3.7.9 1.1 1.6 1.1h.4c2.7-.6 7.1-7.7 7.1-14.3 0-7.1-3.7-15.2-5.5-16.2-.4-.2-1-.2-1.3 0-1 .7-.6 1.9.1 4.1.8 2.4 2.1 6.1 2.1 10.4 0 5.2-1.9 8.3-3.2 10.5-1.1 1.5-2 2.9-1.3 4.4z"></path><path class="sk-eye sk-eye-winking" d="m52.4 78.3c3.7 0 6.4-5.5 6.4-12.7 0-6.4-2.1-11.4-5.2-12.5-1.8-.7-3.8-.4-4.8 0-1.1.4-2 .9-2.9 1.6-.9.6-1.6 1.3-2.4 2-.3.3-.4.9-.1 1.3.3.5 1 .6 1.4.3h.1c.9-.6 1.9-1.1 2.8-1.5-1.1 2.2-1.7 5.3-1.7 8.8 0 7.3 2.7 12.7 6.4 12.7z"></path><path class="sk-eye" d="m20 78c3.7 0 5-7.4 5-12.4 0-6.2-1.7-10.3-4.5-10.8-1.5-.4-3.2-.2-4 .2-.8.3-1.6.7-2.2 1.2-.7.5-1.3.9-1.9 1.5-.4.3-.5.9-.3 1.3.3.5.9.7 1.4.4h.1c.8-.4 1.7-.8 2.6-1.1-.8 2.1-1.2 5-1.2 7.9 0 5.7 1.5 11.8 5 11.8z"></path><path class="sk-outline" d="m79 6.9c-1.2-.7-2.7-.2-3.3.9-.7 1.2-.2 2.7.9 3.4 30 17 15.2 59.4 13 65.1-4.6 3.3-7.3 5-8.5 5.7-3.7-1.3-7.2-1.2-10.4.3-5 2.5-7.6 8-8.5 10.5-1.4.4-2.8.7-4.2 1v-5.4c0-1-.8-1.8-1.7-1.8s-1.7.8-1.7 1.8v6c-2 .3-4.1.4-6.2.6v-6.5c0-1-.8-1.8-1.7-1.8s-1.7.8-1.7 1.8v6.6.1c-2.1 0-4.2 0-6.2-.1v-6.6c0-1-.8-1.8-1.7-1.8s-1.7.8-1.7 1.8v6.5c-1.9-.1-3.8-.3-5.6-.4v-6c0-1-.8-1.8-1.7-1.8s-2.1.6-2.1 1.6v5.7c-2-.2-3.9-.5-5.6-.7v-5c0-1-.8-1.8-1.7-1.8-1 0-1.7.8-1.7 1.8v4.4c-1.3-.2-2.4-.4-3.2-.6-.7-18.9-7-35.2-8.7-39.3l12.4-31.9c5-7.1 16.8-18.4 40.6-15.7 1.4.1 2.5-.8 2.7-2.2.1-1.4-.8-2.6-2.2-2.7-9.2-1-31.9-1.3-45.3 18.1-.1.2-.2.3-.3.5l-12.8 33c-.2.6-.2 1.3 0 1.9.1.2 8.5 19.2 8.7 40.4 0 1.2.8 2.1 1.9 2.4.9.2 15.8 3.3 31.7 3.3 7.7 0 15.6-.7 22.2-2.8.8-.2 1.4-.9 1.6-1.7 0-.1 1.9-6.5 6.4-8.7 2.2-1.1 4.6-1 7.5.2.6.3 1.4.3 2 0 .1-.1 3.1-1.5 10.7-7 .4-.3.7-.6.8-1 .3-.7 21.1-51.8-14.7-72.1z"></path><path class="sk-sparkle sk-sparkle-big" d="m55.8 21c-.3.2-.5.5-.5.9s.2.7.5.9c2.6 1.6 7.2 5.5 9.6 14 .1.5.5.8 1 .8s.9-.3 1-.8c2.3-8.5 7-12.4 9.6-14 .3-.2.5-.5.5-.9s-.2-.7-.5-.9c-2.6-1.6-7.2-5.5-9.6-14-.1-.5-.5-.8-1-.8s-.9.3-1 .8c-2.4 8.5-7 12.5-9.6 14z"></path><path class="sk-sparkle sk-sparkle-small" d="m80.8 45.7c.1.3.4.4.6.4.3 0 .5-.2.6-.4.8-2.1 1.9-4 3-5.5.6-.8 1.3-1.5 1.9-2.2.1-.1.2-.3.2-.5s-.1-.4-.2-.5c-.7-.6-1.3-1.4-1.9-2.2-1.2-1.5-2.2-3.4-3-5.5-.1-.3-.4-.4-.6-.4s-.5.2-.6.4c-.9 2.2-1.9 4.1-3.1 5.6-.6.7-1.2 1.4-1.8 2-.1.1-.2.3-.2.5s.1.4.2.5c.7.6 1.3 1.3 1.9 2.2 1.2 1.7 2.2 3.5 3 5.6z"></path></g></svg>
+        </a>
+        <span>skullface</span>
+        &rarr; designer, engineer, leader, artist
+      </h1>
+      <p>
+        Hihi, nice to meet you! (*＾▽＾)／ I’m Skullface (she/her) and you can call me <b>Skully</b>. I’m a <b>Design Engineer and visual artist</b> dual wielding compassion and cuteness. I use my interdisciplinary background to make positive impact, leaving a trail of glitter in my wake.
+      </p>
       
-      <p>I &hearts; accessibility, storytelling, great docs, semantic markup, and equal parts irreverence + intention.
-    </p>
+      <h2>
+        Current projects
+      </h2>
+      <ul>
+        <li>
+          <a href="https://216.show">216.show</a> <code>Cleveland live music calendar</code>
+        </li>
+        <li>
+          <a href="https://falseluck.shop">False Luck</a> <code>accesories & apparel store</code>
+        </li>
+      </ul>
 
-    <ul class="values-and-practices">
-      <li>
-        <div class="value-arrow">
-          <span class="value">
-            Clarity
+      <h2>
+        Design philosophy
+      </h2>
+      <p>
+        As a kid who liked playing on the computer more than playing outside, I fell in love with design as soon as I found out it had a name. I practice design as code, as strategy, as content, as journey, as visual expression — as the native medium of the world wide web, as holistic end-to-end experience.
+      </p>
+        
+      <p>
+        I &hearts; accessibility, storytelling, great docs, and semantic markup.
+      </p>
+
+      <ul class="values-and-practices">
+        <li>
+          <div class="value-arrow">
+            <span class="value">
+              Clarity
+            </span>
+            <span class="leads-to" aria-label="through">
+            </span>
+          </div>
+          <span class="practice">
+            Showing AND telling
           </span>
-          <span class="leads-to" aria-label="through">
+        </li>
+        <li>
+          <div class="value-arrow">
+            <span class="value">
+              Inclusivity
+            </span>
+            <span class="leads-to" aria-label="through">
+            </span>
+          </div>
+          <span class="practice">
+            Proactive advocacy
           </span>
-        </div>
-        <span class="practice">
-          Showing AND telling
-        </span>
-      </li>
-      <li>
-        <div class="value-arrow">
-          <span class="value">
-            Inclusivity
+        </li>
+        <li>
+          <div class="value-arrow">
+            <span class="value">
+              Irreverence
+            </span>
+            <span class="leads-to" aria-label="through">
+            </span>
+          </div>
+          <span class="practice">
+            Play and experimentation
           </span>
-          <span class="leads-to" aria-label="through">
+        </li>
+        <li>
+          <div class="value-arrow">
+            <span class="value">
+              Intention
+            </span>
+            <span class="leads-to" aria-label="through">
+            </span>
+          </div>
+          <span class="practice">
+              Leading with purpose
           </span>
-        </div>
-        <span class="practice">
-          Proactive advocacy
-        </span>
-      </li>
-      <li>
-        <div class="value-arrow">
-          <span class="value">
-            Intention
+        </li>
+        <li>
+          <div class="value-arrow">
+            <span class="value">
+              Openness
+            </span>
+            <span class="leads-to" aria-label="leads to">
+            </span>
+          </div>
+          <span class="practice">
+            Removing barriers to entry
           </span>
-          <span class="leads-to" aria-label="through">
-          </span>
-        </div>
-        <span class="practice">
-            Leading with purpose
-        </span>
-      </li>
-      <li>
-        <div class="value-arrow">
-          <span class="value">
-            Openness
-          </span>
-          <span class="leads-to" aria-label="leads to">
-          </span>
-        </div>
-        <span class="practice">
-          Removing barriers to entry
-        </span>
-      </li>
-    </ul>
-    
-    <p>Designers in tech have an immense responsibility to <i>do the most good</i> as we serve business goals.</p>
-    
-    <h2>
-      Select consulting clients
-    </h2>
-    <p>
-      Apple, Microsoft, Mozilla Firefox, IGN, Cards Against Humanity
-    </p>
-    
-    <h2>
-      Links
-    </h2>
-    <ul>
-      <li><a href="https://twitter.com/skullface">twitter.com/skullface</a> <code>thoughts</code></li>
-      <li><a href="https://falseluck.shop">falseluck.shop</a> <code>shop</code></li>
-      <li><a href="https://github.com/skullface">github.com/skullface</a> <code>code</code></li>
-      <li><a href="https://instagram.com/skvllface">instagram.com/skvllface</a> <code>photos</code></li>
-      <li><a href="https://youtube.com/c/skullfacekillah">youtube.com/c/skullfacekillah</a> <code>videos</code></li>
-      <li><a href="https://twitch.tv/skvllface">twitch.tv/skvllface</a> <code>streams</code></li>
-      <li><a href="https://read.cv/skullface">read.cv/skullface</a> <code> network</code></li>
+        </li>
+      </ul>
+
+      <p>
+        To create the best work, regardless of personal working styles, designers need psychological safety that can only come from an environment of mutual trust. I aim to foster that environment in the teams I lead and, in tiny ways, to the industry as a whole.
+      </p>
+
+      <p>
+        By prioritizing equity and genuine empathy, we can move the needle toward justice. Designers in tech have an immense responsibility to <i>do the most good</i> as we serve business goals.
+      </p>
+
+      <h2>
+        Select consulting clients
+      </h2>
+      <p>
+        Apple, Microsoft, Mozilla Firefox, IGN, Cards Against Humanity
+      </p>
+
+      <h2>
+        Links
+      </h2>
+      <ul class="links">
+        <li><a href="https://twitter.com/skullface">Twitter</a> <code>thoughts</code></li>
+        <li><a href="https://github.com/skullface">GitHub</a> <code>code</code></li>
+        <li><a href="https://youtube.com/c/skullfacekillah">YouTube</a> <code>videos</code></li>
+        <li><a href="https://read.cv/skullface">Read.cv</a> <code> network</code></li>
+        <li><a href="https://instagram.com/skvllface">Instagram</a> <code>photos</code></li>
+        <li><a href="https://www.buymeacoffee.com/skullface">Buy Me A Coffee</a> <code>tip jar</code></li>
+      </ul>
       
-    </ul>
-    
-    <h2>
-      Contact
-    </h2>
-    
-    <p>
-      If you’d like to get in touch with me, send a <a href="http://twitter.com/intent/tweet?text=@skullface%20Hi!%20I%20wanted%20to%20say">tweet</a> or an email to <code>meow@</code> this domain. 💌
-    </p>
-    
+      <h2>
+        Contact
+      </h2>
+      <p>
+        If you’d like to get in touch with me, send a <a href="http://twitter.com/intent/tweet?text=@skullface%20Hi!%20I%20wanted%20to%20say">tweet</a> or an email to <code>meow@</code> this domain. 💌
+      </p>
 
-  </main>
+      <footer>
+        <p>
+          &copy; skullface, 2024. Ain’t no stoppin’ me. Copywritten, so don’t copy me.<a href="https://youtu.be/FPoKiGQzbSQ?si=DLH_T_tUOHkSOHha&t=133">*</a>
+        </p>
+      </footer>
 
-<script src="/skullface.github.io.3464ddca.js"></script></body>
+    </main>
+
+  <script src="/skullface.github.io.3464ddca.js"></script></body>
 </html>
