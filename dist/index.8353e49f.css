@@ -32,7 +32,7 @@
 }
 
 :root {
-  --color-primary: #a542f0;
+  --color-primary: oklch(60%, .27, 307);
   --color-foreground: #000;
   --color-midground: #6b6673;
   --color-background: #ebeaf1;
@@ -67,7 +67,7 @@ html {
 
 main {
   text-wrap: pretty;
-  max-width: 570px;
+  max-width: 60ch;
   margin-left: auto;
   margin-right: auto;
   padding: 2em;
