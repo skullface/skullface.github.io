@@ -53,7 +53,7 @@
 }
 
 :root {
-  --color-primary: oklch(60%, .28, 307);
+  --color-primary: oklch(60% .29 307);
   --color-foreground: #000;
   --color-midground: #6b6673;
   --color-background: #ebeaf1;
@@ -105,6 +105,14 @@ h1, h2 {
   color: var(--color-midground);
 }
 
+h1 {
+  @media (width <= 680px) {
+    & {
+      margin-top: 0;
+    }
+  }
+}
+
 p, ul, ol {
   margin-top: 0;
   margin-bottom: calc(var(--spacer) * 3);
@@ -130,26 +138,22 @@ p a, li a {
   font-weight: 700;
   font-family: var(--font-family-sans);
   color: inherit;
-  -webkit-text-decoration-color: oklch(80%, 0, 0);
-  text-decoration-color: oklch(80%, 0, 0);
   text-underline-offset: 2px;
+  text-decoration-color: oklch(80% 0 0);
   transition: all 80ms ease-in-out;
 
   &:hover, &:focus {
     color: var(--color-primary);
-    -webkit-text-decoration-color: oklch(78%, .14, 307);
-    text-decoration-color: oklch(78%, .14, 307);
+    text-decoration-color: oklch(78% .14 307);
   }
 
   @media (prefers-color-scheme: dark) {
     & {
-      -webkit-text-decoration-color: oklch(40%, 0, 0);
-      text-decoration-color: oklch(40%, 0, 0);
+      text-decoration-color: oklch(40% 0 0);
     }
 
     &:hover, &:focus {
-      -webkit-text-decoration-color: oklch(36%, .14, 307);
-      text-decoration-color: oklch(36%, .14, 307);
+      text-decoration-color: oklch(36% .14 307);
     }
   }
 }
@@ -160,6 +164,12 @@ p a, li a {
   & li {
     flex-direction: column;
     display: flex;
+
+    @media (width <= 680px) {
+      & {
+        margin-bottom: calc(var(--spacer) * 2);
+      }
+    }
 
     @media (width >= 680px) {
       & {
@@ -231,12 +241,27 @@ p a, li a {
 
 .links, .projects {
   list-style: none;
+
+  @media (width <= 680px) {
+    & li {
+      margin-bottom: calc(var(--spacer) * 2);
+    }
+
+    & a {
+      display: block;
+    }
+  }
 }
 
 footer {
   color: var(--color-midground);
-  margin: calc(var(--spacer) * 8) 0;
   padding-top: calc(var(--spacer) * 2);
+
+  @media (width >= 680px) {
+    & {
+      margin: calc(var(--spacer) * 8) 0;
+    }
+  }
 
   & p {
     font-size: .75rem;

@@ -68,7 +68,7 @@
       }
 
       :root {
-        --color-primary: oklch(60%, 0.28, 307);
+        --color-primary: oklch(60% 0.29 307);
         --color-foreground: #000;
         --color-midground: #6B6673;
         --color-background: #EBEAF1;
@@ -120,6 +120,12 @@
         margin-bottom: var(--spacer);
         color: var(--color-midground);
       }
+      
+      h1 {
+        @media all and (max-width: 680px) {
+          margin-top: 0;
+        }
+      }
 
       p, ul, ol {
         margin-top: 0;
@@ -146,17 +152,17 @@
         font-size: 92.5%;
         font-family: var(--font-family-sans);
         color: inherit;
-        text-decoration-color: oklch(80%, 0, 0);
+        text-decoration-color: oklch(80% 0 0);
         text-underline-offset: 2px;
         transition: all 80ms ease-in-out;
         &:hover, &:focus {
           color: var(--color-primary);
-          text-decoration-color: oklch(78%, 0.14, 307);
+          text-decoration-color: oklch(78% 0.14 307);
         }
         @media (prefers-color-scheme: dark) {
-          text-decoration-color: oklch(40%, 0, 0);
+          text-decoration-color: oklch(40% 0 0);
           &:hover, &:focus {
-            text-decoration-color: oklch(36%, 0.14, 307);
+            text-decoration-color: oklch(36% 0.14 307);
           }
         }
       }
@@ -167,6 +173,9 @@
         li {
           display: flex;
           flex-direction: column;
+          @media all and (max-width: 680px) {
+            margin-bottom: calc(var(--spacer) * 2);
+          }
           @media all and (min-width: 680px) {
             flex-direction: row;
             align-items: center;
@@ -222,11 +231,21 @@
       .links,
       .projects {
         list-style: none;
+        @media all and (max-width: 680px) {
+          li {
+            margin-bottom: calc(var(--spacer) * 2);
+          }
+          a {
+            display: block;
+          }
+        }
       }
 
       footer {
         color: var(--color-midground);
-        margin: calc(var(--spacer) * 8) 0;
+        @media all and (min-width: 680px) {
+          margin: calc(var(--spacer) * 8) 0;
+        }
         padding-top: calc(var(--spacer) * 2);
         p {
           font-size: 0.75rem;
