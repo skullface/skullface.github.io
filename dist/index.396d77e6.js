@@ -24,7 +24,7 @@
                 size: 0,
                 visible: false,
                 horizontalSpeed: randomHorizontalSpeed(),
-                color: aPleasingColor()
+                color: colors()
             };
         }
         doSparkles();
@@ -47,6 +47,8 @@
     function moveSparkle(sparkle) {
         sparkle.x += sparkle.horizontalSpeed;
         sparkle.y += Math.random() * 1;
+        sparkle.x = Math.max(0, Math.min(sparkle.x, window.innerWidth - 5));
+        sparkle.y = Math.max(0, Math.min(sparkle.y, window.innerHeight - 5));
     }
     function shrinkSparkle(sparkle) {
         sparkle.size -= 1;
@@ -66,14 +68,16 @@
         style.visibility = sparkle.visible ? "visible" : "hidden";
     }
     function resetSparkle(sparkle) {
+        const sparkleWidth = 5;
+        const sparkleHeight = 5;
         sparkle.visible = true;
-        sparkle.x = mouse.x;
-        sparkle.y = mouse.y;
+        sparkle.x = Math.min(mouse.x, window.innerWidth - sparkleWidth);
+        sparkle.y = Math.min(mouse.y, window.innerHeight - sparkleHeight);
         sparkle.horizontalSpeed = randomHorizontalSpeed();
         sparkle.size = 100;
         sparkle.element.style.clip = "rect(0px, 5px, 5px, 0px)";
         sparkle.element.style.backgroundColor = "transparent";
-        sparkle.color = aPleasingColor();
+        sparkle.color = colors();
         sparkle.element.childNodes[0].style.backgroundColor = sparkle.color;
         sparkle.element.childNodes[1].style.backgroundColor = sparkle.color;
     }
@@ -97,7 +101,7 @@
         div.style.pointerEvents = "none";
         return div;
     }
-    function aPleasingColor() {
+    function colors() {
         const colorSet = [
             "#ff64c3",
             "#19c1df",

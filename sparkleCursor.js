@@ -23,7 +23,7 @@
         size: 0,
         visible: false,
         horizontalSpeed: randomHorizontalSpeed(),
-        color: aPleasingColor()
+        color: colors()
       }
     }
     doSparkles()
@@ -88,7 +88,7 @@
     sparkle.size = 100
     sparkle.element.style.clip = "rect(0px, 5px, 5px, 0px)"
     sparkle.element.style.backgroundColor = "transparent"
-    sparkle.color = aPleasingColor()
+    sparkle.color = colors()
     sparkle.element.childNodes[0].style.backgroundColor = sparkle.color
     sparkle.element.childNodes[1].style.backgroundColor = sparkle.color
   }
@@ -118,7 +118,7 @@
     return div
   }
 
-  function aPleasingColor() {
+  function colors() {
     const colorSet = [
       '#ff64c3', '#19c1df', '#9655c4',
       '#ff97d7', '#98fff7', '#d598ff'
