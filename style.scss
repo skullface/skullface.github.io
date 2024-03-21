@@ -2,119 +2,312 @@
 　 　　 ∧＿∧
 　 　　(´･ω･)
 　  ⌒~ー､ ー⌒ヽ
- ／ ヽ　 ｜ |
+／ ヽ　 ｜ |
 (　_ノﾄー仝ーイ￣￣＼
- CSS )ミ土彡/ COOL )
+CSS )ミ土彡/ COOL )
 　 ＼ ヽ――-L_＿＿／
 ￣￣(_ノ _　 ＼
 　 /　 ／ ＼　 ヽ
-Author: Jessica Paoli <http://jessicapaoli.com>
+Author: skullface <https://skullface.me>
 License: MIT
 */
 
+@font-face {
+  font-family: "Ars Maquette";
+  src: url("fonts/ARSMaquettePro-Medium.woff2") format("woff2");
+  font-weight: bold;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Courier Prime";
+  src: url("fonts/CourierPrime-Regular.woff2") format("woff2");
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Courier Prime";
+  src: url("fonts/CourierPrime-Italic.woff2") format("woff2");
+  font-style: italic;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Source Serif";
+  src: url("fonts/SourceSerif4-Regular.woff2") format("woff2");
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Source Serif";
+  src: url("fonts/SourceSerif4-Italic.woff2") format("woff2");
+  font-style: italic;
+  font-display: block;
+}
+
 :root {
-  --color-primary: #ff4895;
-  --color-foreground: #121212;
-  --color-background: #fff;
+  --color-primary: #A542F0;
+  --color-foreground: #000;
+  --color-midground: #6B6673;
+  --color-background: #EBEAF1;
+  --spacer: 0.5em;
+  --font-family-serif: "Source Serif", "Georgia", "Times New Roman", serif;
+  --font-family-sans: "ARS Maquette", "Avenir Next", "Avenir", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-family-mono: "Courier Prime", "Courier New", monospace;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-primary: #ff4895;
-    --color-foreground: #fff;
-    --color-background: #121212;
+    --color-foreground: #EBEAF1;
+    --color-midground: #898491;
+    --color-background: #000;
   }
 }
-
-$font-family_sans: "ARS Maquette", ars-maquette-web, "Avenir Next", Avenir, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-$font-family_serif: leitura-news, Georgia, "Times New Roman", serif;
 
 html {
-	font-family: $font-family_sans;
-	line-height: 1.6;
-	color: var(--color-foreground);
+  font-family: var(--font-family-serif);
+  line-height: 1.6;
+  color: var(--color-foreground);
   background-color: var(--color-background);
-  overflow: none;
   cursor: crosshair;
-  @media only screen and (min-width: 800px) {
-  }
-  @media only screen and (max-width: 800px) {
-    padding: 50px;
-  }
-  @media only screen and (max-width: 500px) {
-    padding: 10px;
-  }
+  font-size: 1.125rem;
+  overflow-x: hidden !important;
 }
 
-body {
-  display: flex;
-  flex-direction: column;
+::selection {
+  color: var(--color-foreground);
+  background-color: var(--color-primary);
+}
+
+main {
+  padding: 2em;
   margin-left: auto;
   margin-right: auto;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+  max-width: 570px;
+  text-wrap: pretty;
 }
 
-h1, ul {
-  width: 80%;
-}
-
-h1 {
-  font-weight: 700;
-  font-size: 5.25rem;
-  font-family: $font-family_sans;
-  margin: 0 0 1rem 0;
-  line-height: 0.8;
+h1,
+h2 {
+  font-size: 1rem;
   text-transform: uppercase;
-  letter-spacing: -2px;
-  @media only screen and (max-width: 800px) {
-    font-size: 3.5rem;
-  }
-  @media only screen and (max-width: 666px) {
-    font-size: 2.75rem;
-  }
-  @media only screen and (max-width: 400px) {
-    font-size: 2.25rem;
-  }
+  letter-spacing: 1px;
+  font-weight: 400;
+  font-family: var(--font-family-mono);
+  margin-top: calc(var(--spacer) * 6);
+  margin-bottom: var(--spacer);
+  color: var(--color-midground);
 }
 
-ul {
-  margin: 0 0 1rem 0;
+p, ul, ol {
+  margin-top: 0;
+  margin-bottom: calc(var(--spacer) * 3);
+}
+
+ul, ol {
   padding-left: 0;
 }
 
-li {
-  list-style: none;
+b {
+  font-family: var(--font-family-sans);
 }
 
-s {
-  position: relative;
+i {
   text-decoration: none;
-  &:after {
-    position: absolute;
-    left: -2px;
-    top: 52%;
-    width: 108%;
-    height: 3px;
-    content: "";
-    transform: rotate(-1deg);
-    background: var(--color-primary);
+  font-family: var(--font-family-mono);
+  font-style: italic;
+  color: var(--color-midground);
+}
+
+p a, li a {
+  font-weight: 700;
+  font-size: 92.5%;
+  font-family: var(--font-family-sans);
+  color: inherit;
+  text-decoration-color: #bbb;
+  transition: all 80ms ease-in-out;
+  &:hover, &:focus {
+    color: var(--color-primary);
+    text-decoration-color: #D1A0F7;
+  }
+  @media (prefers-color-scheme: dark) {
+    text-decoration-color: #666;
+    &:hover, &:focus {
+      text-decoration-color: #522178;
+    }
   }
 }
 
-a {
-  padding: 3px 4px 3px 7px;
-  font-size: 0.75rem;
-  letter-spacing: 0.15rem;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: inherit;
-  background-color: rgba(255, 255, 255, 0.1);
+.values-and-practices {
+  list-style: none;
+  
+  li {
+    display: flex;
+    flex-direction: column;
+    @media all and (min-width: 680px) {
+      flex-direction: row;
+      align-items: center;
+    }
+    &:nth-of-type(even) .leads-to {
+      transform: scaleY(-1);
+    }
+  }
+  
+  .value-arrow {
+    display: flex;
+    @media all and (max-width: 680px) {
+      margin-bottom: calc(var(--spacer) * 0.5);
+    }
+    @media all and (min-width: 680px) {
+      justify-content: space-between;
+      width: 45%;
+      padding-right: var(--spacer);
+    }
+    @media screen and (min-width: 1300px) {
+      width: 50%;
+    }
+  }
+  
+  .value {
+    @media all and (min-width: 680px) {
+      padding-right: var(--spacer);
+    }
+    font-weight: bold;
+    font-family: var(--font-family-sans);
+  }
+  
+  .leads-to {
+    @media all and (min-width: 680px) {
+      display: block;
+      flex: 1;
+      content: " ";
+      background: url('img/arrow.svg') center right no-repeat;
+      background-size: auto 1em;
+    }
+  }
+
+  .practice {
+    font-size: 0.9rem;
+    font-family: var(--font-family-mono);
+  }
 }
 
-a:focus,
-a:hover {
-  color: var(--color-primary);
-  background-color: rgba(255, 255, 255, 0.05);
+.links {
+  columns: 2;
+}
+
+.links,
+.projects {
+  list-style: none;
+}
+
+footer {
+  color: var(--color-midground);
+  margin: calc(var(--spacer) * 8) 0;
+  padding-top: calc(var(--spacer) * 2);
+  p {
+    font-size: 0.75rem;
+  }
+  p a {
+    color: var(--color-primary);
+    text-decoration: none;
+    background-image: none;
+    &:hover, &:focus {
+      color: var(--color-foreground);
+    }
+  }
+  &:before {
+    content: "————";
+    letter-spacing: -2px;
+    opacity: 0.5;
+  }
+}
+
+.logo {
+  display: block;
+  margin-bottom: calc(var(--spacer) * 3);
+  width: calc(var(--spacer) * 6);
+  line-height: 1;
+  svg {
+    fill: var(--color-primary);
+  }
+}
+
+.skull {
+  .inverted {
+    opacity: 0
+  }
+  .standard {
+    opacity: 1
+  }  
+}
+
+@media (prefers-color-scheme: dark) {
+  .skull {
+    .inverted {
+      opacity: 1
+    }
+    .standard {
+      opacity: 0
+    }  
+  }
+}
+
+.sk-sparkle {
+  transform-origin: center;
+}
+
+.sk-eye {
+  transform-origin: 0 70px;
+  animation: blink 4s cubic-bezier(0.65, 0.05, 0.36, 1) infinite;
+}
+
+.sk-sparkle-big {
+  animation: float 4s ease-in-out infinite;
+}
+
+.sk-sparkle-small {
+  animation: floatGrow 8s ease-in-out infinite;
+}
+
+.logo {
+  transition: transform 130ms cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+
+.logo:hover, .logo:focus {
+  transform: scale(1.1);
+}
+.logo:hover .sk-sparkle-big, .logo:focus .sk-sparkle-big {
+  animation: float 3s ease-in-out infinite;
+}
+.logo:hover .sk-sparkle-small, .logo:focus .sk-sparkle-small {
+  animation: floatGrow 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 33%, 100% {
+    opacity: 1;
+  }
+  66% {
+    opacity: .5;
+  }
+}
+
+@keyframes floatGrow {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+  30%, 40% {
+    opacity: .3;
+  }
+}
+
+@keyframes blink {
+  0%, 10%, 20%, 100% {
+    transform: scale(1, 1)
+  }
+
+  15% {
+    transform: scale(1, 0.01);
+  }
 }

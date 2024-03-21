@@ -7,325 +7,23 @@
 
     <title>skullface.me 🫶</title>
     <meta name="title" content="skullface.me 🫶">
-    <meta name="description" content="Design Engineerig leader dual wielding compassion + cuteness.">
+    <meta name="description" content="Design Engineerig leader and visual artist dual wielding compassion + cuteness.">
     <meta name="author" content="skullface">
     <link rel="icon" type="image/png" href="/favicon.31b65a3d.png">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://skullface.me">
     <meta property="og:title" content="skullface.me 🫶">
-    <meta property="og:description" content="Design Engineerig leader dual wielding compassion + cuteness.">
+    <meta property="og:description" content="Design Engineerig leader and visual artist dual wielding compassion + cuteness.">
 
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://skullface.me">
     <meta property="twitter:title" content="skullface.me 🫶">
     <meta property="twitter:description" content="Design Engineerig leader and visual artist dual wielding compassion + cuteness.">
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital@0;1&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap" rel="stylesheet">
-    
     <script src="https://cdn.usefathom.com/script.js" data-site="DQFBXLTU" defer=""></script>
-    
     <script src="/index.91c968ba.js" defer=""></script>
-    
-    <style>@font-face {
-  font-family: Ars Maquette;
-  src: url("ARSMaquettePro-Medium.9cdcaf1d.woff") format("woff");
-  font-weight: bold;
-}
-
-:root {
-  --color-primary: #a542f0;
-  --color-foreground: #000;
-  --color-foreground-pale: #6b6673;
-  --color-background: #ebeaf1;
-  --spacer: .5em;
-  --font-family_body: "Source Serif 4", "Source Serif Pro", "Georgia", "Times New Roman", serif;
-  --font-family_head: "ARS Maquette", "ars-maquette-web", "Avenir Next", "Avenir", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --font-family_accent: "Courier Prime", "Courier New", monospace;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-foreground: #ebeaf1;
-    --color-foreground-pale: #898491;
-    --color-background: #000;
-  }
-}
-
-html {
-  font-family: var(--font-family_body);
-  color: var(--color-foreground);
-  background-color: var(--color-background);
-  cursor: crosshair;
-  font-size: 1.125rem;
-  line-height: 1.6;
-  overflow-x: hidden !important;
-}
-
-::selection {
-  color: var(--color-foreground);
-  background-color: var(--color-primary);
-}
-
-main {
-  text-wrap: pretty;
-  max-width: 60ch;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 2em;
-}
-
-h1, h2 {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 1rem;
-  font-weight: 400;
-  font-family: var(--font-family_accent);
-  margin-top: calc(var(--spacer) * 6);
-  margin-bottom: var(--spacer);
-  color: var(--color-foreground-pale);
-}
-
-p, ul, ol {
-  margin-top: 0;
-  margin-bottom: calc(var(--spacer) * 3);
-}
-
-ul, ol {
-  padding-left: 0;
-}
-
-b {
-  font-family: var(--font-family_head);
-}
-
-u {
-  font-family: var(--font-family_accent);
-  color: var(--color-foreground-pale);
-  font-style: italic;
-  text-decoration: none;
-}
-
-p a, li a {
-  font-weight: 700;
-  font-family: var(--font-family_head);
-  color: inherit;
-  text-decoration-color: #bbb;
-  transition: all 80ms ease-in-out;
-
-  &:hover, &:focus {
-    color: var(--color-primary);
-    text-decoration-color: #d1a0f7;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    & {
-      text-decoration-color: #666;
-    }
-
-    &:hover, &:focus {
-      text-decoration-color: #522178;
-    }
-  }
-}
-
-.values-and-practices {
-  list-style: none;
-
-  & li {
-    flex-direction: column;
-    display: flex;
-
-    @media (width >= 680px) {
-      & {
-        flex-direction: row;
-        align-items: center;
-      }
-    }
-
-    &:nth-of-type(2n) .leads-to {
-      transform: scaleY(-1);
-    }
-  }
-
-  & .value-arrow {
-    display: flex;
-
-    @media (width <= 680px) {
-      & {
-        margin-bottom: var(--spacer) * .5;
-      }
-    }
-
-    @media (width >= 680px) {
-      & {
-        padding-right: var(--spacer);
-        justify-content: space-between;
-        width: 45%;
-      }
-    }
-
-    @media screen and (width >= 1300px) {
-      & {
-        width: 50%;
-      }
-    }
-  }
-
-  & .value {
-    font-weight: bold;
-    font-family: var(--font-family_head);
-
-    @media (width >= 680px) {
-      & {
-        padding-right: var(--spacer);
-      }
-    }
-  }
-
-  & .leads-to {
-    @media (width >= 680px) {
-      & {
-        content: " ";
-        background: url("arrow.5053a6e0.svg") 100% / auto 1em no-repeat;
-        flex: 1;
-        display: block;
-      }
-    }
-  }
-
-  & .practice {
-    font-size: .9rem;
-    font-family: var(--font-family_accent);
-  }
-}
-
-.links {
-  columns: 2;
-}
-
-.links, .projects {
-  list-style: none;
-}
-
-footer {
-  border-top: solid 1px var(--color-foreground-pale);
-  margin-top: calc(var(--spacer) * 8);
-  padding-top: calc(var(--spacer) * 2);
-
-  & p {
-    font-size: .75rem;
-  }
-
-  & p a {
-    color: var(--color-primary);
-    background-image: none;
-    text-decoration: none;
-
-    &:hover, &:focus {
-      color: var(--color-foreground);
-    }
-  }
-}
-
-.logo {
-  margin-bottom: calc(var(--spacer) * 3);
-  width: calc(var(--spacer) * 6);
-  line-height: 1;
-  display: block;
-
-  & svg {
-    fill: var(--color-primary);
-  }
-}
-
-.skull {
-  & .inverted {
-    opacity: 0;
-  }
-
-  & .standard {
-    opacity: 1;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .skull {
-    & .inverted {
-      opacity: 1;
-    }
-
-    & .standard {
-      opacity: 0;
-    }
-  }
-}
-
-@keyframes float {
-  0%, 33%, 100% {
-    opacity: 1;
-  }
-
-  66% {
-    opacity: .5;
-  }
-}
-
-@keyframes floatGrow {
-  0%, 50%, 100% {
-    opacity: 1;
-  }
-
-  30%, 40% {
-    opacity: .3;
-  }
-}
-
-@keyframes blink {
-  0%, 10%, 20%, 100% {
-    transform: scale(1);
-  }
-
-  15% {
-    transform: scale(1, .01);
-  }
-}
-
-.sk-sparkle {
-  transform-origin: center;
-}
-
-.sk-eye {
-  transform-origin: 0 70px;
-  animation: 4s cubic-bezier(.65, .05, .36, 1) infinite blink;
-}
-
-.sk-sparkle-big {
-  animation: 4s ease-in-out infinite float;
-}
-
-.sk-sparkle-small {
-  animation: 8s ease-in-out infinite floatGrow;
-}
-
-.logo {
-  transition: transform .13s cubic-bezier(.65, .05, .36, 1);
-}
-
-.logo:hover, .logo:focus {
-  transform: scale(1.1);
-}
-
-.logo:hover .sk-sparkle-big, .logo:focus .sk-sparkle-big {
-  animation: 3s ease-in-out infinite float;
-}
-
-.logo:hover .sk-sparkle-small, .logo:focus .sk-sparkle-small {
-  animation: 2s ease-in-out infinite floatGrow;
-}
-</style>
+    <link rel="stylesheet" href="/index.8353e49f.css">
   </head>
   <body>
     <main>
@@ -341,7 +39,7 @@ footer {
         &hearts;
       </h1>
       <p>
-        Hihi, nice to meet you! (*＾▽＾)／ I’m Skullface (she/her) and you can call me <b>Skully</b>. I’m a <b>Design Engineer and visual artist</b> dual wielding compassion and cuteness.
+        Hihi, nice to meet you! (*＾▽＾)／ I’m Skullface (she/her) and you can call me <b>Skully</b>. I’m a <b>Design Engineer</b> and <b>visual artist</b> dual&nbsp;wielding compassion and cuteness.
       </p>
       
       <h2>
@@ -349,10 +47,10 @@ footer {
       </h2>
       <ul class="projects">
         <li>
-          <a href="https://216.show">216.show</a> 🎸 <u>Cleveland live music calendar</u>
+          <a href="https://216.show">216.show</a> 🎸 <i>Cleveland live music calendar</i>
         </li>
         <li>
-          <a href="https://falseluck.shop">False Luck</a> 🤞 <u>accesories & apparel store</u>
+          <a href="https://falseluck.shop">False Luck</a> 🤞 <i>accesories & apparel store</i>
         </li>
       </ul>
 
@@ -435,7 +133,7 @@ footer {
       </p>
 
       <p>
-        By prioritizing equity and genuine empathy, we can move the needle toward justice. Designers in tech have an immense responsibility to <i>do the most good</i> as we serve business goals.
+        By prioritizing equity and genuine empathy, we can move the needle toward justice. Designers in tech have an immense responsibility to <b>do the most good</b> as we serve business goals.
       </p>
 
       <h2>
@@ -461,7 +159,7 @@ footer {
         Contact
       </h2>
       <p>
-        If you’d like to get in touch with me, send a <a href="http://twitter.com/intent/tweet?text=@skullface%20Hi!%20I%20wanted%20to%20say">tweet</a> or an email to <u>meow@</u> this domain. 💌
+        Send a <a href="http://twitter.com/intent/tweet?text=@skullface%20Hi!%20I%20wanted%20to%20say">tweet</a> or an email to <i>meow@</i> this domain. 💌
       </p>
 
       <footer>
