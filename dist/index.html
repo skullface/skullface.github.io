@@ -56,7 +56,7 @@
   --color-primary: oklch(60% .29 307);
   --color-foreground: #000;
   --color-midground: #6b6673;
-  --color-background: #ebeaf1;
+  --color-background: #fff;
   --spacer: .5em;
   --font-family-serif: "Source Serif", "Georgia", "Times New Roman", serif;
   --font-family-sans: "ARS Maquette", "Avenir Next", "Avenir", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -82,8 +82,14 @@ html {
 }
 
 ::selection {
-  color: var(--color-foreground);
+  color: var(--color-background);
   background-color: var(--color-primary);
+}
+
+@media (prefers-color-scheme: dark) {
+  ::selection {
+    color: var(--color-foreground);
+  }
 }
 
 main {
@@ -127,6 +133,7 @@ b {
 }
 
 i {
+  font-size: .9rem;
   font-family: var(--font-family-mono);
   color: var(--color-midground);
   font-style: italic;
