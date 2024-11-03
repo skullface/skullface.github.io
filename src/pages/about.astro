@@ -1,0 +1,92 @@
+---
+import Layout from "../layouts/Layout.astro";
+const title = "About Skullface";
+
+const valuesAndPractices = [
+  {
+    value: "clarity",
+    practice: "showing AND telling",
+  },
+  {
+    value: "inclusivity",
+    practice: "proactive advocacy",
+  },
+  {
+    value: "irreverence",
+    practice: "play and experimentation",
+  },
+  {
+    value: "intention",
+    practice: "leading with purpose",
+  },
+  {
+    value: "openness",
+    practice: "removing barriers to entry",
+  },
+];
+---
+
+<Layout title={title}>
+  <main>
+    <h1>{title}</h1>
+    <p>
+      As a kid who liked playing on the computer more than playing outside, I
+      fell in love with design as soon as I found out it had a name. I practice
+      design as code, as strategy, as content, as journey, as visual expression
+      — as the native medium of the world wide web, as holistic end-to-end
+      experience.
+    </p>
+    <p>I ♥ accessibility, storytelling, great docs, and semantic markup.</p>
+    <ul class="values-and-practices">
+      {
+        valuesAndPractices.map(({ value, practice }) => (
+          <li>
+            {value.charAt(0).toUpperCase() + value.slice(1)}
+            through
+            {practice}
+          </li>
+        ))
+      }
+    </ul>
+    <p>
+      To create the best work, regardless of personal working styles, designers
+      need psychological safety that can only come from an environment of mutual
+      trust. I aim to foster that environment in the teams I lead and, in tiny
+      ways, to the industry as a whole.
+    </p>
+    <p>
+      By prioritizing equity and genuine empathy, we can move the needle toward
+      justice. Designers in tech have an immense responsibility to <b
+        >do the most good</b
+      > as we serve business goals.
+    </p>
+  </main>
+</Layout>
+
+<style>
+  .values-and-practices {
+    list-style: none;
+
+    li {
+      display: flex;
+      flex-direction: column;
+      @media all and (min-width: 680px) {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+
+    .value-arrow {
+      display: flex;
+      gap: 1rem;
+      @media all and (min-width: 680px) {
+        justify-content: space-between;
+        width: 8rem;
+      }
+    }
+
+    .value {
+      font-weight: bold;
+    }
+  }
+</style>

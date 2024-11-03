@@ -1,0 +1,24 @@
+---
+const { frontmatter, headings } = Astro.props;
+import TableOfContents from '../components/TableOfContents.astro';
+import Layout from "./Layout.astro";
+---
+
+<Layout title={frontmatter.title}>
+  <aside>  
+    <TableOfContents headings={headings} />
+  </aside>
+  <main>
+    <h1 class="text-3xl">{frontmatter.title}</h1>
+    <p>{frontmatter.datePublished.toString().slice(0, 10)}</p>
+    <p><em>{frontmatter.description}</em></p>
+    <ul>
+      {frontmatter.tags.map((tag: string) => (
+        <li><a href={`/tags/${tag}`}>{tag}</a></li>
+      ))}
+    </ul>
+    <p>Written by: {frontmatter.author}</p>
+    <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
+    <slot />
+  </main>
+</Layout>

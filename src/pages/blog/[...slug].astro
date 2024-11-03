@@ -1,0 +1,37 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content';
+import Layout from "../../layouts/Layout.astro";
+import TableOfContents from '../../components/TableOfContents.astro';
+
+type Props = CollectionEntry<'blog'>;
+
+export async function getStaticPaths() {
+  const blogPosts = await getCollection('blog');
+  return blogPosts.map(post => ({
+    params: { slug: post.slug }, 
+    props: post,
+  }));
+}
+
+const post = Astro.props;
+const { Content, headings } = await post.render();
+---
+
+<Layout title={post.data.title}>
+  <h1 class="text-3xl">{post.data.title}</h1>
+  
+  <fieldset>
+    <legend>Table of Contents</legend>
+    <TableOfContents headings={headings} />
+  </fieldset>
+  
+  <p>{post.data.datePublished.toString().slice(0, 10)}</p>
+  <p><em>{post.data.description}</em></p>
+  <ul>
+    {post.data.tags && post.data.tags.map((tag: string) => (
+      <li><a href={`/tagged/${tag}`}>{tag}</a></li>
+    ))}
+  </ul>
+  <img src={post.data.image.url} width="300" alt={post.data.image.alt} />
+  <Content />    
+</Layout>

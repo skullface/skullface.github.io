@@ -1,0 +1,27 @@
+---
+import Layout from "../../layouts/Layout.astro";
+const title = "Blog";
+
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog', (post) => {
+  return import.meta.env.PROD ? post.data.isDraft !== true : true;
+});
+
+---
+
+<Layout title={title}>
+  <main>
+    <ul>
+    {
+      posts.map((post) => (
+        <li>
+          <a href={`/blog/${post.slug}`}>{post.data.title}</a>
+          <time datetime={post.data.datePublished.toISOString()}>
+            {post.data.datePublished.toDateString()}
+          </time>
+        </li>
+      ))}
+    </ul>
+  </main>
+</Layout>

@@ -1,26 +1,21 @@
 {
-  "name": "skullface.github.io",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "pianoisland",
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/skullface/skullface.github.io.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/skullface/skullface.github.io/issues"
-  },
-  "homepage": "https://github.com/skullface/skullface.github.io#readme",
   "dependencies": {
-    "parcel": "^2.12.0"
-  },
-  "devDependencies": {
-    "@parcel/transformer-sass": "^2.12.0"
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/mdx": "^3.1.8",
+    "@astrojs/rss": "^4.0.9",
+    "@astrojs/tailwind": "^5.1.2",
+    "astro": "^4.16.6",
+    "tailwindcss": "^3.4.14",
+    "typescript": "^5.6.3"
   }
 }
