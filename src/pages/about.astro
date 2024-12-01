@@ -1,92 +1,89 @@
 ---
 import Layout from "../layouts/Layout.astro";
 const title = "About Skullface";
-
-const valuesAndPractices = [
-  {
-    value: "clarity",
-    practice: "showing AND telling",
-  },
-  {
-    value: "inclusivity",
-    practice: "proactive advocacy",
-  },
-  {
-    value: "irreverence",
-    practice: "play and experimentation",
-  },
-  {
-    value: "intention",
-    practice: "leading with purpose",
-  },
-  {
-    value: "openness",
-    practice: "removing barriers to entry",
-  },
-];
 ---
 
 <Layout title={title}>
   <main>
     <h1>{title}</h1>
     <p>
-      As a kid who liked playing on the computer more than playing outside, I
-      fell in love with design as soon as I found out it had a name. I practice
-      design as code, as strategy, as content, as journey, as visual expression
-      — as the native medium of the world wide web, as holistic end-to-end
-      experience.
+      I’m <b>Skully</b> (short for <b>@skullface</b>) and I’m a creative
+      generalist on the Internet and IRL in the Midwest. I love my cat 🐱, video
+      games 🎮, k-pop 🕺, and the Cleveland Cavaliers 🏀. Now I’ll talk about
+      myself in the third person:
     </p>
-    <p>I ♥ accessibility, storytelling, great docs, and semantic markup.</p>
-    <ul class="values-and-practices">
-      {
-        valuesAndPractices.map(({ value, practice }) => (
-          <li>
-            {value.charAt(0).toUpperCase() + value.slice(1)}
-            through
-            {practice}
-          </li>
-        ))
-      }
+
+    <h2>Design bio</h2>
+    <p>
+      SKULLFACE is a design leader who defines and elevates Brand and Marketing
+      experiences for technology companies. She works as a design engineer,
+      visual designer, art director, front-end developer, and brand strategist.
+      She likes kerning pairs as much as parallelism as much as semantic markup
+      as much as halftones. Through people management and design operations,
+      mentorship as an experienced IC, or taking on a consulting project, Skully
+      helps lead design and engineering teams toward business success and
+      collaborative creative health.
+    </p>
+
+    <h2>Artist bio</h2>
+    <p>
+      SKULLFACE is a designer and visual artist who dual wields compassion and
+      cuteness. She explore themes of love, justice, and identity as a queer
+      Latina via graphic shapes, fun color, and a little cheek. Skullface’s work
+      mixes digital illustration with block printing and risography to mirror
+      her whimsical and radical interior world. She leaves a trail of glitter in
+      her wake at her home studio and <a href="https://zygotepress.com"
+        >Zygote Press</a
+      >. Find her personal art and design work at <a href="">False Luck</a>.
+    </p>
+
+    <h2>Exhibitions</h2>
+    <ul>
+      <li>2016 Moon Prism Power, San Francisco (group show)</li>
+      <li>2014 Bit Bash, Chicago (group show)</li>
+      <li>2013 Ink Wars, Cleveland (participating artist)</li>
+      <li>2013 Weapons of Mass Creation IV, Cleveland (group show)</li>
     </ul>
-    <p>
-      To create the best work, regardless of personal working styles, designers
-      need psychological safety that can only come from an environment of mutual
-      trust. I aim to foster that environment in the teams I lead and, in tiny
-      ways, to the industry as a whole.
-    </p>
-    <p>
-      By prioritizing equity and genuine empathy, we can move the needle toward
-      justice. Designers in tech have an immense responsibility to <b
-        >do the most good</b
-      > as we serve business goals.
-    </p>
+
+    <h2>Publications</h2>
+    <ul>
+      <li>
+        <i>Cards Against Humanity Comic Book #01</i> at SDCC, 2017, contributing
+        artist + writer
+      </li>
+      <li>
+        <i>Secret Loves of Geek Girls Redux</i>, Dark Horse, 2017, contributing
+        artist + writer
+      </li>
+      <li>
+        <i>Secret Loves of Geek Girls</i>, Dark Horse, 2016, contributing artist
+      </li>
+    </ul>
+
+    <h2>Speaking</h2>
+    <ul>
+      <li>2021 Salary negotiation panelist, Women Who Code Boston</li>
+      <li>2020 Unconventional pathways into tech panelist, Code Tenderloin</li>
+    </ul>
+
+    <h2>Education and training</h2>
+    <ul>
+      <li>
+        2024 <i>Power Shift</i> Leadership Accelerator, Active Voice
+      </li>
+      <li>
+        2021 <i>Courageous Leadership</i> Leadership Accelerator, Active Voice
+      </li>
+      <li>
+        2021 <i>Ethics, Public Policy, Technological Change</i>, Stanford
+        University
+      </li>
+    </ul>
+
+    <h2>Press</h2>
+    <ul>
+      <li>Dribbble Timeout interview</li>
+      <li>Kickstarter, Fashion campaign feature + Staff Pick</li>
+    </ul>
   </main>
 </Layout>
-
-<style>
-  .values-and-practices {
-    list-style: none;
-
-    li {
-      display: flex;
-      flex-direction: column;
-      @media all and (min-width: 680px) {
-        flex-direction: row;
-        align-items: center;
-      }
-    }
-
-    .value-arrow {
-      display: flex;
-      gap: 1rem;
-      @media all and (min-width: 680px) {
-        justify-content: space-between;
-        width: 8rem;
-      }
-    }
-
-    .value {
-      font-weight: bold;
-    }
-  }
-</style>

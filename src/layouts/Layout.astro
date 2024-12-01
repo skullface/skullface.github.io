@@ -1,7 +1,6 @@
 ---
-import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
-import ThemeIcon from '../components/ThemeIcon.astro';
+import Header from "../components/Header.astro";
 
 interface Props {
   title: string;
@@ -18,56 +17,407 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap"
+      rel="stylesheet"
+    />
     <title>{title}</title>
   </head>
   <body>
-    <header>
-      <nav>
-        <Navigation />
-        <ThemeIcon />
-      </nav>
-    </header>
+    <Header />
     <slot />
     <Footer />
   </body>
 </html>
 <style is:global>
-  :root {
-    --accent: 136, 58, 234;
-    --accent-light: 224, 204, 250;
-    --accent-dark: 49, 10, 101;
-    --accent-gradient: linear-gradient(
-      45deg,
-      rgb(var(--accent)),
-      rgb(var(--accent-light)) 30%,
-      white 60%
-    );
-  }
-  html.dark {
-    background-color: #0d0950;
-    color: #fff;
+  /*
+  　 　　 ∧＿∧
+  　 　　(´･ω･)
+  　  ⌒~ー､ ー⌒ヽ
+  ／ ヽ　 ｜ |
+  (　_ノﾄー仝ーイ￣￣＼
+  CSS )ミ土彡/ COOL )
+  　 ＼ ヽ――-L_＿＿／
+  ￣￣(_ノ _　 ＼
+  　 /　 ／ ＼　 ヽ
+  Author: skullface <https://skullface.me>
+  License: MIT
+  */
+
+  @font-face {
+    font-family: "Ars Maquette";
+    src: url("/fonts/ARSMaquettePro-Medium.woff2") format("woff2");
+    font-weight: bold;
+    font-display: swap;
   }
 
-  .dark .nav-links a {
-    color: #fff;
+  @font-face {
+    font-family: "Ars Maquette";
+    src: url("/fonts/ARSMaquettePro-Bold.woff2") format("woff2");
+    font-weight: 800;
+    font-display: swap;
   }
-  code {
-    font-family:
-      Menlo,
-      Monaco,
-      Lucida Console,
-      Liberation Mono,
-      DejaVu Sans Mono,
-      Bitstream Vera Sans Mono,
-      Courier New,
-      monospace;
+
+  @font-face {
+    font-family: "Ars Maquette";
+    src: url("/fonts/ARSMaquettePro-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-display: swap;
   }
-  main {
-    margin: auto;
-    padding: 1rem;
-    width: 800px;
-    max-width: calc(100% - 2rem);
-    font-size: 20px;
+
+  :root {
+    --color-primary: oklch(60% 0.29 307);
+    --color-foreground: #111;
+    --color-midground: #888;
+    --color-background: #fff;
+    --spacer: 0.5em;
+    --font-family-serif: "Source Serif 4", "Georgia", "Times New Roman", serif;
+    --font-family-sans: "ARS Maquette", "Avenir Next", "Avenir", -apple-system,
+      BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --font-family-mono: "Courier Prime", "Courier New", monospace;
+    --page-width: 670px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-foreground: #ddd;
+      --color-midground: #aaa;
+      --color-background: #0f0f0f;
+    }
+  }
+
+  html {
+    font-family: var(--font-family-serif);
     line-height: 1.6;
+    color: var(--color-foreground);
+    background-color: var(--color-background);
+    cursor: crosshair;
+    font-size: 1rem;
+    overflow-x: hidden !important;
+    font-smooth: subpixel-antialiased;
+    scroll-padding-top: 106px;
+  }
+
+  ::selection {
+    color: var(--color-background);
+    background-color: var(--color-primary);
+  }
+  @media (prefers-color-scheme: dark) {
+    ::selection {
+      color: var(--color-foreground);
+    }
+  }
+
+  main {
+    padding: 2em;
+    margin: 0 auto;
+    max-width: var(--page-width);
+
+    p,
+    ul,
+    ol {
+      margin-top: 0;
+      margin-bottom: calc(var(--spacer) * 2);
+      text-wrap: pretty;
+    }
+
+    p a,
+    li a {
+      font-weight: 700;
+      font-size: 93.75%;
+      font-family: var(--font-family-sans);
+      color: inherit;
+      text-decoration: underline;
+      text-decoration-color: oklch(80% 0 0);
+      text-underline-offset: 2px;
+      transition: all 80ms ease-in-out;
+      &:hover,
+      &:focus {
+        color: var(--color-primary);
+        text-decoration-color: oklch(78% 0.14 307);
+      }
+      @media (prefers-color-scheme: dark) {
+        text-decoration-color: oklch(40% 0 0);
+        &:hover,
+        &:focus {
+          text-decoration-color: oklch(36% 0.14 307);
+        }
+      }
+    }
+  }
+
+  :not(.content) > h1 {
+    font-family: var(--font-family-sans);
+    font-size: 3.5em;
+    font-weight: 800;
+    letter-spacing: -2px;
+    line-height: 90%;
+    margin-bottom: var(--spacer);
+    text-wrap: balance;
+  }
+
+  :not(.content) > h2 {
+    letter-spacing: 1px;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-family: var(--font-family-mono);
+    margin-top: calc(var(--spacer) * 6);
+    margin-bottom: calc(var(--spacer));
+    color: var(--color-midground);
+  }
+
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  b,
+  strong {
+    font-family: var(--font-family-sans);
+    font-size: 93.75%;
+    color: color-mix(
+      in lab,
+      var(--color-midground),
+      var(--color-foreground) 50%
+    );
+  }
+
+  i,
+  em {
+    text-decoration: none;
+    font-style: italic;
+    color: color-mix(
+      in lab,
+      var(--color-midground),
+      var(--color-foreground) 50%
+    );
+  }
+
+  .article-heading {
+    font-family: var(--font-family-sans);
+    font-size: 3.5em;
+    font-weight: 800;
+    letter-spacing: -2px;
+    line-height: 90%;
+    margin-bottom: var(--spacer);
+    text-wrap: balance;
+  }
+
+  .article-description {
+    font-size: 1.125rem;
+    font-family: var(--font-family-sans);
+    &:before {
+      content: "♡ ";
+      color: var(--color-midground);
+    }
+  }
+
+  .article-meta {
+    letter-spacing: 1px;
+    font-family: var(--font-family-mono);
+    color: var(--color-midground);
+    text-transform: uppercase;
+
+    a {
+      font-family: var(--font-family-sans);
+      font-size: 85%;
+      font-weight: 600;
+      text-transform: none;
+      letter-spacing: 0;
+      text-decoration: none;
+      padding: 1px 6px 3px 6px;
+      border-radius: 5px;
+      border: solid 1px
+        color-mix(in lab, var(--color-midground), var(--color-background) 66%);
+      &:hover {
+        color: var(--color-background);
+        border-color: var(--color-foreground);
+        background-color: var(--color-foreground);
+      }
+    }
+  }
+
+  .toc {
+    position: relative;
+    margin-top: calc(var(--spacer) * 8);
+    line-height: 1.25;
+    @media (max-width: 1199px) {
+      display: flex;
+      border: solid 1px
+        color-mix(in lab, var(--color-midground), var(--color-background) 66%);
+      border-radius: 5px;
+    }
+    @media (min-width: 1200px) {
+      position: fixed;
+      left: 0;
+      margin-top: 0;
+      padding: 0 1.5rem;
+      top: 7.5rem;
+      width: calc((100vw - (var(--page-width))) / 2);
+    }
+    @media (max-width: 1199px) {
+      ol {
+        flex: 1;
+        padding: calc(var(--spacer) * 2);
+        margin-left: calc(var(--spacer) * 0.5);
+        margin-bottom: 0;
+      }
+    }
+    li:not(:last-child) {
+      margin-bottom: calc(var(--spacer) * 1.5);
+    }
+    .active {
+      opacity: 0.5;
+      text-decoration: none;
+      &:hover {
+        color: inherit;
+      }
+    }
+    .toc-head {
+      display: flex;
+      align-items: center;
+      position: relative;
+      @media (max-width: 1199px) {
+        width: 3.5rem;
+      }
+      h2 {
+        text-wrap: unset;
+        color: color-mix(
+          in lab,
+          var(--color-midground),
+          var(--color-foreground) 33%
+        );
+        @media (max-width: 1199px) {
+          display: flex;
+          color: var(--color-foreground);
+          background-color: color-mix(
+            in lab,
+            var(--color-midground),
+            var(--color-background) 90%
+          );
+          border-right: solid 1px
+            color-mix(
+              in lab,
+              var(--color-midground),
+              var(--color-background) 66%
+            );
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          margin: 0;
+          padding: 0;
+          align-items: center;
+          justify-content: center;
+          span {
+            display: block;
+            transform: rotate(-90deg);
+            white-space: nowrap;
+            padding: 0 var(--spacer);
+          }
+        }
+      }
+    }
+  }
+
+  .content {
+    font-size: 1.125rem;
+
+    ul {
+      list-style: disc;
+      li::marker {
+        font-size: 92.5%;
+      }
+    }
+
+    li {
+      margin-top: calc(var(--spacer) * 0.5);
+    }
+
+    ol {
+      list-style: upper-roman;
+    }
+
+    ol ol,
+    ul ul {
+      margin-left: calc(var(--spacer) * 2.125);
+      margin-bottom: 0;
+    }
+
+    ul li::marker,
+    ol li::marker {
+      color: var(--color-midground);
+    }
+
+    h2 {
+      font-size: 1.75em;
+      font-weight: 700;
+      font-family: var(--font-family-sans);
+      margin-top: calc(var(--spacer) * 4);
+      margin-bottom: calc(var(--spacer));
+      letter-spacing: -1px;
+      line-height: 120%;
+    }
+
+    h3 {
+      letter-spacing: 1px;
+      font-weight: 400;
+      text-transform: uppercase;
+      font-family: var(--font-family-mono);
+      margin-top: calc(var(--spacer) * 6);
+      margin-bottom: calc(var(--spacer));
+      color: var(--color-midground);
+    }
+
+    h4 {
+      font-size: 1.25em;
+      font-weight: 800;
+      font-family: var(--font-family-sans);
+      margin-top: calc(var(--spacer) * 6);
+      margin-bottom: calc(var(--spacer));
+      letter-spacing: -0.5px;
+      line-height: 130%;
+    }
+
+    blockquote {
+      border-left: solid 2px
+        color-mix(in lab, var(--color-midground), var(--color-background) 66%);
+      padding-left: calc(var(--spacer) * 3);
+      margin-left: calc(var(--spacer) * -3);
+
+      p:first-letter {
+        margin-left: calc(var(--spacer) * -0.75);
+      }
+    }
+    blockquote p i a {
+      font-family: var(--font-family-serif);
+      font-weight: 600;
+    }
+
+    a[href*="//"]:not([href*="localhost"])::after
+    {
+      content: "";
+      display: inline-block;
+      position: relative;
+      width: 0.75rem;
+      height: 0.75rem;
+      margin: 0 calc(var(--spacer) * 0.5);
+      opacity: 0.5;
+      background-size: cover;
+    }
+
+    a[href*="//"]:not([href*="localhost"])::after
+    {
+      filter: grayscale(1);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='none'%3E%3Cpath stroke='%23ae23ff' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.75' d='m5 1h-2c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2v-2m0-3.5v-4.5h-4.5m-3.4 7.9 7.9-7.9'/%3E%3C/svg%3E");
+    }
+
+    a[href*="//"]:not([href*="localhost"]):hover::after
+    {
+      filter: grayscale(0);
+      opacity: 1;
+    }
   }
 </style>

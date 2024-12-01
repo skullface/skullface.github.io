@@ -1,27 +1,31 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import Card from "../../components/Card.astro";
 const title = "Blog";
 
-import { getCollection } from 'astro:content';
+import { getCollection } from "astro:content";
 
-const posts = await getCollection('blog', (post) => {
+const posts = await getCollection("blog", (post) => {
   return import.meta.env.PROD ? post.data.isDraft !== true : true;
 });
-
 ---
 
 <Layout title={title}>
   <main>
-    <ul>
-    {
-      posts.map((post) => (
-        <li>
-          <a href={`/blog/${post.slug}`}>{post.data.title}</a>
-          <time datetime={post.data.datePublished.toISOString()}>
-            {post.data.datePublished.toDateString()}
-          </time>
-        </li>
-      ))}
+    <h1>{title}</h1>
+    <ul class="grid gap-4">
+      {
+        posts.map((post) => (
+          <li>
+            <Card
+              href={`/blog/${post.slug}`}
+              title={post.data.title}
+              body={post.data.description}
+              footer={post.data.datePublished.toDateString()}
+            />
+          </li>
+        ))
+      }
     </ul>
   </main>
 </Layout>

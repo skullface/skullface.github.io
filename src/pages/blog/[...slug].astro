@@ -1,14 +1,14 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content';
+import { type CollectionEntry, getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
-import TableOfContents from '../../components/TableOfContents.astro';
+import TableOfContents from "../../components/TableOfContents.astro";
 
-type Props = CollectionEntry<'blog'>;
+type Props = CollectionEntry<"blog">;
 
 export async function getStaticPaths() {
-  const blogPosts = await getCollection('blog');
-  return blogPosts.map(post => ({
-    params: { slug: post.slug }, 
+  const blogPosts = await getCollection("blog");
+  return blogPosts.map((post) => ({
+    params: { slug: post.slug },
     props: post,
   }));
 }
@@ -18,20 +18,66 @@ const { Content, headings } = await post.render();
 ---
 
 <Layout title={post.data.title}>
-  <h1 class="text-3xl">{post.data.title}</h1>
-  
-  <fieldset>
-    <legend>Table of Contents</legend>
+  <main>
+    <h1 class="article-heading">{post.data.title}</h1>
+
+    <p class="article-description">{post.data.description}</p>
+
+    <div class="flex gap-3 items-center article-meta">
+      <date datetime={post.data.datePublished}
+        >{post.data.datePublished.toString().slice(0, 15)}</date
+      >
+      <ul class="flex gap-2 mb-0">
+        {
+          post.data.tags &&
+            post.data.tags.map((tag: string) => (
+              <li>
+                <a href={`/tagged/${tag}`}>{tag}</a>
+              </li>
+            ))
+        }
+      </ul>
+    </div>
+
     <TableOfContents headings={headings} />
-  </fieldset>
-  
-  <p>{post.data.datePublished.toString().slice(0, 10)}</p>
-  <p><em>{post.data.description}</em></p>
-  <ul>
-    {post.data.tags && post.data.tags.map((tag: string) => (
-      <li><a href={`/tagged/${tag}`}>{tag}</a></li>
-    ))}
-  </ul>
-  <img src={post.data.image.url} width="300" alt={post.data.image.alt} />
-  <Content />    
+
+    <article class="content">
+      <Content />
+    </article>
+  </main>
 </Layout>
+
+<script is:inline>
+  addIntersectionObserver();
+
+  function addIntersectionObserver() {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const heading = entry.target;
+          const id = heading.getAttribute("id");
+          if (!id) return;
+
+          const link = document.querySelector(`nav.toc a[href="#${id}"]`);
+          if (!link) return;
+
+          if (entry.isIntersecting) {
+            document
+              .querySelectorAll("nav.toc a.active")
+              .forEach((activeLink) => activeLink.classList.remove("active"));
+            link.classList.add("active");
+          }
+        });
+      },
+      { threshold: 0.9 }
+    ); // Adjust the threshold here
+
+    const article = document.querySelector("article");
+    if (!article) return;
+
+    const headings = article.querySelectorAll("h2");
+    if (headings.length === 0) return;
+
+    headings.forEach((heading) => observer.observe(heading));
+  }
+</script>
