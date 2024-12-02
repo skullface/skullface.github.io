@@ -4,24 +4,57 @@ import Header from "../components/Header.astro";
 
 interface Props {
   title: string;
+  description?: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+    <meta name="title" content="skullface.me 🫶" />
+    <meta
+      name="description"
+      content={description ||
+        "Design leader and visual artist. Brand, code, and illustration in Cleveland, Ohio."}
+    />
+    <meta name="author" content="skullface" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="icon" type="image/svg" href="favicon.svg" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://skullface.me" />
+    <meta property="og:title" content={title} />
+    <meta
+      property="og:description"
+      content={description ||
+        "Design leader and visual artist. Brand, code, and illustration in Cleveland, Ohio."}
+    />
+    <meta property="og:image" content="./social-card.png" />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://skullface.me" />
+    <meta property="twitter:title" content={title} />
+    <meta
+      property="twitter:description"
+      content={description ||
+        "Design leader and visual artist. Brand, code, and illustration in Cleveland, Ohio."}
+    />
+    <meta name="twitter:image" content="./social-card.png" />
+
+    <script src="https://cdn.usefathom.com/script.js" data-site="DQFBXLTU" defer
+    ></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap"
       rel="stylesheet"
     />
-    <title>{title}</title>
   </head>
   <body>
     <Header />
@@ -41,7 +74,6 @@ const { title } = Astro.props;
   ￣￣(_ノ _　 ＼
   　 /　 ／ ＼　 ヽ
   Author: skullface <https://skullface.me>
-  License: MIT
   */
 
   @font-face {
