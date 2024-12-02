@@ -11,22 +11,22 @@ interface Props {
 const { href, title, body, img, alt, footer } = Astro.props;
 ---
 
-<li class="link-card">
+<li class="link-project">
   <a href={href}>
     <h3>
       {title}
-      <span>&rarr;</span>
     </h3>
     <p>
       {body}
     </p>
+    <span>&rarr;</span>
     {footer && <div class="article-meta">{footer}</div>}
     {img && <img src={img} alt={alt} />}
   </a>
 </li>
 
 <style>
-  .link-card {
+  .link-project {
     @apply transition ease-in-out;
     border-radius: 0.5rem;
     background-color: var(--color-background);
@@ -41,7 +41,7 @@ const { href, title, body, img, alt, footer } = Astro.props;
         color: var(--color-primary);
       }
 
-      @apply w-full no-underline transition ease-in-out font-normal flex flex-col gap-0;
+      @apply w-full no-underline transition ease-in-out font-normal flex gap-2;
       &:hover,
       &:focus-within {
         color: var(--color-primary);

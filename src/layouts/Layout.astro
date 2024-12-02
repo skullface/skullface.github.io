@@ -122,6 +122,13 @@ const { title } = Astro.props;
       text-wrap: pretty;
     }
 
+    img,
+    svg,
+    figure {
+      max-width: 100%;
+      height: auto;
+    }
+
     p a,
     li a {
       font-weight: 700;
@@ -192,6 +199,15 @@ const { title } = Astro.props;
       var(--color-midground),
       var(--color-foreground) 50%
     );
+  }
+
+  ul li::marker,
+  ol li::marker {
+    color: var(--color-midground);
+  }
+
+  ul li::marker {
+    font-size: 92.5%;
   }
 
   .article-heading {
@@ -327,9 +343,6 @@ const { title } = Astro.props;
 
     ul {
       list-style: disc;
-      li::marker {
-        font-size: 92.5%;
-      }
     }
 
     li {
@@ -344,11 +357,6 @@ const { title } = Astro.props;
     ul ul {
       margin-left: calc(var(--spacer) * 2.125);
       margin-bottom: 0;
-    }
-
-    ul li::marker,
-    ol li::marker {
-      color: var(--color-midground);
     }
 
     h2 {
@@ -418,6 +426,49 @@ const { title } = Astro.props;
     {
       filter: grayscale(0);
       opacity: 1;
+    }
+  }
+
+  .social-links {
+    @apply list-none flex gap-3;
+    li {
+      @apply m-0;
+    }
+
+    svg {
+      fill: var(--color-midground);
+      width: 16px;
+      height: 16px;
+    }
+
+    .inverted {
+      opacity: 0;
+    }
+    .standard {
+      opacity: 1;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .inverted {
+        opacity: 1;
+      }
+      .standard {
+        opacity: 0;
+      }
+    }
+
+    a {
+      display: block;
+      &:hover svg {
+        fill: var(--color-foreground);
+      }
+    }
+  }
+
+  .site-footer a {
+    color: var(--color-foreground);
+    &:hover {
+      color: var(--color-primary);
     }
   }
 </style>
