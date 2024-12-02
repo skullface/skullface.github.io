@@ -16,60 +16,30 @@ const { href, title, body, img, alt, footer } = Astro.props;
     <h3>
       {title}
     </h3>
-    <p>
-      {body}
-    </p>
-    <span>&rarr;</span>
-    {footer && <div class="article-meta">{footer}</div>}
-    {img && <img src={img} alt={alt} />}
   </a>
+  <p>
+    {body}
+  </p>
+  {footer && <div class="article-meta">{footer}</div>}
+  {img && <img src={img} alt={alt} />}
 </li>
 
 <style>
   .link-project {
     @apply transition ease-in-out;
-    border-radius: 0.5rem;
-    background-color: var(--color-background);
-    box-shadow:
-      rgba(0, 0, 0, 0.05) 0px 25px 50px -10px,
-      rgba(0, 0, 0, 0.05) 0px 20px 40px -20px,
-      inset 0 0 0 1px
-        color-mix(in lab, var(--color-midground), var(--color-background) 90%);
 
     a {
-      span {
-        color: var(--color-primary);
-      }
-
-      @apply w-full no-underline transition ease-in-out font-normal flex gap-2;
-      &:hover,
-      &:focus-within {
-        color: var(--color-primary);
-
-        p {
-          color: var(--color-foreground);
-        }
-      }
-    }
-
-    &:hover,
-    &:focus-within {
-      box-shadow:
-        rgba(0, 0, 0, 0.1) 0px 25px 50px -10px,
-        rgba(0, 0, 0, 0.1) 0px 20px 40px -20px,
-        inset 0 0 0 1px
-          color-mix(in lab, var(--color-midground), var(--color-background) 80%);
+      @apply flex gap-1 items-center;
     }
 
     h3 {
       font-weight: 700;
-      font-size: 1.1rem;
       letter-spacing: -0.25px;
-      @apply px-6 pt-4 mb-0;
+      @apply mb-1;
     }
 
     p {
-      @apply px-6 pb-4 mb-0;
+      @apply mb-0;
       color: color-mix(
         in lab,
         var(--color-midground),
