@@ -140,6 +140,15 @@ const { title, description } = Astro.props;
     }
   }
 
+  a:focus {
+    outline-color: color-mix(
+      in lab,
+      var(--color-primary),
+      var(--color-background) 66%
+    );
+    border-radius: 100%;
+  }
+
   main {
     padding: 2em;
     margin: 0 auto;
@@ -188,7 +197,7 @@ const { title, description } = Astro.props;
     }
   }
 
-  :not(.content) > h1 {
+  h1 {
     font-family: var(--font-family-sans);
     font-size: 3.5em;
     font-weight: 800;
@@ -500,6 +509,11 @@ const { title, description } = Astro.props;
         fill: var(--color-foreground);
       }
     }
+  }
+
+  nav a {
+    font-family: var(--font-family-sans);
+    font-weight: 600;
   }
 
   .site-footer a {
