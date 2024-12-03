@@ -124,7 +124,6 @@ const { title, description } = Astro.props;
     line-height: 1.6;
     color: var(--color-foreground);
     background-color: var(--color-background);
-    cursor: crosshair;
     font-size: 1rem;
     overflow-x: hidden !important;
     font-smooth: subpixel-antialiased;
@@ -163,6 +162,7 @@ const { title, description } = Astro.props;
 
     p a,
     li a {
+      @apply transition-all ease-in-out duration-150;
       font-weight: 700;
       font-size: 93.75%;
       font-family: var(--font-family-sans);
@@ -170,7 +170,6 @@ const { title, description } = Astro.props;
       text-decoration: underline;
       text-decoration-color: oklch(80% 0 0);
       text-underline-offset: 2px;
-      transition: all 80ms ease-in-out;
       &:hover,
       &:focus {
         color: var(--color-primary);
@@ -182,6 +181,9 @@ const { title, description } = Astro.props;
         &:focus {
           text-decoration-color: oklch(36% 0.14 307);
         }
+      }
+      svg {
+        @apply transition-all;
       }
     }
   }
@@ -255,16 +257,20 @@ const { title, description } = Astro.props;
   .article-description {
     font-size: 1.125rem;
     font-family: var(--font-family-sans);
+    color: var(--color-midground);
     &:before {
       content: "♡ ";
-      color: var(--color-midground);
+      color: color-mix(
+        in lab,
+        var(--color-midground),
+        var(--color-background) 25%
+      );
     }
   }
 
   .article-meta {
     letter-spacing: 1px;
     font-family: var(--font-family-mono);
-    color: var(--color-midground);
     text-transform: uppercase;
 
     a {
@@ -437,25 +443,24 @@ const { title, description } = Astro.props;
     }
   }
 
-  a[href*="//"]:not([href*="localhost"])::after
+  main a[href*="//"]::after
   {
+    @apply transition-all ease-in-out duration-150;
     content: "";
     display: inline-block;
-    position: relative;
-    width: 0.75rem;
-    height: 0.75rem;
+    width: 10px;
+    height: 10px;
     margin: 0 calc(var(--spacer) * 0.5);
     opacity: 0.5;
+    @media (prefers-color-scheme: dark) {
+      opacity: 1;
+    }
     background-size: cover;
-  }
-
-  a[href*="//"]:not([href*="localhost"])::after
-  {
     filter: grayscale(1);
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='none'%3E%3Cpath stroke='%23ae23ff' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.75' d='m5 1h-2c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2v-2m0-3.5v-4.5h-4.5m-3.4 7.9 7.9-7.9'/%3E%3C/svg%3E");
   }
 
-  a[href*="//"]:not([href*="localhost"]):hover::after
+  main a[href*="//"]:hover::after
   {
     filter: grayscale(0);
     opacity: 1;
@@ -502,5 +507,14 @@ const { title, description } = Astro.props;
     &:hover {
       color: var(--color-primary);
     }
+  }
+
+  .collage {
+    border-radius: var(--spacer);
+    border-color: color-mix(
+      in lab,
+      var(--color-midground),
+      var(--color-background) 50%
+    );
   }
 </style>

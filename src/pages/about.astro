@@ -8,34 +8,43 @@ const title = "About Skullface";
     <h1>{title}</h1>
     <p>
       I’m <b>Skully</b> (short for <b>@skullface</b>) and I’m a creative
-      generalist on the Internet and IRL in the Midwest. I love my cat 🐱, video
-      games 🎮, k-pop 🕺, and the Cleveland Cavaliers 🏀. Now I’ll talk about
-      myself in the third person:
+      generalist on the Internet and IRL in the Midwest. I love my cat Bruce 🐱,
+      video games 🎮, k-pop 🕺, and the Cleveland&nbsp;Cavaliers 🏀.
     </p>
 
-    <h2>Design bio</h2>
-    <p>
-      SKULLFACE is a design leader who defines and elevates Brand and Marketing
-      experiences for technology companies. She works as a design engineer,
-      visual designer, art director, front-end developer, and brand strategist.
-      She likes kerning pairs as much as parallelism as much as semantic markup
-      as much as halftones. Through people management and design operations,
-      mentorship as an experienced IC, or taking on a consulting project, Skully
-      helps lead design and engineering teams toward business success and
-      collaborative creative health.
-    </p>
+    <img alt="" src="./collage.jpg" class="border collage" />
 
-    <h2>Artist bio</h2>
-    <p>
-      SKULLFACE is a designer and visual artist who dual wields compassion and
-      cuteness. She explore themes of love, justice, and identity as a queer
-      Latina via graphic shapes, fun color, and a little cheek. Skullface’s work
-      mixes digital illustration with block printing and risography to mirror
-      her whimsical and radical interior world. She leaves a trail of glitter in
-      her wake at her home studio and <a href="https://zygotepress.com"
-        >Zygote Press</a
-      >. Find her personal art and design work at <a href="">False Luck</a>.
-    </p>
+    <div>
+      <div class="grid grid-cols-5 justify-start items-start gap-8">
+        <h2 class="">Design bio</h2>
+        <p class="col-span-4" style="margin-top: calc(var(--spacer) * 6);">
+          SKULLFACE is a design leader who defines and elevates Brand and
+          Marketing experiences for technology companies. She works as a design
+          engineer, visual designer, art director, front-end developer, and
+          brand strategist. She likes kerning pairs as much as parallelism as
+          much as semantic markup as much as halftones. Through people
+          management and design operations, mentorship as an experienced IC, or
+          taking on a consulting project, Skully helps lead design and
+          engineering teams toward business success and collaborative creative
+          health.
+        </p>
+      </div>
+      <div class="grid grid-cols-5 justify-start items-start gap-8">
+        <h2>Artist bio</h2>
+        <p class="col-span-4" style="margin-top: calc(var(--spacer) * 6);">
+          SKULLFACE is a visual artist who dual wields compassion and cuteness.
+          She explore themes of love, justice, and identity as a queer Latina
+          via graphic shapes, fun color, and a little cheek. Skullface’s work
+          mixes digital illustration with block printing and risography to
+          mirror her whimsical and radical interior world. She leaves a trail of
+          glitter in her wake at her home studio and <a
+            href="https://zygotepress.com">Zygote Press</a
+          >. Find her personal art and design work at <a
+            href="https://falseluck.shop">False Luck</a
+          >.
+        </p>
+      </div>
+    </div>
 
     <h2>Exhibitions</h2>
     <ul class="md:list-style-none list-disc">
@@ -84,3 +93,24 @@ const title = "About Skullface";
     </ul>
   </main>
 </Layout>
+
+<style>
+  .expand-on-hover {
+    display: -webkit-box; /* Necessary for truncating with ellipsis */
+    -webkit-line-clamp: 2; /* Limits text to 2 lines */
+    -webkit-box-orient: vertical; /* Sets the box orientation to vertical */
+    overflow: hidden; /* Hides overflow text */
+    position: relative;
+    cursor: cell;
+    transition: all 250ms ease-in-out; /* Smooth transition for the hover effect */
+    max-height: calc(
+      2 * 1.6em
+    ); /* Adjust based on your line-height (e.g., 2 lines at 1.2em line-height) */
+  }
+
+  .expand-on-hover:hover {
+    -webkit-line-clamp: unset; /* Removes truncation */
+    overflow: visible; /* Reveals full text */
+    max-height: 500px; /* A large max-height to accommodate expanded text */
+  }
+</style>

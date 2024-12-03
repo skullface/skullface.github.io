@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
+import Project from "../components/Project.astro";
+import Heart from "../components/Heart.astro";
+import Sparkles from "../components/Sparkles.astro";
 const title = "skullface.me 🫶";
 
 const valuesAndPractices = [
@@ -37,34 +39,34 @@ const valuesAndPractices = [
     </h1>
 
     <p>
-      <span class="heart">&hearts;</span><br />
+      <span class="glitter"><Heart class="glitter" /></span>
       I’m <b>@skullface</b>, “Skully” for short! I’m a creative generalist
-      always trying to leave things better than I found them. Here are some of
-      my recent projects:
+      always trying to leave things better than I found them. Here’s what I’m
+      building:
     </p>
 
     <div>
       <h2>Projects</h2>
       <ul role="list" class="grid gap-4">
-        <Card
+        <Project
           href="https://falseluck.shop"
           title="False Luck"
-          body="Cute and kitschy art prints, zines, and stickers."
+          body="🤞 Cute and kitschy art prints, zines, and stickers."
         />
-        <Card
+        <Project
           href="/blog"
           title="Design leadership resources"
-          body="Notes on leading design and engineering teams."
+          body="📓 Notes on leading design and engineering teams."
         />
-        <Card
+        <Project
           href="https://github.com/skullface/sceneland"
           title="216.show"
-          body="Local music aggregator for Northeast Ohio venues."
+          body="🎸 Local music aggregator for Northeast Ohio venues."
         />
-        <Card
+        <Project
           href="https://github.com/skullface/protest.wtf"
-          title="Protest.wtf"
-          body="Crowdsourced anarchist wisdom, told accessibly."
+          title="protest.wtf"
+          body="ℹ️ Crowdsourced anarchist wisdom, told accessibly."
         />
       </ul>
     </div>
@@ -97,7 +99,7 @@ const valuesAndPractices = [
     </ul>
 
     <p>
-      &hearts;<br />
+      <span class="glitter"><Sparkles /></span>
       Currently looking for my next opportunity. Previously Design Manager at Clerk
       and PlanetScale; Designer at GitHub, Vox Media, and ad agencies.
     </p>
@@ -126,9 +128,13 @@ const valuesAndPractices = [
     }
   }
 
-  .heart {
-    color: var(--color-midground);
-    font-size: 2rem;
+  .glitter {
+    @apply block mb-2;
+    svg {
+      width: 32px;
+      height: 32px;
+      fill: var(--color-primary);
+    }
   }
 
   .values-and-practices {
