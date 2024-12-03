@@ -117,7 +117,9 @@ const valuesAndPractices = [
     font-family: var(--font-family-sans);
     margin-bottom: calc(var(--spacer));
     letter-spacing: -0.5px;
-    line-height: 130%;
+    @media (min-width: 590px) {
+      line-height: 130%;
+    }
 
     span {
       font-size: 0.94em;
@@ -129,7 +131,7 @@ const valuesAndPractices = [
   }
 
   .glitter {
-    @apply block mb-2;
+    @apply block mb-2 mt-6 md:mt-0;
     svg {
       width: 32px;
       height: 32px;
