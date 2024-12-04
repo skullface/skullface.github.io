@@ -5,9 +5,15 @@ const title = "Blog";
 
 import { getCollection } from "astro:content";
 
-const posts = await getCollection("blog", (post) => {
-  return import.meta.env.PROD ? post.data.isDraft !== true : true;
-});
+const posts = (
+  await getCollection("blog", (post) => {
+    return import.meta.env.PROD ? post.data.isDraft !== true : true;
+  })
+).sort(
+  (a, b) =>
+    new Date(b.data.datePublished).getTime() -
+    new Date(a.data.datePublished).getTime()
+);
 ---
 
 <Layout title={title}>
