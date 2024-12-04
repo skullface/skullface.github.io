@@ -15,16 +15,25 @@ const posts = await getCollection("blog", (post) => {
     <h1>{title}</h1>
     <ul class="grid gap-4">
       {
-        posts.map((post) => (
-          <li>
-            <Card
-              href={`/blog/${post.slug}`}
-              title={post.data.title}
-              body={post.data.description}
-              footer={post.data.datePublished.toDateString()}
-            />
-          </li>
-        ))
+        posts.map(
+          (post: {
+            id: any;
+            data: {
+              title: string;
+              description: string;
+              datePublished: { toDateString: () => string | undefined };
+            };
+          }) => (
+            <li>
+              <Card
+                href={`/blog/${post.id}`}
+                title={post.data.title}
+                body={post.data.description}
+                footer={post.data.datePublished.toDateString()}
+              />
+            </li>
+          )
+        )
       }
     </ul>
   </main>

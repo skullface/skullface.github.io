@@ -2,14 +2,15 @@
 import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
+import Card from "../../components/Card.astro";
 
 export async function getStaticPaths() {
   const allPosts = await getCollection("blog");
 
   const tags: string[] = [];
 
-  allPosts.forEach((post) => {
-    post.data.tags?.forEach((tag) => {
+  allPosts.forEach((post: CollectionEntry<"blog">) => {
+    post.data.tags?.forEach((tag: string) => {
       tags.push(tag.toLowerCase());
     });
   });
@@ -18,8 +19,11 @@ export async function getStaticPaths() {
     return {
       params: { tag },
       props: {
-        posts: allPosts.filter((post) =>
-          (post.data.tags ?? []).map((tag) => tag.toLowerCase()).includes(tag),
+        tag,
+        posts: allPosts.filter((post: CollectionEntry<"blog">) =>
+          (post.data.tags ?? [])
+            .map((tag: string) => tag.toLowerCase())
+            .includes(tag)
         ),
       },
     };
@@ -31,31 +35,25 @@ interface Props {
   posts: CollectionEntry<"blog">[];
 }
 
-const { tag, posts } = Astro.props;
+const { tag, posts } = Astro.props as Props;
 ---
 
-<Layout title={tag}>
+<Layout title={`Blog posts about ${tag}`}>
   <main>
-    <ul>
+    <h1>Posts tagged with <b>{tag}</b></h1>
+    <ul class="grid gap-2">
       {
         posts.map((post) => (
           <li>
-            <a href={`/blog/${post.slug}`}>{post.data.title}</a>
+            <Card
+              href={`/blog/${post.id}`}
+              title={post.data.title}
+              body={post.data.description}
+              footer={post.data.datePublished.toDateString()}
+            />
           </li>
         ))
       }
     </ul>
   </main>
-</Layout>
----
-
-<Layout title={tag}>
-  <h2>Posts tagged with <b>{tag}</b></h2>
-  <ul>
-    {posts.map((post: CollectionEntry<"blog">) => (
-      <li>
-        <a href={`/blog/${post.slug}`}>{post.data.title}</a>
-      </li>
-    ))}
-  </ul>
 </Layout>

@@ -25,12 +25,12 @@ const groupedHeadings = headings.reduce((array, heading) => {
     {
       groupedHeadings.map((h) => (
         <li>
-          <a href={`#${h.slug}`}>{h.text}</a>
+          <a href={`#${h.id}`}>{h.text}</a>
           {h.subheadings.length > 0 && (
             <ol>
               {h.subheadings.map((sub) => (
                 <li>
-                  <a href={`#${sub.slug}`}>{sub.text}</a>
+                  <a href={`#${sub.id}`}>{sub.text}</a>
                 </li>
               ))}
             </ol>
