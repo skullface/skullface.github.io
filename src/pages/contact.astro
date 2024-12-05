@@ -14,12 +14,12 @@ const title = "Contact Skullface";
       <span class="inline relative copy-element">
         <button
           aria-label="Copy email address: meow at skullface dot me"
-          class="font-[var(--font-family-sans)] transition-all ease-in-out duration-200 bg-[color-mix(in_lab,_var(--color-midground),_var(--color-background)_90%)] hover:bg-[var(--color-background)] hover:shadow-[inset_0_0_0_1.5px_color-mix(in_lab,_var(--color-midground),_var(--color-background)_75%)] pl-2 pr-1 rounded mb-0 inline-flex items-center copy-button"
+          class="transition-all ease-in-out duration-200 bg-[color-mix(in_lab,_var(--color-midground),_var(--color-background)_90%)] hover:bg-[var(--color-background)] hover:shadow-[inset_0_0_0_1.5px_color-mix(in_lab,_var(--color-midground),_var(--color-background)_75%)] pl-2 pr-1 rounded mb-0 inline-flex items-center copy-button"
           >&#109;&#101;&#111;&#119;&#64;&#115;&#107;&#117;&#108;&#108;&#102;&#97;&#99;&#101;&#46;&#109;&#101;</button
         ><span
           role="status"
           aria-live="polite"
-          class="copy-feedback hidden font-[var(--font-family-sans)] absolute transition-all opacity-0 ease-in-out duration-200 -top-7 rounded p-2 left-[50%] text-[0.8125rem] bg-[var(--color-foreground)] text-[var(--color-background)] whitespace-nowrap text-white leading-none -translate-x-1/2"
+          class="copy-feedback hidden absolute transition-all opacity-0 ease-in-out duration-200 -top-7 rounded p-2 left-[50%] text-[0.8125rem] bg-[var(--color-foreground)] text-[var(--color-background)] whitespace-nowrap text-white leading-none -translate-x-1/2"
           >Email address copied</span
         ></span
       >.
@@ -68,6 +68,10 @@ const title = "Contact Skullface";
 
   .copy-button[data-status="copied"]::after {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='none'%3E%3Cpath fill='%23ae23ff' d='m10 0h-8c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2v-8c0-1.1-.9-2-2-2zm-.9 4.4-3.4 4.2c-.1.2-.4.3-.6.3s-.4-.1-.6-.3l-1.7-2c-.1-.2-.2-.4-.2-.5 0-.2.1-.4.3-.5s.4-.2.5-.2c.2 0 .4.1.5.3l1.1 1.3 2.8-3.5c.3-.3.7-.4 1.1-.1.2.1.3.3.3.5s0 .4-.2.5z'/%3E%3C/svg%3E");
+  }
+
+  .copy-feedback {
+    font-family: var(--font-family-sans);
   }
 </style>
 
