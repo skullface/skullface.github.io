@@ -1,0 +1,82 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Fav from "../../components/Fav.astro";
+const title = "Favorites";
+
+import { getCollection } from "astro:content";
+
+// Fetch collection
+const favs = await getCollection("favorites");
+
+// Group by category
+const groupedFavs: Record<string, typeof favs> = favs.reduce(
+  (acc, fav) => {
+    const category = fav.data.category || "Uncategorized"; // Handle undefined category
+    if (!acc[category]) {
+      acc[category] = [];
+    }
+    acc[category].push(fav);
+    return acc;
+  },
+  {} as Record<string, typeof favs> // Explicitly cast initial accumulator
+);
+
+// Sort each category's items alphabetically by title
+for (const category in groupedFavs) {
+  groupedFavs[category].sort((a, b) =>
+    a.data.title.localeCompare(b.data.title)
+  );
+}
+---
+
+<Layout title={title}>
+  <main>
+    <h1>{title}</h1>
+
+    <p>
+      Enjoy some of my fav lifestyle picks <span class="">♡</span> Note: Some links
+      on this page are affiliate links. I may earn a small commission if you purchase,
+      but I only recommend things I actually love (that’s why these are my <i
+        >favorites</i
+      >). The affiliate links are here for mutual convenience — I encourage
+      shopping secondhand and/or from independent shops whenever you can!
+    </p>
+
+    <div class="flex gap-2 flex-wrap">
+      <b>Categories:</b>
+      <ul class="flex gap-4 md:gap-2 article-meta">
+        {
+          Object.keys(groupedFavs).map((category) => (
+            <li class="after:content-['']">
+              <a href={`#${category}`}>{category}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    {
+      Object.keys(groupedFavs).map((category) => (
+        <section id={category}>
+          <h2>{category}</h2>
+          <ul class="grid md:grid-cols-2 items-stretch gap-6">
+            {groupedFavs[category].map(
+              (fav) =>
+                fav.data && (
+                  <li class="h-full" data-id={fav.id}>
+                    <Fav
+                      id={fav.id}
+                      href={fav.data.url}
+                      title={fav.data.title}
+                      body={fav.data.description}
+                      category={fav.data.category}
+                    />
+                  </li>
+                )
+            )}
+          </ul>
+        </section>
+      ))
+    }
+  </main>
+</Layout>

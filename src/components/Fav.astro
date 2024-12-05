@@ -1,0 +1,52 @@
+---
+interface Props {
+  title: string;
+  href: string;
+  body: string;
+  category: string;
+  id: string;
+}
+
+const { href, title, body, category, id } = Astro.props;
+---
+
+<div class="link-fav flex flex-col items-stretch h-full p-3">
+  <a href={href} target="_blank" class="block mb-2"
+    ><h3 class="inline">{title}</h3></a
+  >
+  <p class="flex-1">
+    {body}
+  </p>
+  <a href={href} target="_blank" class=""
+    ><img
+      class="transition ease-in-out rounded bg-[#fff] py-2 px-8"
+      src={`./favs/${category.replace(/\s+/g, "").replace(/[^a-zA-Z]/g, "-")}/${id}.jpg`}
+      alt=" "
+    /></a
+  >
+</div>
+
+<style>
+  .link-fav {
+    @apply transition ease-in-out rounded-md;
+    border: solid 1px
+      color-mix(in lab, var(--color-midground), var(--color-background) 90%);
+
+    &:hover {
+      background-color: color-mix(
+        in lab,
+        var(--color-midground),
+        var(--color-background) 90%
+      );
+    }
+
+    p {
+      font-size: 0.875rem;
+      color: color-mix(
+        in lab,
+        var(--color-midground),
+        var(--color-foreground) 33%
+      );
+    }
+  }
+</style>

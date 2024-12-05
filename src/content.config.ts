@@ -20,29 +20,17 @@ const blogCollection = defineCollection({
   }),
 });
 
-const workCollection = defineCollection({ 
-  loader: glob({ pattern: '**\/[^_]*.md', base: "./src/content/work" }),
+const favoritesCollection = defineCollection({
+  loader: glob({ pattern: '**\/[^_]*.md', base: "./src/content/favorites" }),
   schema: z.object({
     title: z.string(),
-    description: z.string().optional(),
-    collaborators: z.array(z.string()).optional(),
-    tags: z.array(z.string()),
-    image: z.string().optional(),
-  }),
-});
-
-const shopCollection = defineCollection({
-  loader: glob({ pattern: '**\/[^_]*.md', base: "./src/content/shop" }),
-  schema: z.object({
-    title: z.string(),
-    description: z.string().optional(),
-    url: z.string(),
-    image: z.string().optional(),
+    description: z.string(),
+    url: z.string().url(),
+    category: z.string(),
   }),
 });
 
 export const collections = {
   'blog': blogCollection,
-  'work': workCollection,
-  'shop': shopCollection
+  'favorites': favoritesCollection
 };
