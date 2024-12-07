@@ -53,6 +53,9 @@ for (const category in groupedFavs) {
         <li>
           <a href="#coding">coding</a>
         </li>
+        <li>
+          <a href="#coding">writing</a>
+        </li>
         {
           Object.keys(groupedFavs).map((category) => (
             <li>
@@ -100,6 +103,23 @@ for (const category in groupedFavs) {
       </ul>
     </section>
 
+    <section id="writing">
+      <h2>Writing</h2>
+      <ul class="list-disc">
+        <li>
+          📖 App: <a href="https://obsidian.md/">Obsidian</a> with a <a
+            href="https://github.com/skullface/obsidian-wonja">custom theme</a
+          >
+        </li>
+        <li>
+          🖍️ Readability editing: <a href="https://hemingwayapp.com/">Hemingway Desktop</a>
+        </li>
+        <li>
+          🔎 Research: Perplexity (see my <a href="/ai">AI notice</a>)
+        </li>
+      </ul>
+    </section>
+    
     {
       Object.keys(groupedFavs).map((category) => (
         <section id={category.replace(/\s+/g, "").replace(/[^a-zA-Z]/g, "-")}>
