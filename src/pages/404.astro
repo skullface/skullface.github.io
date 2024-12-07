@@ -1,0 +1,14 @@
+---
+import Layout from "../layouts/Layout.astro";
+const title = "Not found";
+---
+
+<Layout title={title}>
+  <main>
+    <h1>{title}</h1>
+    <p>
+      Sorry! This page doesn’t exist. I probably forgot to make a redirect
+      somewhere. Care to <a href="/">go back home</a>?
+    </p>
+  </main>
+</Layout>
