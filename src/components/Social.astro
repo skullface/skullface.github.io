@@ -16,9 +16,10 @@ const svgContent = svgs[platform] || "";
 ---
 
 <a
+  aria-label={platform}
   href={platform === "bluesky"
     ? `https://bsky.app/profile/${username || "skullface"}`
     : `https://${platform}.com/${username || "skullface"}`}
 >
-  <div set:html={svgContent} aria-label={platform} />
+  <div set:html={svgContent} />
 </a>

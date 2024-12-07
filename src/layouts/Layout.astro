@@ -140,13 +140,14 @@ const { title, description } = Astro.props;
     }
   }
 
-  a:focus {
+  a:focus,
+  input:focus,
+  button:focus {
     outline-color: color-mix(
       in lab,
       var(--color-primary),
       var(--color-background) 66%
     );
-    border-radius: 100%;
   }
 
   main {
@@ -170,7 +171,7 @@ const { title, description } = Astro.props;
     }
 
     p a,
-    li a {
+    li a:not(:has(p)) {
       @apply transition-all ease-in-out duration-150;
       font-weight: 700;
       font-size: 93.75%;
@@ -529,6 +530,15 @@ const { title, description } = Astro.props;
       in lab,
       var(--color-midground),
       var(--color-background) 50%
+    );
+  }
+
+  input {
+    font-family: var(--font-family-sans);
+    background-color: color-mix(
+      in lab,
+      var(--color-midground),
+      var(--color-background) 90%
     );
   }
 </style>
