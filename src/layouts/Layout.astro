@@ -58,7 +58,9 @@ const { title, description } = Astro.props;
   </head>
   <body>
     <Header />
-    <slot />
+    <div id="content">
+      <slot />
+    </div>
     <Footer />
   </body>
 </html>
