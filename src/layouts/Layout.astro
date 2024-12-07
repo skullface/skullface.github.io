@@ -173,7 +173,8 @@ const { title, description } = Astro.props;
     }
 
     p a,
-    li a:not(.link-fav:has(p)) {
+    li a
+    .external-link {
       @apply transition-all ease-in-out duration-150;
       font-weight: 700;
       font-size: 93.75%;
@@ -454,7 +455,8 @@ const { title, description } = Astro.props;
     }
   }
 
-  main a[href*="//"]:not(:has(img))::after
+  main a[href*="//"]:not(:has(img))::after,
+  .link-fav h3::after
   {
     @apply transition-all ease-in-out duration-150;
     content: "";
@@ -470,8 +472,21 @@ const { title, description } = Astro.props;
     filter: grayscale(1);
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='none'%3E%3Cpath stroke='%23ae23ff' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.75' d='m5 1h-2c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2v-2m0-3.5v-4.5h-4.5m-3.4 7.9 7.9-7.9'/%3E%3C/svg%3E");
   }
+  
+  .link-fav:hover h3 {
+    color: var(--color-primary);
+    text-decoration-color: oklch(78% 0.14 307);
+  }
+  @media (prefers-color-scheme: dark) {
+    text-decoration-color: oklch(40% 0 0);
+    &:hover,
+    &:focus {
+      text-decoration-color: oklch(36% 0.14 307);
+    }
+  }
 
-  main a[href*="//"]:hover::after
+  main a[href*="//"]:hover::after,
+  .link-fav:hover h3::after
   {
     filter: grayscale(0);
     opacity: 1;

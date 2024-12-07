@@ -13,10 +13,10 @@ const { href, title, body, category, id } = Astro.props;
 <a
   href={href}
   target="_blank"
-  class="link-fav flex flex-col items-stretch h-full p-3"
+  class="link-fav flex flex-col no-underline items-stretch h-full p-3"
 >
-  <h3 id={title} class="inline">{title}</h3>
-  <p class="flex-1 font-serif font-normal">
+  <h3 id={title} class="inline external-link">{title}</h3>
+  <p class="flex-1 font-normal" style="font-family: var(--font-family-serif)">
     {body}
   </p>
   <img
