@@ -34,30 +34,75 @@ for (const category in groupedFavs) {
     <h1>{title}</h1>
 
     <p>
-      Enjoy some of my fav lifestyle picks <span class="">♡</span> Note: Some links
-      on this page are affiliate links. I may earn a small commission if you purchase,
-      but I only recommend things I actually love (that’s why these are my <i
-        >favorites</i
-      >). The affiliate links are here for mutual convenience — I encourage
-      shopping secondhand and/or from independent shops whenever you can!
+      Enjoy some of my fav lifestyle picks I use on the daily! <span class=""
+        >♡</span
+      >
+    </p><p>
+      Some links on this page are affiliate links. I may earn a small commission
+      if you purchase, but I only recommend things I actually love (that’s why
+      these are my <i>favorites</i>). The affiliate links are here for mutual
+      convenience — I encourage shopping secondhand and/or from independent
+      shops whenever you can!
     </p>
 
-    <div class="flex gap-2 flex-wrap">
+    <div
+      class="flex gap-2 flex-wrap sticky top-0 bg-[var(--color-background)] py-2 border-b border-[color-mix(in_lab,_var(--color-midground),_var(--color-background)_80%)]"
+    >
       <b>Categories:</b>
-      <ul class="flex gap-4 md:gap-2 article-meta">
+      <ul class="flex gap-4 md:gap-2 article-meta mb-0">
+        <li>
+          <a href="#coding">coding</a>
+        </li>
         {
           Object.keys(groupedFavs).map((category) => (
-            <li class="after:content-['']">
-              <a href={`#${category}`}>{category}</a>
+            <li>
+              <a
+                href={`#${category.replace(/\s+/g, "").replace(/[^a-zA-Z]/g, "-")}`}
+              >
+                {category}
+              </a>
             </li>
           ))
         }
       </ul>
     </div>
 
+    <section id="coding">
+      <h2>Coding</h2>
+      <ul class="list-disc">
+        <li>
+          👩🏻‍💻 Editor: <a href="https://code.visualstudio.com/">VS Code</a> with <a
+            href="https://yoncetheme.com/">Yoncé theme</a
+          >
+        </li>
+        <li>
+          🍐 Pair programmer: Claude (see my <a href="/ai">AI notice</a>)
+        </li><li>
+          🐙 Version control: <a href="https://github.com/apps/desktop"
+            >GitHub Desktop</a
+          >
+        </li><li>
+          🚀 Terminal: <a href="https://app.warp.dev/referral/Q4N3KW">Warp</a> with
+          <a
+            href="https://github.com/skullface/dotfiles/blob/main/warp/yonce.yaml"
+            >a ported Yoncé color theme</a
+          >
+        </li>
+        <li>
+          🐚 Shell: ohmyzsh with a <a
+            href="https://github.com/skullface/dotfiles/blob/main/.zshrc"
+            >custom setup</a
+          > of the <a
+            href="https://github.com/spaceship-prompt/spaceship-prompt"
+            >Spaceship prompt</a
+          >
+        </li>
+      </ul>
+    </section>
+
     {
       Object.keys(groupedFavs).map((category) => (
-        <section id={category}>
+        <section id={category.replace(/\s+/g, "").replace(/[^a-zA-Z]/g, "-")}>
           <h2>{category}</h2>
           <ul class="grid md:grid-cols-2 items-stretch gap-6">
             {groupedFavs[category].map(
