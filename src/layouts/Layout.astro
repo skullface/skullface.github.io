@@ -127,7 +127,7 @@ const { title, description } = Astro.props;
     font-size: 1rem;
     overflow-x: hidden !important;
     font-smooth: subpixel-antialiased;
-    scroll-padding-top: 106px;
+    scroll-padding-top: 80px;
   }
 
   ::selection {
@@ -483,7 +483,6 @@ const { title, description } = Astro.props;
     }
 
     svg {
-      fill: var(--color-midground);
       width: 16px;
       height: 16px;
     }
@@ -506,9 +505,6 @@ const { title, description } = Astro.props;
 
     a {
       display: block;
-      &:hover svg {
-        fill: var(--color-foreground);
-      }
     }
   }
 
@@ -521,6 +517,9 @@ const { title, description } = Astro.props;
     color: var(--color-foreground);
     &:hover {
       color: var(--color-primary);
+      svg {
+        fill: var(--color-primary);
+      }
     }
   }
 
@@ -533,12 +532,22 @@ const { title, description } = Astro.props;
     );
   }
 
-  input {
+  input:not([type="submit"]) {
+    color: var(--color-foreground);
+    background-color: var(--color-background);
+    line-height: 1;
+  }
+
+  input[type="submit"] {
+    @apply transition-all ease-in-out duration-150;
     font-family: var(--font-family-sans);
-    background-color: color-mix(
-      in lab,
-      var(--color-midground),
-      var(--color-background) 90%
-    );
+    background-color: var(--color-foreground);
+    color: var(--color-background);
+    font-weight: 600;
+    &:hover,
+    &:focus {
+      color: var(--color-background);
+      background-color: var(--color-primary);
+    }
   }
 </style>
