@@ -1,9 +1,10 @@
 ---
 import Social from "./Social.astro";
+import EmailSubscribe from "./EmailSubscribe.astro";
 ---
 
 <footer
-  class="site-footer text-midground max-w-page p-[2rem] mx-auto text-pretty before:content-['————'] before:tracking-[-2px] before:opacity-50 text-[0.8125rem]"
+  class="site-footer text-midground max-w-page p-[2rem] mx-auto text-pretty before:content-['————'] before:tracking-[-2px] before:opacity-50 flex flex-col gap-4 text-[0.8125rem]"
 >
   <div class="justify-between flex-wrap flex gap-4">
     <p class="">
@@ -27,7 +28,11 @@ import Social from "./Social.astro";
     </ul>
   </div>
 
-  <ul class="flex-wrap max-md:mt-4 flex gap-4 md:gap-2">
+  <EmailSubscribe />
+
+  <ul
+    class="md:justify-center font-[var(--font-family-sans)] flex gap-4 md:gap-2"
+  >
     <li>
       <a href="/">Home</a>
     </li>
