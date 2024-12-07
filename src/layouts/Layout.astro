@@ -171,7 +171,7 @@ const { title, description } = Astro.props;
     }
 
     p a,
-    li a:not(:has(p)) {
+    li a:not(.link-fav:has(p)) {
       @apply transition-all ease-in-out duration-150;
       font-weight: 700;
       font-size: 93.75%;
