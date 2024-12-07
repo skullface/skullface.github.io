@@ -1,1 +1,1 @@
-made with my beloved [parceljs](https://parceljs.org/) and one of those deadly panera lemonades
+made with [astro](https://astro.build) from my couch while watching [hasan](https://twitch.tv/hasanabi) 🫰

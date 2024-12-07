@@ -1,0 +1,569 @@
+---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+    <meta name="title" content="skullface.me 🫶" />
+    <meta
+      name="description"
+      content={description ||
+        "Design leader and visual artist. Brand, code, and illustration in Cleveland, Ohio."}
+    />
+    <meta name="author" content="skullface" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="icon" type="image/svg" href="favicon.svg" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://skullface.me" />
+    <meta property="og:title" content={title} />
+    <meta
+      property="og:description"
+      content={description ||
+        "Design leader and visual artist. Brand, code, and illustration in Cleveland, Ohio."}
+    />
+    <meta property="og:image" content="./social-card.png" />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://skullface.me" />
+    <meta property="twitter:title" content={title} />
+    <meta
+      property="twitter:description"
+      content={description ||
+        "Design leader and visual artist. Brand, code, and illustration in Cleveland, Ohio."}
+    />
+    <meta name="twitter:image" content="./social-card.png" />
+
+    <script src="https://cdn.usefathom.com/script.js" data-site="DQFBXLTU" defer
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <Header />
+    <div id="content">
+      <slot />
+    </div>
+    <Footer />
+  </body>
+</html>
+<style is:global>
+  /*
+  　 　　 ∧＿∧
+  　 　　(´･ω･)
+  　  ⌒~ー､ ー⌒ヽ
+  ／ ヽ　 ｜ |
+  (　_ノﾄー仝ーイ￣￣＼
+  CSS )ミ土彡/ COOL )
+  　 ＼ ヽ――-L_＿＿／
+  ￣￣(_ノ _　 ＼
+  　 /　 ／ ＼　 ヽ
+  Author: skullface <https://skullface.me>
+  */
+
+  @font-face {
+    font-family: "Ars Maquette";
+    src: url("/fonts/ARSMaquettePro-Medium.woff2") format("woff2");
+    font-weight: bold;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Ars Maquette";
+    src: url("/fonts/ARSMaquettePro-Bold.woff2") format("woff2");
+    font-weight: 800;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Ars Maquette";
+    src: url("/fonts/ARSMaquettePro-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-display: swap;
+  }
+
+  :root {
+    --color-primary: oklch(60% 0.29 307);
+    --color-foreground: #111;
+    --color-midground: #888;
+    --color-background: #fff;
+    --spacer: 0.5em;
+    --font-family-serif: "Source Serif 4", "Georgia", "Times New Roman", serif;
+    --font-family-sans: "ARS Maquette", "Avenir Next", "Avenir", -apple-system,
+      BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --font-family-mono: "Courier Prime", "Courier New", monospace;
+    --page-width: 670px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-foreground: #ddd;
+      --color-midground: #aaa;
+      --color-background: #0f0f0f;
+    }
+  }
+
+  html {
+    font-family: var(--font-family-serif);
+    line-height: 1.6;
+    color: var(--color-foreground);
+    background-color: var(--color-background);
+    font-size: 1rem;
+    overflow-x: hidden !important;
+    font-smooth: subpixel-antialiased;
+    scroll-padding-top: 80px;
+  }
+
+  ::selection {
+    color: var(--color-background);
+    background-color: var(--color-primary);
+  }
+  @media (prefers-color-scheme: dark) {
+    ::selection {
+      color: var(--color-foreground);
+    }
+  }
+
+  a:focus,
+  input:focus,
+  button:focus {
+    outline-color: color-mix(
+      in lab,
+      var(--color-primary),
+      var(--color-background) 66%
+    );
+  }
+
+  main {
+    padding: 2em;
+    margin: 0 auto;
+    max-width: var(--page-width);
+
+    p,
+    ul,
+    ol {
+      margin-top: 0;
+      margin-bottom: calc(var(--spacer) * 2);
+      text-wrap: pretty;
+    }
+
+    img,
+    svg,
+    figure {
+      max-width: 100%;
+      height: auto;
+    }
+
+    p a,
+    li a
+    .external-link {
+      @apply transition-all ease-in-out duration-150;
+      font-weight: 700;
+      font-size: 93.75%;
+      font-family: var(--font-family-sans);
+      color: inherit;
+      text-decoration: underline;
+      text-decoration-color: oklch(80% 0 0);
+      text-underline-offset: 2px;
+      &:hover,
+      &:focus {
+        color: var(--color-primary);
+        text-decoration-color: oklch(78% 0.14 307);
+      }
+      @media (prefers-color-scheme: dark) {
+        text-decoration-color: oklch(40% 0 0);
+        &:hover,
+        &:focus {
+          text-decoration-color: oklch(36% 0.14 307);
+        }
+      }
+      svg {
+        @apply transition-all;
+      }
+    }
+  }
+
+  h1 {
+    font-family: var(--font-family-sans);
+    font-size: 3.5em;
+    font-weight: 800;
+    letter-spacing: -2px;
+    line-height: 90%;
+    margin-bottom: var(--spacer);
+    text-wrap: balance;
+  }
+
+  :not(.content) > h2 {
+    letter-spacing: 1px;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-family: var(--font-family-mono);
+    margin-top: calc(var(--spacer) * 6);
+    margin-bottom: calc(var(--spacer));
+    color: var(--color-midground);
+  }
+
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  b,
+  strong {
+    font-family: var(--font-family-sans);
+    font-size: 93.75%;
+    color: color-mix(
+      in lab,
+      var(--color-midground),
+      var(--color-foreground) 50%
+    );
+  }
+
+  i,
+  em {
+    text-decoration: none;
+    font-style: italic;
+    color: color-mix(
+      in lab,
+      var(--color-midground),
+      var(--color-foreground) 50%
+    );
+  }
+
+  ul li::marker,
+  ol li::marker {
+    color: var(--color-midground);
+  }
+
+  ul li::marker {
+    font-size: 92.5%;
+  }
+
+  .article-heading {
+    font-family: var(--font-family-sans);
+    font-size: 3.5em;
+    font-weight: 800;
+    letter-spacing: -2px;
+    line-height: 90%;
+    margin-bottom: var(--spacer);
+    text-wrap: balance;
+  }
+
+  .article-description {
+    font-size: 1.125rem;
+    font-family: var(--font-family-sans);
+    color: var(--color-midground);
+    &:before {
+      content: "♡ ";
+      color: color-mix(
+        in lab,
+        var(--color-midground),
+        var(--color-background) 25%
+      );
+    }
+  }
+
+  .article-meta {
+    letter-spacing: 1px;
+    font-family: var(--font-family-mono);
+    text-transform: uppercase;
+
+    a {
+      font-family: var(--font-family-sans);
+      font-size: 85%;
+      font-weight: 600;
+      text-transform: none;
+      letter-spacing: 0;
+      text-decoration: none;
+      padding: 1px 6px 3px 6px;
+      border-radius: 5px;
+      border: solid 1px
+        color-mix(in lab, var(--color-midground), var(--color-background) 66%);
+      &:hover {
+        color: var(--color-background);
+        border-color: var(--color-foreground);
+        background-color: var(--color-foreground);
+      }
+    }
+  }
+
+  .toc {
+    position: relative;
+    margin-top: calc(var(--spacer) * 8);
+    line-height: 1.25;
+    @media (max-width: 1199px) {
+      display: flex;
+      border: solid 1px
+        color-mix(in lab, var(--color-midground), var(--color-background) 66%);
+      border-radius: 5px;
+    }
+    @media (min-width: 1200px) {
+      position: fixed;
+      left: 0;
+      margin-top: 0;
+      padding: 0 1.5rem;
+      top: 7.5rem;
+      width: calc((100vw - (var(--page-width))) / 2);
+    }
+    @media (max-width: 1199px) {
+      ol {
+        flex: 1;
+        padding: calc(var(--spacer) * 2);
+        margin-left: calc(var(--spacer) * 0.5);
+        margin-bottom: 0;
+      }
+    }
+    li:not(:last-child) {
+      margin-bottom: calc(var(--spacer) * 1.5);
+    }
+    .active {
+      opacity: 0.5;
+      text-decoration: none;
+      &:hover {
+        color: inherit;
+      }
+    }
+    .toc-head {
+      display: flex;
+      align-items: center;
+      position: relative;
+      @media (max-width: 1199px) {
+        width: 3.5rem;
+      }
+      h2 {
+        text-wrap: unset;
+        color: color-mix(
+          in lab,
+          var(--color-midground),
+          var(--color-foreground) 33%
+        );
+        @media (max-width: 1199px) {
+          display: flex;
+          color: var(--color-foreground);
+          background-color: color-mix(
+            in lab,
+            var(--color-midground),
+            var(--color-background) 90%
+          );
+          border-right: solid 1px
+            color-mix(
+              in lab,
+              var(--color-midground),
+              var(--color-background) 66%
+            );
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          margin: 0;
+          padding: 0;
+          align-items: center;
+          justify-content: center;
+          span {
+            display: block;
+            transform: rotate(-90deg);
+            padding: 0 var(--spacer);
+          }
+        }
+      }
+    }
+  }
+
+  .content {
+    font-size: 1.125rem;
+
+    ul {
+      list-style: disc;
+    }
+
+    li {
+      margin-top: calc(var(--spacer) * 0.5);
+    }
+
+    ol {
+      list-style: decimal;
+    }
+
+    ol ol,
+    ul ul {
+      margin-left: calc(var(--spacer) * 2.125);
+      margin-bottom: 0;
+    }
+
+    h2 {
+      font-size: 1.75em;
+      font-weight: 700;
+      font-family: var(--font-family-sans);
+      margin-top: calc(var(--spacer) * 4);
+      margin-bottom: calc(var(--spacer));
+      letter-spacing: -1px;
+      line-height: 120%;
+    }
+
+    h3 {
+      letter-spacing: 1px;
+      font-weight: 400;
+      text-transform: uppercase;
+      font-family: var(--font-family-mono);
+      margin-top: calc(var(--spacer) * 6);
+      margin-bottom: calc(var(--spacer));
+      color: var(--color-midground);
+    }
+
+    h4 {
+      font-size: 1.25em;
+      font-weight: 800;
+      font-family: var(--font-family-sans);
+      margin-top: calc(var(--spacer) * 6);
+      margin-bottom: calc(var(--spacer));
+      letter-spacing: -0.5px;
+      line-height: 130%;
+    }
+
+    blockquote {
+      border-left: solid 2px
+        color-mix(in lab, var(--color-midground), var(--color-background) 66%);
+      padding-left: calc(var(--spacer) * 3);
+      margin-left: calc(var(--spacer) * -3);
+
+      p:first-letter {
+        margin-left: calc(var(--spacer) * -0.75);
+      }
+    }
+    blockquote p i a {
+      font-family: var(--font-family-serif);
+      font-weight: 600;
+    }
+  }
+
+  main a[href*="//"]:not(:has(img))::after,
+  .link-fav h3::after
+  {
+    @apply transition-all ease-in-out duration-150;
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 calc(var(--spacer) * 0.5);
+    opacity: 0.5;
+    @media (prefers-color-scheme: dark) {
+      opacity: 1;
+    }
+    background-size: cover;
+    filter: grayscale(1);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='none'%3E%3Cpath stroke='%23ae23ff' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.75' d='m5 1h-2c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2v-2m0-3.5v-4.5h-4.5m-3.4 7.9 7.9-7.9'/%3E%3C/svg%3E");
+  }
+  
+  .link-fav:hover h3 {
+    color: var(--color-primary);
+    text-decoration-color: oklch(78% 0.14 307);
+  }
+  @media (prefers-color-scheme: dark) {
+    text-decoration-color: oklch(40% 0 0);
+    &:hover,
+    &:focus {
+      text-decoration-color: oklch(36% 0.14 307);
+    }
+  }
+
+  main a[href*="//"]:hover::after,
+  .link-fav:hover h3::after
+  {
+    filter: grayscale(0);
+    opacity: 1;
+  }
+
+  .social-links {
+    @apply list-none flex gap-6 md:gap-3;
+    li {
+      @apply m-0;
+    }
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .inverted {
+      opacity: 0;
+    }
+    .standard {
+      opacity: 1;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .inverted {
+        opacity: 1;
+      }
+      .standard {
+        opacity: 0;
+      }
+    }
+
+    a {
+      display: block;
+    }
+  }
+
+  nav a {
+    font-family: var(--font-family-sans);
+    font-weight: 600;
+  }
+
+  .site-footer a {
+    color: var(--color-foreground);
+    &:hover {
+      color: var(--color-primary);
+      svg {
+        fill: var(--color-primary);
+      }
+    }
+  }
+
+  .collage {
+    border-radius: var(--spacer);
+    border-color: color-mix(
+      in lab,
+      var(--color-midground),
+      var(--color-background) 50%
+    );
+  }
+
+  input:not([type="submit"]) {
+    color: var(--color-foreground);
+    background-color: var(--color-background);
+    line-height: 1;
+  }
+
+  input[type="submit"] {
+    @apply transition-all ease-in-out duration-150;
+    font-family: var(--font-family-sans);
+    background-color: var(--color-foreground);
+    color: var(--color-background);
+    font-weight: 600;
+    &:hover,
+    &:focus {
+      color: var(--color-background);
+      background-color: var(--color-primary);
+    }
+  }
+</style>

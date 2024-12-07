@@ -1,0 +1,46 @@
+---
+import type { MarkdownHeading } from "astro";
+
+type Props = {
+  headings: MarkdownHeading[];
+};
+
+type HeadingWithSubheadings = MarkdownHeading & {
+  subheadings: MarkdownHeading[];
+};
+
+const { headings } = Astro.props;
+
+const groupedHeadings = headings.reduce((array, heading) => {
+  if (heading.depth === 2) {
+    array.push({ ...heading, subheadings: [] });
+  }
+  return array;
+}, [] as HeadingWithSubheadings[]);
+---
+
+<nav class="toc" id="table-of-contents" aria-labelledBy="tocHeading">
+  <div id="tocHeading" class="toc-head">
+    <h2>
+      <span>Contents</span>
+    </h2>
+  </div>
+  <ol>
+    {
+      groupedHeadings.map((h) => (
+        <li>
+          <a href={`#${h.slug}`}>{h.text}</a>
+          {h.subheadings.length > 0 && (
+            <ol>
+              {h.subheadings.map((sub) => (
+                <li>
+                  <a href={`#${sub.slug}`}>{sub.text}</a>
+                </li>
+              ))}
+            </ol>
+          )}
+        </li>
+      ))
+    }
+  </ol>
+</nav>

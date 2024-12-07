@@ -1,0 +1,58 @@
+---
+interface Props {
+  title: string;
+  body: string;
+  href: string;
+  img?: string;
+  alt?: string;
+  footer?: string;
+}
+
+const { href, title, body, img, alt, footer } = Astro.props;
+---
+
+<li class="link-project">
+  <a href={href}>
+    <h3>
+      {title}
+    </h3>
+  </a>
+  <p>
+    {body}
+  </p>
+  {footer && <div class="article-meta">{footer}</div>}
+  {img && <img src={img} alt={alt} />}
+</li>
+
+<style>
+  .link-project {
+    @apply transition ease-in-out;
+
+    a {
+      @apply flex gap-1 items-center;
+    }
+
+    h3 {
+      font-weight: 700;
+      letter-spacing: -0.25px;
+      @apply mb-1;
+    }
+
+    p {
+      @apply mb-0;
+      color: color-mix(
+        in lab,
+        var(--color-midground),
+        var(--color-foreground) 33%
+      );
+    }
+
+    .article-meta {
+      @apply px-6 pb-4 mb-0;
+    }
+
+    img {
+      border-radius: 0 0 0.5rem 0.5rem;
+    }
+  }
+</style>

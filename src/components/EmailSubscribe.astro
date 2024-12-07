@@ -1,0 +1,38 @@
+---
+
+---
+
+<div
+  class="p-4 rounded-lg text-[0.8125rem] bg-[color-mix(in_lab,_var(--color-midground),_var(--color-background)_90%)]"
+>
+  <form
+    action="https://buttondown.com/api/emails/embed-subscribe/skullface"
+    method="post"
+    target="popupwindow"
+    onsubmit="window.open('https://buttondown.com/skullface', 'popupwindow')"
+    class="embeddable-buttondown-form flex flex-col gap-2"
+  >
+    <label for="bd-email" class="font-sans"
+      >💌 Resources, roundups, and musings in your inbox each month.</label
+    >
+    <div class="flex flex-row">
+      <input
+        type="email"
+        class="border border-[color-mix(in_lab,_var(--color-midground),_var(--color-background)_80%)] flex-1 rounded-l px-3 py-2 leading-none focus:!rounded-r-none"
+        style="font-family: var(--font-family-mono)"
+        name="email"
+        placeholder="email@address.com"
+        autocomplete="email"
+        id="bd-email"
+      />
+      <input
+        type="submit"
+        value="Subscribe >"
+        class="rounded-r px-4 py-2 cursor-pointer"
+      />
+    </div>
+
+    <input type="hidden" name="tag" value="site-footer" />
+    <input type="hidden" name="tag" value="og" />
+  </form>
+</div>

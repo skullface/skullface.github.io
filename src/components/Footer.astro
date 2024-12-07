@@ -1,0 +1,54 @@
+---
+import Social from "./Social.astro";
+import EmailSubscribe from "./EmailSubscribe.astro";
+---
+
+<footer
+  class="site-footer text-midground max-w-page p-[2rem] mx-auto text-pretty before:content-['————'] before:tracking-[-2px] before:opacity-50 flex flex-col gap-4 text-[0.8125rem]"
+>
+  <div class="justify-between flex-wrap flex gap-4">
+    <p class="">
+      © skullface, 2024. Ain’t no stoppin’ me. Copywritten, so don’t copy me.<a
+        href="https://youtu.be/FPoKiGQzbSQ?si=DLH_T_tUOHkSOHha&t=133">*</a
+      >
+    </p>
+    <ul class="social-links">
+      <li>
+        <Social platform="bluesky" username="skullface.me" />
+      </li>
+      <li>
+        <Social platform="github" />
+      </li>
+      <li>
+        <Social platform="instagram" username="skvllface" />
+      </li>
+      <li>
+        <Social platform="letterboxd" username="jsca" />
+      </li>
+    </ul>
+  </div>
+
+  <EmailSubscribe />
+
+  <ul
+    class="md:justify-center font-sans font-[var(--font-family-sans)] flex gap-4 md:gap-2"
+  >
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a href="/about">About</a>
+    </li>
+    <li>
+      <a href="/blog">Blog</a>
+    </li>
+    <li>
+      <a href="/favorites">Favorites</a>
+    </li>
+    <li>
+      <a href="/more">More</a>
+    </li>
+    <li><a href="/contact">Contact</a></li>
+    <li><a href="/rss.xml">RSS</a></li>
+  </ul>
+</footer>

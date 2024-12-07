@@ -1,0 +1,83 @@
+---
+import { render, type CollectionEntry, getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import TableOfContents from "../../components/TableOfContents.astro";
+
+type Props = CollectionEntry<"blog">;
+
+export async function getStaticPaths() {
+  const blogPosts = await getCollection("blog");
+  return blogPosts.map((post: { id: any }) => ({
+    params: { id: post.id },
+    props: post,
+  }));
+}
+
+const post = Astro.props;
+const { Content, headings } = await render(post);
+---
+
+<Layout title={post.data.title}>
+  <main>
+    <h1 class="article-heading">{post.data.title}</h1>
+
+    <p class="article-description">{post.data.description}</p>
+
+    <div class="flex gap-3 items-center article-meta">
+      <date datetime={post.data.datePublished}
+        >{post.data.datePublished.toString().slice(0, 15)}</date
+      >
+      <ul class="flex gap-2 mb-0">
+        {
+          post.data.tags &&
+            post.data.tags.map((tag: string) => (
+              <li>
+                <a href={`/tagged/${tag}`}>{tag}</a>
+              </li>
+            ))
+        }
+      </ul>
+    </div>
+
+    <TableOfContents headings={headings} />
+
+    <article class="content">
+      <Content />
+    </article>
+  </main>
+</Layout>
+
+<script is:inline>
+  addIntersectionObserver();
+
+  function addIntersectionObserver() {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const heading = entry.target;
+          const id = heading.getAttribute("id");
+          if (!id) return;
+
+          const link = document.querySelector(`nav.toc a[href="#${id}"]`);
+          if (!link) return;
+
+          if (entry.isIntersecting) {
+            document
+              .querySelectorAll("nav.toc a.active")
+              .forEach((activeLink) => activeLink.classList.remove("active"));
+            link.classList.add("active");
+          }
+        });
+      },
+      { threshold: 0.9 }
+    );
+
+    const article = document.querySelector("article");
+    if (!article) return;
+
+    const headings = article.querySelectorAll("h2");
+    if (headings.length === 0) return;
+
+    headings.forEach((heading) => observer.observe(heading));
+  }
+</script>

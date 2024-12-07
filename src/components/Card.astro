@@ -1,0 +1,82 @@
+---
+interface Props {
+  title: string;
+  body: string;
+  href: string;
+  img?: string;
+  alt?: string;
+  footer?: string;
+}
+
+const { href, title, body, img, alt, footer } = Astro.props;
+---
+
+<li class="link-card">
+  <a href={href}>
+    <h3>
+      {title}
+      <span>&rarr;</span>
+    </h3>
+    <p>
+      {body}
+    </p>
+    {footer && <div class="article-meta">{footer}</div>}
+    {img && <img src={img} alt={alt} />}
+  </a>
+</li>
+
+<style>
+  .link-card {
+    @apply transition ease-in-out;
+    border-radius: 0.5rem;
+    background-color: var(--color-background);
+    box-shadow: inset 0 0 0 1px
+      color-mix(in lab, var(--color-midground), var(--color-background) 90%);
+
+    a {
+      span {
+        color: var(--color-primary);
+      }
+
+      @apply w-full no-underline transition ease-in-out font-normal flex flex-col gap-0;
+      &:hover,
+      &:focus-within {
+        color: var(--color-primary);
+
+        p {
+          color: var(--color-foreground);
+        }
+      }
+    }
+
+    &:hover,
+    &:focus-within {
+      box-shadow: inset 0 0 0 1px
+        color-mix(in lab, var(--color-midground), var(--color-background) 80%);
+    }
+
+    h3 {
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: -0.25px;
+      @apply px-6 pt-4 mb-0;
+    }
+
+    p {
+      @apply px-6 pb-4 mb-0;
+      color: color-mix(
+        in lab,
+        var(--color-midground),
+        var(--color-foreground) 33%
+      );
+    }
+
+    .article-meta {
+      @apply px-6 pb-4 mb-0;
+    }
+
+    img {
+      border-radius: 0 0 0.5rem 0.5rem;
+    }
+  }
+</style>
