@@ -4,59 +4,24 @@ import Project from "../components/Project.astro";
 import Heart from "../components/Heart.astro";
 import Sparkles from "../components/Sparkles.astro";
 const title = "skullface.me 🫶";
-
-const valuesAndPractices = [
-  {
-    value: "Clarity",
-    practice: "Showing and telling",
-  },
-  {
-    value: "Inclusivity",
-    practice: "Proactive advocacy",
-  },
-  {
-    value: "Irreverence",
-    practice: "Play and experimentation",
-  },
-  {
-    value: "Intention",
-    practice: "Leading with purpose",
-  },
-  {
-    value: "Openness",
-    practice: "Removing barriers to entry",
-  },
-];
 ---
 
 <Layout title={title}>
   <main>
     <h1>
-      dual wielding <br />compassion <br />+ cuteness
+      I make websites, brands, and art! 👋 (⸝⸝ • ◡ • ⸝⸝) ⊹`*✧･˖
     </h1>
 
     <p>
       I’m <b>@skullface</b>, “Skully” for short! I’m a creative generalist
-      always trying to leave things better than I found them.
+      always trying to leave things better than I found them. I love my cat named Bruce 🐱, video games 🎮, k-pop 🕺, and the Cleveland Cavaliers 🏀.
     </p>
-<span class="glitter"><Heart class="glitter" /></span>
-    <h2 class="hidden">Values and practices</h2>
-    <ul class="values-and-practices">
-      {
-        valuesAndPractices.map(({ value, practice }) => (
-          <li>
-            <span class="value">
-              {value}
-              <span aria-label="through" class="through" />
-            </span>
-            {practice}
-          </li>
-        ))
-      }
-    </ul>
-
+    
     <p>
-      <span class="glitter"><Sparkles /></span>
+      Currently running <a href="https://falseluck.shop">False Luck</a> and design engineering at Vercel ▲.
+    </p>
+
+    <span class="glitter"><Heart class="glitter" /></span>
   </main>
 </Layout>
 
@@ -83,50 +48,6 @@ const valuesAndPractices = [
       width: 32px;
       height: 32px;
       fill: var(--color-primary);
-    }
-  }
-
-  .values-and-practices {
-    list-style: none;
-
-    li {
-      display: flex;
-      flex-direction: column;
-      @media all and (max-width: 680px) {
-        margin-bottom: calc(var(--spacer) * 2);
-      }
-      @media all and (min-width: 680px) {
-        flex-direction: row;
-        align-items: center;
-      }
-      &:nth-of-type(even) .through {
-        transform: scaleY(-1);
-      }
-    }
-
-    .value {
-      display: flex;
-      font-family: var(--font-family-sans);
-      font-weight: 600;
-      font-size: 93.75%;
-      @media all and (max-width: 680px) {
-        margin-bottom: calc(var(--spacer) * 0.5);
-      }
-      @media all and (min-width: 680px) {
-        justify-content: space-between;
-        width: 45%;
-        padding-right: var(--spacer);
-      }
-    }
-
-    .through {
-      @media all and (min-width: 680px) {
-        margin-left: var(--spacer);
-        flex: 1;
-        background: url("data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjE2IiB3aWR0aD0iMjI4IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Im0yMDYuMDg1IDkuODIuMDM5Ljc1em0yMS40NzMuMjlhLjc1Ljc1IDAgMCAwIC4wMTEtMS4wNjFsLTQuNzIyLTQuODI0YS43NS43NSAwIDEgMCAtMS4wNzIgMS4wNWw0LjE5OCA0LjI4Ny00LjI4OCA0LjE5N2EuNzUuNzUgMCAwIDAgMS4wNDkgMS4wNzJsNC44MjQtNC43MjJ6bS04Ni40OTgtMi4yMy4wNjYtLjc0N3ptNjUuMDY0IDIuNjg5YzMuNzQ1LS4xOTQgOC45NjYtLjI1NiAxMy4yNjEtLjI3YTY1OS45ODUgNjU5Ljk4NSAwIDAgMSA3LjQ4OS4wMjJsLjExMy4wMDFhNC40MDggNC40MDggMCAwIDEgLjAzNiAwaC4wMDJsLjAwOC0uNzUuMDA4LS43NWgtLjAzOWwtLjExNC0uMDAxYTM1OC43MjggMzU4LjcyOCAwIDAgMCAtMi4wNjUtLjAxNSA2NjEuMzMxIDY2MS4zMzEgMCAwIDAgLTUuNDQzLS4wMDZjLTQuMjk3LjAxMy05LjU1LjA3NS0xMy4zMzQuMjd6bS02NC45OTgtMy40MzZjLTMwLjU1OS0yLjcxNy01OS45My0yLjI0My04NC41NjMtMS4yOTMtMjQuNjc3Ljk1Mi00NC41MDQgMi4zNzYtNTYuMTEzIDEuNTc3bC0uMTAzIDEuNDk3YzExLjcxNi44MDYgMzEuNzA4LS42MjcgNTYuMjc0LTEuNTc1IDI0LjYxLS45NSA1My45MDctMS40MiA4NC4zNzIgMS4yOWwuMTMzLTEuNDk1em02NC45MiAxLjkzOGMtNy40OTYuMzg4LTMyLjgxNC45MTktNjQuOTItMS45MzhsLS4xMzMgMS40OTRjMzIuMTgyIDIuODYzIDU3LjU3IDIuMzM0IDY1LjEzMSAxLjk0MnoiIGZpbGw9IiM2YjY2NzMiLz48L3N2Zz4=")
-          center right no-repeat;
-        background-size: auto 1em;
-      }
     }
   }
 </style>

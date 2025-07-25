@@ -84,6 +84,27 @@
     }
   }
 
+  html.dark .skull {
+    .inverted {
+      opacity: 1;
+      .sk-eye {
+        fill: var(--color-background);
+      }
+    }
+    .standard {
+      opacity: 0;
+    }
+  }
+
+  html.light .skull {
+    .inverted {
+      opacity: 0;
+    }
+    .standard {
+      opacity: 1;
+    }
+  }
+
   .sk-sparkle {
     transform-origin: center;
   }
