@@ -13,6 +13,33 @@ import ThemeIcon from "./ThemeIcon.astro";
         href="https://youtu.be/FPoKiGQzbSQ?si=DLH_T_tUOHkSOHha&t=133">*</a
       >
     </p>
+  </div>
+
+  <EmailSubscribe />
+  
+  <div class="flex justify-between flex-wrap gap-4">
+    <ul
+      class="md:justify-center flex-wrap font-sans font-[var(--font-family-sans)] flex gap-4 md:gap-2"
+    >
+      <li>
+        <a href="/">Home</a>
+      </li>
+      <li>
+        <a href="/about">About</a>
+      </li>
+      <li>
+        <a href="/blog">Blog</a>
+      </li>
+      <li>
+        <a href="/favorites">Favorites</a>
+      </li>
+      <li>
+        <a href="/more">More</a>
+      </li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/rss.xml">RSS</a></li>
+    </ul>
+
     <ul class="social-links">
       <li>
         <Social platform="bluesky" username="skullface.me" />
@@ -31,28 +58,4 @@ import ThemeIcon from "./ThemeIcon.astro";
       </li>
     </ul>
   </div>
-
-  <EmailSubscribe />
-
-  <ul
-    class="md:justify-center font-sans font-[var(--font-family-sans)] flex gap-4 md:gap-2"
-  >
-    <li>
-      <a href="/">Home</a>
-    </li>
-    <li>
-      <a href="/about">About</a>
-    </li>
-    <li>
-      <a href="/blog">Blog</a>
-    </li>
-    <li>
-      <a href="/favorites">Favorites</a>
-    </li>
-    <li>
-      <a href="/more">More</a>
-    </li>
-    <li><a href="/contact">Contact</a></li>
-    <li><a href="/rss.xml">RSS</a></li>
-  </ul>
 </footer>
